@@ -3,11 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --border: #e5e5e5; /* light gray, like Tailwind’s zinc-200 */
+  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-edge: var(--edge);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -23,4 +27,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+/* Add this to your globals.css file */
+
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 15px 15px;
+}
+
+.dot-pattern-large {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 2px, transparent 2px);
+  background-size: 25px 25px;
+}
+
+.dot-pattern-subtle {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 12px 12px;
 }
