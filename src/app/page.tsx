@@ -126,7 +126,7 @@ export default function Home() {
        
         <div className="flex grid grid-cols-3 overflow-hidden ">
           <div className="col-span-2 flex justify-center items-center border border-gray-200 rounded-lg overflow-hidden">
-            <h2 className="text-3xl font-bold text-gray-900">Tools & Tech I Use</h2>
+            <h2 className="text-3xl font-mono text-gray-900">Tools & Tech I Use</h2>
           </div>
           <div className="col-span-1  border border-gray-200 rounded-lg overflow-hidden">
             <Separator />
@@ -202,18 +202,35 @@ export default function Home() {
             <Separator />
           </div>
           <div className="col-span-2 flex justify-center items-center border border-gray-200 rounded-lg overflow-hidden">
-            <h2 className="text-3xl font-bold text-gray-900">My Contributions</h2>
+            <h2 className="text-3xl font-mono text-gray-900">My Contributions</h2>
           </div>
          
-          <div className="col-span-1  border border-gray-200 rounded-lg overflow-hidden"> 
-            <span className="text-gray-500">dodopayments 2 merged PRs</span>
-          </div>
-          <div className="col-span-1  border border-gray-200 rounded-lg overflow-hidden"> 
-            <span className="text-gray-500">dodopayments 2 merged PRs</span>
-          </div>
-          <div className="col-span-1  border border-gray-200 rounded-lg overflow-hidden"> 
-            <span className="text-gray-500">dodopayments 2 merged PRs</span>
-          </div>
+         <ul className="mb-4 ml-4   border-l border-gray-200 mt-3 ">
+        
+            <li className="ml-4 relative ">
+              <span className=" text-gray-500">DodoPayments/billing sdk</span>
+              <span className="absolute inline-flex items-center justify-center top-2 right-2 ">
+            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-indigo-500 opacity-50" />
+            <span className="relative inline-flex size-2 rounded-full bg-indigo-500" />
+           
+          </span>
+             
+            </li>
+            <li className="ml-4 relative ">
+              <span className=" text-gray-500">Link 1</span>
+            
+             
+            </li>
+
+            <li className="ml-4 relative ">
+              <span className=" text-gray-500">Link 2</span>
+            
+             
+            </li>
+      
+          
+       
+         </ul>
         </div>
 
 
