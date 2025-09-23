@@ -1,0 +1,31 @@
+export const contributionsData = [
+    {
+      title: "feat: added a new ui component",
+      year: "2025",
+      description:
+        "Added a new cancel subscription component with transaction flow to the billingsdk.",
+      link: "https://github.com/dodopayments/billingsdk/pull/158",
+    },
+    {
+      title: "fix: fixed hydration error",
+      year: "2025",
+      description:
+        "Fixed hydration error for better SEO performance.",
+      link: "https://github.com/dodopayments/billingsdk/pull/225",
+    },
+    {
+      title:
+        "fix: fixed ui inconsistency",
+      year: "2025",
+      description:
+        "Fixed UI consistency in hero section and components.",
+      link: "https://github.com/dodopayments/billingsdk/pull/127",
+    },
+    {
+      title: "feat: added a new ui component with animations,form validation",
+      year: "2025",
+      description:
+        "Added a Payment Card component with two-panel UI, validation, inline errors, animations, and responsive design.",
+      link: "https://github.com/dodopayments/billingsdk/pull/223",
+    },
+  ];
