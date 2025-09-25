@@ -1,10 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { WordRotate } from "@/components/WordsFlip";
-import { ExternalLink, ArrowUpRight, Github } from "lucide-react";
-import { motion } from "framer-motion";
 import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
 
@@ -14,17 +10,18 @@ import Contributions from "@/components/contributions";
 
 
 const techStack = [
-  { name: "TypeScript", icon: "/ts.svg", href: "https://www.typescriptlang.org/" },
-  { name: "React", icon: "/react.svg", href: "https://react.dev/" },
-  { name: "Next.js", icon: "/nextjs2-light.svg", href: "https://nextjs.org/" },
-  { name: "Tailwind CSS", icon: "/tailwindcss.svg", href: "https://tailwindcss.com/" },
-  { name: "JavaScript", icon: "/js.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-  { name: "MySQL", icon: "/mysql.svg", href: "https://www.mysql.com/" },
-  { name: "Node.js", icon: "/nodejs.svg", href: "https://nodejs.org/" },
-  { name: "MongoDB", icon: "/mongodb.svg", href: "https://www.mongodb.com/" },
-  { name: "Framer Motion", icon: "/motion.svg", href: "https://www.framer.com/motion/" },
-  { name: "Git", icon: "/git.svg", href: "https://git-scm.com/" },
-  { name: "Docker", icon: "/docker.svg", href: "https://www.docker.com/" },
+  { name: "TypeScript", icon: "/typescript.svg", href: "https://www.typescriptlang.org/" },
+  { name: "React", icon: "/react (1).svg", href: "https://react.dev/" },
+  { name: "Next.js", icon: "/nextdotjs.svg", href: "https://nextjs.org/" },
+  { name: "Tailwind CSS", icon: "/tailwindcss1.svg", href: "https://tailwindcss.com/" },
+  { name: "JavaScript", icon: "/javascript.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { name: "MySQL", icon: "/mysql(1).svg", href: "https://www.mysql.com/" },
+  { name: "Node.js", icon: "/nodedotjs.svg", href: "https://nodejs.org/" },
+  { name: "MongoDB", icon: "/mongodb (1).svg", href: "https://www.mongodb.com/" },
+  { name:"Express",icon:"/express.svg",href:"https://expressjs.com/"},
+  { name:"Postgresql",icon:"/postgresql.svg",href:"https://www.postgresql.org/"},
+  {name:"Github",icon:"/github.svg",href:"https://github.com/"},
+  {name:"C++",icon:"/cplusplus.svg",href:"https://www.cplusplus.com/"},
 ];
 
 export default function Home() {
@@ -38,7 +35,7 @@ export default function Home() {
         <section className="py-2">
           <div className="flex justify-end">
 
-             <div className="hidden sm:flex items-center gap-2 justify-end py-5 w-fit border-b border-gray-200">
+             <div className="sm:flex items-center gap-2 justify-end py-5 w-fit border-b border-gray-200">
               <a href="https://github.com/mizurex" target="_blank" rel="noopener noreferrer" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white hover:scale-110 transition-transform duration-200">
                 <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
               </a>

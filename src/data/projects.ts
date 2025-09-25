@@ -8,7 +8,7 @@ export const projectsData = [
     },
     {
       title: "Turfex",
-      image: "/minimal.png",
+      image: "/minimal.jpeg",
       live: "https://github.com/mizurex/turfex",
       github: "https://github.com/mizurex/turfex",
       description: "AI chat template.Features clean UI interface for conversations.",

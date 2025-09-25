@@ -22,7 +22,7 @@ export const contributionsData = [
       link: "https://github.com/dodopayments/billingsdk/pull/127",
     },
     {
-      title: "feat: added a new ui component with animations,form validation",
+      title: "feat: added a new payment card",
       year: "2025",
       description:
         "Added a Payment Card component with two-panel UI, validation, inline errors, animations, and responsive design.",
