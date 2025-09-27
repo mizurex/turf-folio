@@ -7,6 +7,9 @@
   --border: #e5e5e5; /* light gray, like Tailwind’s zinc-200 */
   --edge: color-mix(in oklab, var(--border) 64%, var(--background));
 }
+@theme{
+  --color-line:#374151;
+}
 
 @theme inline {
   --color-background: var(--background);
