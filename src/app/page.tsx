@@ -3,27 +3,7 @@
 import Image from "next/image";
 import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
-
-
-
-
-
-
-const techStack = [
-  { name: "TypeScript", icon: "/typescript.svg", href: "https://www.typescriptlang.org/" },
-  { name: "React", icon: "/react (1).svg", href: "https://react.dev/" },
-  { name: "Next.js", icon: "/nextdotjs.svg", href: "https://nextjs.org/" },
-  { name: "Tailwind CSS", icon: "/tailwindcss1.svg", href: "https://tailwindcss.com/" },
-  { name: "JavaScript", icon: "/javascript.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-  { name: "MySQL", icon: "/mysql(1).svg", href: "https://www.mysql.com/" },
-  { name: "Node.js", icon: "/nodedotjs.svg", href: "https://nodejs.org/" },
-  { name: "MongoDB", icon: "/mongodb (1).svg", href: "https://www.mongodb.com/" },
-  { name:"Express",icon:"/express.svg",href:"https://expressjs.com/"},
-  { name:"Postgresql",icon:"/postgresql.svg",href:"https://www.postgresql.org/"},
-  {name:"Github",icon:"/github.svg",href:"https://github.com/"},
-  {name:"C++",icon:"/cplusplus.svg",href:"https://www.cplusplus.com/"},
-];
-
+import techStack from "@/data/techtsack";
 export default function Home() {
 
   
@@ -109,7 +89,7 @@ export default function Home() {
               <h2 className="text-2xl font-mono text-gray-900 mb-3 underline">Stack</h2>
           </div>
           <div className="grid grid-cols-5 gap-2 pt-6">
-              {techStack.map((tech) => (
+              {techStack().map((tech) => (
                 <a
                   key={tech.name}
                   href={tech.href}
@@ -136,11 +116,7 @@ export default function Home() {
               <h2 className="text-2xl font-mono text-gray-900 mb-3 underline">Experience</h2>
           </div>
           <div className="rounded-md p-3 pt-6">
-            <div className="flex items-center justify-between">
-              <h3 className="font-mono text-lg text-gray-900">Experience loading…</h3>
-           
-            </div>
-            <p className="mt-2 text-sm text-gray-600 ">Still waiting to fill this section.</p>
+            <p className="mt-2 text-sm text-gray-600 ">Still waiting to fill this section...</p>
             
             <a href="https://icons8.com/icon/GodD4Rx442rU/sad">
              <img src="sad.png" alt="" className="w-6 h-6" />
