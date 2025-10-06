@@ -29,3 +29,13 @@ export const contributionsData = [
       link: "https://github.com/dodopayments/billingsdk/pull/223",
     },
   ];
+
+  export const tamboContributionsData = [
+    {
+      title: "fix: improve sidebar animation ",
+      year: "2025",
+      description:
+        "fixed sidebar animation of the component when collapsing and expanding.",
+      link: "https://github.com/tambo-ai/tambo/pull/1115",
+    },
+  ];

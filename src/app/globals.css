@@ -58,3 +58,23 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
+/* From Uiverse.io by kennyotsu-monochromia */ 
+.container {
+  width: 100%;
+  height: 100%;
+  --color: #f7f7f7fa;
+  background-color: #ffffff;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
+}
+/* From Uiverse.io by Juanes200122 */ 
+.container2 {
+  width: 100%;
+  height: 100%;
+  /* Add your background pattern here */
+  background-color: #ffffff;
+  background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+}

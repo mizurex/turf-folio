@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       },
       {
         source:"/motion",
-        destination:"/",
+        destination:"/hey",
         permanent:true,
       },
     ]

@@ -8,7 +8,7 @@ export default function Home() {
 
   
   return (
-    <main className="flex flex-col items-center justify-center text-gray-800  bg-white selection:bg-neutral-100">
+    <main className="flex flex-col items-center justify-center text-gray-800  bg-white selection:bg-neutral-100 container">
     
       <div className="max-w-3xl w-full bg-white  px-6 ">
       
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 className="font-mono text-lg text-gray-900 mb-3 pt-6 ">All Contributions <strong className="text-gray-500">{'>'}</strong></h3>
+            <h3 className="font-mono text-lg text-gray-900 mb-3 pt-6 ">All Contributions </h3>
 
           </div>
            <div className="grid grid-cols-1 gap-2">
@@ -112,11 +112,11 @@ export default function Home() {
         </section>
 
         <section className="mt-10 pb-10">
-        <div className="flex items-start border-b border-gray-200 w-full">
+        <div className="flex items-start w-full border-b border-gray-200">
               <h2 className="text-2xl font-mono text-gray-900 mb-3 underline">Experience</h2>
           </div>
           <div className="rounded-md p-3 pt-6">
-            <p className="mt-2 text-sm text-gray-600 ">Still waiting to fill this section...</p>
+            <p className="mt-2 text-sm text-gray-600 ">waiting to fill this section...</p>
             
             <a href="https://icons8.com/icon/GodD4Rx442rU/sad">
              <img src="sad.png" alt="" className="w-6 h-6" />
