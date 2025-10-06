@@ -4,11 +4,13 @@ import Image from "next/image";
 import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
 import techStack from "@/data/techtsack";
+import Button from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 export default function Home() {
 
   
   return (
-    <main className="flex flex-col items-center justify-center text-gray-800  bg-white selection:bg-neutral-100 container">
+    <main className="flex flex-col items-center justify-center text-gray-800  bg-white selection:bg-neutral-100 ">
     
       <div className="max-w-3xl w-full bg-white  px-6 ">
       
@@ -16,18 +18,49 @@ export default function Home() {
           <div className="flex justify-end">
 
              <div className="sm:flex items-center gap-2 justify-end py-5 w-fit border-b border-gray-200">
-              <a href="https://github.com/mizurex" target="_blank" rel="noopener noreferrer" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white hover:scale-110 transition-transform duration-200">
-                <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white hover:scale-110 transition-transform duration-200">
-                <img src="/linkedin.webp" alt="LinkedIn" className="h-4 w-4" />
-              </a>
-              <a href="https://x.com/PotatoTurf" target="_blank" rel="noopener noreferrer" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white hover:scale-110 transition-transform duration-200">
-                <img src="/x.webp" alt="Twitter" className="h-4 w-4" />
-              </a>
-              <a href="mailto:dhananjayadhal3@gmail.com" target="_blank" rel="noopener noreferrer" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white hover:scale-110 transition-transform duration-200">
-                <img src="/gmail.png" alt="Twitter" className="h-4 w-4" />
-              </a>
+              <Button className={cn({ "px-2": true })}>
+                <a
+                  href="https://github.com/mizurex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md bg-white hover:scale-110 transition-transform duration-200"
+                >
+                  <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
+                </a>
+              </Button>
+
+              <Button className={cn({ "px-2": true })}>
+                <a
+                  href="https://linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md bg-white hover:scale-110 transition-transform duration-200"
+                >
+                  <img src="/linkedin.webp" alt="LinkedIn" className="h-4 w-4" />
+                </a>
+              </Button>
+
+              <Button className={cn({ "px-2": true })}>
+                <a
+                  href="https://x.com/PotatoTurf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md bg-white hover:scale-110 transition-transform duration-200"
+                >
+                  <img src="/x.webp" alt="Twitter" className="h-4 w-4" />
+                </a>
+              </Button>
+
+              <Button className={cn({ "px-2": true })}>
+                <a
+                  href="mailto:dhananjayadhal3@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md bg-white hover:scale-110 transition-transform duration-200"
+                >
+                  <img src="/gmail.png" alt="Twitter" className="h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
        
