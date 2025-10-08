@@ -158,12 +158,17 @@ export default function Home() {
             
           </div>
         </section>
-        
-      
-      </div>
-      <div className="max-w-3xl w-full bg-white pt-2 ">
+        <div className="max-w-3xl w-full bg-white pt-2 ">
             <Separator />
       </div>
+        <section className="py-20">
+          <div className="flex justify-center items-center border-b border-gray-200 relative">
+            
+            <h4 className="font-mono text-lg text-gray-900 mb-3 pt-6 selection:bg-neutral-100"> Thanks a lot for checking out my portfolio! </h4>
+          </div>
+        </section>
+      </div>
+    
     
 
     
@@ -174,7 +179,7 @@ export default function Home() {
 function Separator() {
   return (
     <div
-      className="relative flex h-[30px] w-full 
+      className="relative flex h-[10px] w-full 
         before:absolute before:inset-0
         before:bg-[repeating-linear-gradient(315deg,#e5e7eb_0,#d1d5db_1px,transparent_0,transparent_50%)]
         before:bg-[length:10px_10px] border-t border-gray-200"

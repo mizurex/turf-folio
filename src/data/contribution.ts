@@ -38,4 +38,11 @@ export const contributionsData = [
         "fixed sidebar animation of the component when collapsing and expanding.",
       link: "https://github.com/tambo-ai/tambo/pull/1115",
     },
+    {
+      title: "feat: highlight active link",
+      year: "2025",
+      description:
+        "added active link highlight to the sidebar for better ux.",
+      link: "https://github.com/tambo-ai/tambo/pull/1121",
+    },
   ];
