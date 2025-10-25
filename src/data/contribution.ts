@@ -10,7 +10,7 @@ export const contributionsData = [
       title: "fix: fixed hydration error",
       year: "2025",
       description:
-        "Fixed hydration error for better SEO performance.",
+        "Fixed hydration errors.",
       link: "https://github.com/dodopayments/billingsdk/pull/225",
     },
     {
@@ -45,4 +45,21 @@ export const contributionsData = [
         "added active link highlight to the sidebar for better ux.",
       link: "https://github.com/tambo-ai/tambo/pull/1121",
     },
+    {
+      title: "fix: fixed table layout issue",
+      year: "2025",
+      description:
+        "fixed table layout issue for better ui.",
+      link: "https://github.com/tambo-ai/tambo/pull/1140",
+    }
   ];
+
+  export const PalisaFoundationContributions =[
+    {
+      title: "feat: fixed homepage",
+      year: "2025",
+      description:
+        "fixed homepage of the talawa-docs project.",
+      link: "https://github.com/PalisadoesFoundation/talawa-docs/pull/1036",
+    },
+  ]

@@ -72,11 +72,9 @@ export default function Home() {
              
               <h2 className="font-mono text-lg text-gray-900 mt-4">Dhananjay (@PotatoTurf)</h2>
               <p className="mt-2 text-sm text-stone-900 leading-relaxed font-mono selection:bg-neutral-100">
-                • Passionate developer who learns by building real projects<br/>
+                • Passionate developer<br/>
                 • Love exploring new technologies and turning ideas into code<br/>
-                • Actively seeking internships and full-time development roles<br/>
-                • This portfolio showcases my journey<br/>
-                • Recently started contributing to open source projects, and its been a great experience.
+                • This website showcases my journey and work<br/>
               </p>
             </div>
           
@@ -144,27 +142,14 @@ export default function Home() {
             </div>
         </section>
 
-        <section className="mt-10 pb-10">
-        <div className="flex items-start w-full border-b border-gray-200">
-              <h2 className="text-2xl font-mono text-gray-900 mb-3 underline">Experience</h2>
-          </div>
-          <div className="rounded-md p-3 pt-6">
-            <p className="mt-2 text-sm text-gray-600 ">waiting to fill this section...</p>
-            
-            <a href="https://icons8.com/icon/GodD4Rx442rU/sad">
-             <img src="sad.png" alt="" className="w-6 h-6" />
-            </a>
-           
-            
-          </div>
-        </section>
-        <div className="max-w-3xl w-full bg-white pt-2 ">
+  
+        <div className="max-w-3xl  pt-2 ">
             <Separator />
       </div>
         <section className="py-20">
           <div className="flex justify-center items-center border-b border-gray-200 relative">
             
-            <h4 className="font-mono text-lg text-gray-900 mb-3 pt-6 selection:bg-neutral-100"> Thanks a lot for checking out my portfolio! </h4>
+            <h4 className="font-mono text-lg text-gray-900 mb-3 pt-6 selection:bg-neutral-100"> Thanks a lot for checking out my work! </h4>
           </div>
         </section>
       </div>
@@ -179,10 +164,10 @@ export default function Home() {
 function Separator() {
   return (
     <div
-      className="relative flex h-[10px] w-full 
+      className="relative flex h-[30px] w-full 
         before:absolute before:inset-0
         before:bg-[repeating-linear-gradient(315deg,#e5e7eb_0,#d1d5db_1px,transparent_0,transparent_50%)]
-        before:bg-[length:10px_10px] border-t border-gray-200"
+        before:bg-[length:10px_10px] "
     />
   );
 }

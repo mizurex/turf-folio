@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   async redirects(){
     return[
       {
-        source:"/hey",
+        source:"/notion",
         destination:"https://turf-contri.notion.site/hello-27632a5724a8803092d4dc01881772a8?source=copy_link",
         permanent:true,
       },
