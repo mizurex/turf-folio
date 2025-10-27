@@ -8,6 +8,7 @@ export const TutorialRegistry: Record<
   string,
   { files: { path: string }[]; component?: RegistryComponent }
 > = {
+  // Skeleton
   demo: {
     files: [
       {
@@ -18,6 +19,18 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/demo/demo")
     ),
   },
+  skeleton:{
+    files:[
+      {
+        path: "src/docs/registry/components/skeleton.tsx",
+      },
+    ],
+    component:React.lazy(
+      () => import("@/docs/registry/components/skeleton")
+    )
+  },
+
+  // Browser Demo
   browserDemo:{
     files: [
       {
@@ -27,7 +40,83 @@ export const TutorialRegistry: Record<
     component: React.lazy(
       () => import("@/docs/registry/demo/browser-demo")
     ),
-  }
+  },
+  // Browser
+  browser:{
+    files: [
+      {
+        path: "src/docs/registry/components/browser.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/browser")
+    ),
+  },
+  // Analog Watch
+  analogWatchDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/analog-watch.demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/analog-watch.demo")
+    ),
+  },
+  // Analog Watch
+  analogWatch:{
+    files: [
+      {
+        path: "src/docs/registry/components/analog-watch.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/analog-watch")
+    ),
+  },
+
+  //Boucy button
+  bouncyButtonDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/button/bouncy-button.demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/button/bouncy-button")
+    ),
+  },
+  bouncyButton:{
+    files: [
+      {
+        path: "src/docs/registry/components/button/bouncy-button.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/button/bouncy-button")
+    ),
+  },
+  // dashed button
+  dashedButtonDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/button/dashed-button-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/button/dashed-button")
+    ),
+  },
+  dashedButton:{
+    files: [
+      {
+        path: "src/docs/registry/components/button/dashed-button.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/button/dashed-button")
+    ),
+  },
 };
 
 

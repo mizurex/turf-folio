@@ -1,6 +1,6 @@
 import { Image, Lock } from "lucide-react";
 
-export default function Skeleton() {
+export default function UISkeleton() {
   return (
    
       <div className="bg-neutral-100 h-60 w-70 rounded-md border border-neutral-300">
