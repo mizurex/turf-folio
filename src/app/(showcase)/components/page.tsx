@@ -14,7 +14,22 @@ export default function Page() {
     process.cwd(),
     "src/docs/content/browser-demo.mdx"
   );
+  const analogWatchDemoPath = path.join(
+    process.cwd(),
+    "src/docs/content/analog-watch.mdx"
+  );
+  const bouncyButtonDemoPath = path.join(
+    process.cwd(),
+    "src/docs/content/bouncy-button.mdx"
+  );
+  const dashedButtonDemoPath = path.join(
+    process.cwd(),
+    "src/docs/content/dashed-button.mdx"
+  );
+  const analogWatchDemoCode = fs.readFileSync(analogWatchDemoPath, "utf8");
   const browserDemoCode = fs.readFileSync(browserDemoPath, "utf8");
+  const bouncyButtonDemoCode = fs.readFileSync(bouncyButtonDemoPath, "utf8");
+  const dashedButtonDemoCode = fs.readFileSync(dashedButtonDemoPath, "utf8");
   return (
     <div className="mx-auto my-5 max-w-[820px] p-6">
       <h1 className="text-2xl font-semibold text-center"> Components</h1>
@@ -23,6 +38,12 @@ export default function Page() {
         <MDXTutorial code={code} />
         <Separator className="my-4 border-border" />
         <MDXTutorial code={browserDemoCode} />
+        <Separator className="my-4 border-border" />
+        <MDXTutorial code={analogWatchDemoCode} />
+        <Separator className="my-4 border-border" />
+        <MDXTutorial code={bouncyButtonDemoCode} />
+        <Separator className="my-4 border-border" />
+        <MDXTutorial code={dashedButtonDemoCode} />
       </div>
     </div>
   );

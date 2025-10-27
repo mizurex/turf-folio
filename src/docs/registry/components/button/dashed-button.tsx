@@ -1,16 +1,18 @@
 "use client"
 import { cn } from "@/lib/utils";
-import { CircleDot, Dot, Plus } from "lucide-react";
+import { CircleDot, Dot} from "lucide-react";
 import { motion } from "motion/react";
 
-export default function Button(){
+interface ButtonProps {
+  text?: string;
+}
+export default function DashedButton({ text }: ButtonProps){
   return(
-   <div className="flex items-center justify-center h-screen w-full">
       <motion.button
         initial="rest"
         animate="rest"
         whileHover="hover"
-        className={cn("relative px-3 py-1 border border-dashed border-neutral-400 border-[1px] text-black dark:text-white cursor-pointer select-none font-light")}
+        className={cn("relative bg-neutral-100 dark:bg-neutral-900 px-3 py-1 border border-dashed border-neutral-400 border-[1px] text-black dark:text-white cursor-pointer select-none font-light")}
       >
         <motion.span
           variants={{ rest: { opacity: 1, scale: 1 }, hover: { opacity: 0, scale: 0.8, transition: { duration: 0.18 } } }}
@@ -60,8 +62,7 @@ export default function Button(){
         >
           <CircleDot className="size-4" />
         </motion.span>
-        Hover Me
+        {text ? text : "Hover Me"}
       </motion.button>
-     </div>
     )
 }

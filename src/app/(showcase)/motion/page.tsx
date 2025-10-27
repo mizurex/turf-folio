@@ -52,9 +52,9 @@ export default function usemotion() {
             <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(at_center,transparent,var(--color-blue-500)_50%,transparent_60%)] animate-spin scale-[1.8]"></div>
           </div>
         
-        <div className="relative flex flex-col pt-8  max-w-40 overflow-hidden">
+        <div className="relative flex flex-col pt-20   max-w-40 overflow-hidden">
   {/* First left line */}
-  <MiddleLine    className="w-40 h-8 absolute bottom-0 text-gray-700" />
+  <MiddleLine  className="h-40 w-8" />
 
   
 </div>
