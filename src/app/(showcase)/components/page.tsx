@@ -39,7 +39,6 @@ export default function Page() {
   const bouncyButtonDemoCode = fs.readFileSync(bouncyButtonDemoPath, "utf8");
   const dashedButtonDemoCode = fs.readFileSync(dashedButtonDemoPath, "utf8");
   const leetcodeGraphDemoCode = fs.readFileSync(leetcodeGraphDemoPath, "utf8");
-  const leetcodeGraphCode = fs.readFileSync(leetcodeGraphPath, "utf8");
   return (
     <div className="mx-auto my-5 max-w-[820px] p-6">
       <h1 className="text-2xl font-semibold text-center"> Components</h1>
