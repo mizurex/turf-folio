@@ -1,6 +1,6 @@
 #  Personal Portfolio 
 
-Hi! This is my personal developer portfolio.  
+Hi! This is my personal webiste.  
 It showcases my work, skills, and contact info, all in one place.
 
 ## Tech Stack

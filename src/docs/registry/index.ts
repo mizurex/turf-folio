@@ -117,6 +117,28 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/button/dashed-button")
     ),
   },
+
+  // LeetCode Graph
+  leetcodeGraphDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/leetcode-graph-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/leetcode-graph-demo")
+    ),
+  },
+  leetcodeGraph:{
+    files: [
+      {
+        path: "src/docs/registry/components/leetcode-graph.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/leetcode-graph")
+    ),
+  },
 };
 
 
