@@ -266,7 +266,7 @@
   }
 
   body {
-    @apply overscroll-y-none bg-background font-sans text-foreground antialiased;
+    @apply overscroll-y-none  bg-background text-foreground antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -365,4 +365,22 @@
 .animate-gradient {
   background-size: 300% 300%;
   animation: gradient-move 3s linear infinite;
+}
+
+@theme inline {
+  --animate-meteor-effect: meteor 5s linear infinite;
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
 }
