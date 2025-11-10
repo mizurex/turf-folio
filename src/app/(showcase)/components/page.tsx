@@ -4,7 +4,6 @@ import { MDXTutorial } from "@/docs/components/mdx";
 import { Separator } from "@/components/ui/separator";
 import { Instrument_Serif } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 
 const instrumentSans = Instrument_Serif({
   subsets: ["latin"],
@@ -36,10 +35,6 @@ export default function Page() {
   const leetcodeGraphDemoPath = path.join(
     process.cwd(),
     "src/docs/content/leetcode-graph.mdx"
-  );
-  const leetcodeGraphPath = path.join(
-    process.cwd(),
-    "src/docs/registry/components/leetcode-graph.tsx"
   );
   const meteorCardDemoPath = path.join(
     process.cwd(),
