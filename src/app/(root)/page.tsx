@@ -10,67 +10,25 @@ export default function Home() {
 
   
   return (
-    <main className="flex flex-col items-center justify-center bg-background text-foreground selection:bg-selection selection:text-selection-foreground ">
+    <main className="
+     relative min-h-dvh grid 
+        [background-image:linear-gradient(to_right,#FBFAF5_1px,transparent_1px),linear-gradient(to_bottom,#FBFAF5_1px,transparent_1px)]
+        [background-size:40px_40px]
     
-      <div className="max-w-3xl w-full   px-6 ">
-      
+    flex flex-col items-center justify-center  text-foreground selection:bg-selection selection:text-selection-foreground ">
+   
+      <div className="max-w-3xl w-full px-6 bg-[#FFFFFC]">
         <section className="py-2">
-          <div className="flex justify-end">
-
-             <div className="sm:flex items-center gap-2 justify-end py-5 w-fit border-b border-border">
-              <Button className={cn({ "px-2": true })}>
-                <a
-                  href="https://github.com/mizurex"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-md bg-background hover:scale-110 transition-transform duration-200"
-                >
-                  <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
-                </a>
-              </Button>
-
-              <Button className={cn({ "px-2": true })}>
-                <a
-                  href="https://linkedin.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-md bg-background hover:scale-110 transition-transform duration-200"
-                >
-                  <img src="/linkedin.webp" alt="LinkedIn" className="h-4 w-4" />
-                </a>
-              </Button>
-
-              <Button className={cn({ "px-2": true })}>
-                <a
-                  href="https://x.com/PotatoTurf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-md bg-background hover:scale-110 transition-transform duration-200"
-                >
-                  <img src="/x.webp" alt="Twitter" className="h-4 w-4" />
-                </a>
-              </Button>
-
-              <Button className={cn({ "px-2": true })}>
-                <a
-                  href="mailto:dhananjayadhal3@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-md bg-background hover:scale-110 transition-transform duration-200"
-                >
-                  <img src="/gmail.png" alt="Twitter" className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </div>
+        
        
-          <div className="flex items-start justify-between gap-3 pt-4">
+          <div className="relative flex items-start justify-between gap-3 pt-4">
+         
             <div>
             <div className="flex items-start border-b border-border"> 
                <h3 className="font-mono text-2xl text-foreground underline mb-3">About Me</h3>
             </div>
              
-              <h2 className="font-mono text-lg text-foreground mt-4">Dhananjay (@PotatoTurf)</h2>
+              <h2 className="font-mono text-lg text-foreground mt-4">Jay (@PotatoTurf)</h2>
               <p className="mt-2 text-sm text-foreground leading-relaxed font-mono ">
                 • Passionate developer<br/>
                 • Love exploring new technologies and turning ideas into code<br/>

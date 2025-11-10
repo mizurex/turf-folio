@@ -28,7 +28,7 @@ export function ComponentPreview({
         </TabsList>
 
         <TabsContent value="preview">
-          <div className="rounded-lg border border-edge bg-zinc-950/0.75 bg-[repeating-linear-gradient(135deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_1px,transparent_10px)] bg-center p-4 [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
+          <div className="rounded-lg border border-edge bg-zinc-950/0.75 bg-[repeating-linear-gradient(40deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_1px,transparent_5px)] bg-center p-4 [--pattern-foreground:var(--color-zinc-600)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
             <div className="flex min-h-80 items-center justify-center font-sans">
               <React.Suspense fallback={<div className="text-sm text-muted-foreground">Loading…</div>}>
                 {Component ? <Component /> : <div className="text-sm text-muted-foreground">Component not found: {name}</div>}

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Space_Mono } from "next/font/google";
-import "./globals.css";
-
+import "../globals.css";
+import { ThemeProvider } from "next-themes";
+import { Header } from "@/components/header"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +25,12 @@ export default function ShowcaseLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
-      <body>
-        
+      <body className={`font-mono`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Header />
           {children}
-   
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-
-

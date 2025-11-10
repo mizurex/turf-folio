@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Space_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "next-themes";
 import { ThemeToggleNext } from "@/components/ui/theme-toggle-next";
@@ -12,9 +12,10 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,10 +27,10 @@ export default function ShowcaseLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
+      <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between sticky top-0 z-50 bg-background">
                 <div className="flex items-center justify-center gap-2 ml-5">
                     <Link href="/">
                         <BiLeftArrowAlt className="w-4 h-4 cursor-pointer hover:scale-110 transition-transform duration-200 text-blue-500" /> 

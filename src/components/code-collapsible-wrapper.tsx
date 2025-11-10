@@ -1,6 +1,7 @@
-import { ArrowDown, ChevronsDownUpIcon, ChevronsUpDownIcon } from "lucide-react";
-
+"use client";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
+
 import {
   Collapsible,
   CollapsibleContent,
@@ -20,11 +21,8 @@ export function CodeCollapsibleWrapper({
       {...props}
     >
       <CollapsibleTrigger asChild>
-        <div className="absolute top-9 right-10 z-10 flex items-center gap-2 w-[70%] cursor-pointer">
-          <Separator
-            className="data-[orientation=vertical]:h-4"
-            orientation="vertical"
-          />
+        <div className="absolute top-9 right-10 w-fit bg-background border border-border z-10 flex items-center justify-center gap-2 w-[70%] cursor-pointer group-data-[state=closed]/collapsible:hidden">
+          <ArrowUp className="w-4 h-4 cursor-pointer text-muted-foreground" />
         </div>
       </CollapsibleTrigger>
 

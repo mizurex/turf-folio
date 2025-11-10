@@ -38,8 +38,9 @@
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
 
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  /* Wire Tailwind font tokens to next/font variables with sensible fallbacks */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --shadow-popover: var(--shadow-popover);
 }
@@ -266,7 +267,7 @@
   }
 
   body {
-    @apply overscroll-y-none  bg-background text-foreground antialiased;
+    @apply overscroll-y-none  bg-background text-foreground font-mono antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }

@@ -139,6 +139,29 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/leetcode-graph")
     ),
   },
+
+  //meteor card
+
+  meteorCardDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/meteor-card-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/meteor-card-demo")
+    ),
+  },
+  meteorCard:{
+    files: [
+      {
+        path: "src/docs/registry/components/meteor-card.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/meteor-card")
+    ),
+  },
 };
 
 
