@@ -26,8 +26,8 @@ export function SiteHeader() {
           </button>
 
           <nav className="hidden md:flex items-center gap-4">
-            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200">
-              <Link href="/components">Components</Link>
+            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200 bg-red-500 rounded-md px-2 py-1.5 border">
+              <Link href="/components">Componentqs</Link>
             </button>
             <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200">
               <Link href="/blog">Blog</Link>

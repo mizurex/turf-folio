@@ -49,7 +49,7 @@ export default function Page() {
   return (
     <div className="mx-auto  max-w-[820px] p-6">
       <h1 className={cn("text-4xl font-semibold text-center", instrumentSans.className)}> Components</h1>
-      <p className="text-center text-sm text-muted-foreground">A collection of built with Tailwind CSS</p>
+      <p className="text-center text-sm text-muted-foreground">A collection built with React and Tailwind CSS</p>
      
       <div className="mt-1">
         <MDXTutorial code={code} />

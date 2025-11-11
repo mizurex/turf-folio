@@ -10,6 +10,24 @@
 />
 </Steps>
 
+### Utils.ts
+
+```tsx
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+```
+
+### Packages
+
+```bash
+npm i clsx tailwind-merge motion lucide-react
+```
+
 ### Props
 
 | Prop      | Type                    | Default | Description                               |

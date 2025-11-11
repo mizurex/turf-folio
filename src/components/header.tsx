@@ -26,10 +26,10 @@ export function Header() {
           </button>
 
           <nav className="hidden md:flex items-center gap-4">
-            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200">
+            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200 bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
               <Link href="/components">Components</Link>
             </button>
-            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200">
+            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200 bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
               <Link href="/blog">Blog</Link>
             </button>
           </nav>
@@ -38,7 +38,7 @@ export function Header() {
         <div className="hidden md:flex items-center justify-end pr-10 py-2 gap-3">
           <div className="flex items-center gap-2">
             <div className="flex justify-end">
-              <div className="sm:flex items-center gap-2 justify-end w-fit border-b border-border">
+              <div className="sm:flex items-center gap-2 justify-end w-fit bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
                 <Button className={cn({ "px-2": true })}>
                   <a
                     href="https://github.com/mizurex"
