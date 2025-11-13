@@ -49,7 +49,17 @@ export default function Page() {
   return (
     <div className="mx-auto  max-w-[820px] p-6">
       <h1 className={cn("text-4xl font-semibold text-center", instrumentSans.className)}> Components</h1>
-      <p className="text-center text-sm text-muted-foreground">A collection built with React and Tailwind CSS</p>
+      <p className="text-center text-sm text-muted-foreground pt-3">A collection built with React and Tailwind CSS</p>
+
+      <section aria-label="About these components" className="mt-4">
+        <div className="rounded-lg border border-border bg-accent/30 p-4">
+         
+          <p className={cn("mt-1 text-sm text-foreground text-center font-mono leading-relaxed whitespace-pre-line")}>
+            I like crafting small UI pieces. This is my own collection of
+            reusable components that you can drop into your projects.
+          </p>
+        </div>
+      </section>
      
       <div className="mt-1">
         <MDXTutorial code={code} />

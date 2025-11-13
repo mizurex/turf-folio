@@ -7,6 +7,13 @@ export const projectsData = [
       description: "Embedding widget for your website,trained on your custom data to answer questions.",
     },
     {
+      title: "Welp",
+      image: "/welp.jpeg",
+      live: "https://www.trywelp.live/chat",
+      github: "https://github.com/mizurex/welp",
+      description: "AI learning platform.",
+    },
+    {
       title: "Turfex",
       image: "/minimal.jpeg",
       live: "https://github.com/mizurex/turfex",

@@ -8,7 +8,7 @@ import { projectsData } from "@/data/projects";
 export default function Projects() {
     return (
       <div>
-           {projectsData.slice(0, 5).map((project, index) => (
+           {projectsData.slice(0, 6).map((project, index) => (
             <div
               key={index}
               className="group relative  p-2 transition focus-within:ring-2 focus-within:ring-border border-b border-border"

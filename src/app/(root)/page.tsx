@@ -28,11 +28,12 @@ export default function Home() {
                <h3 className="font-mono text-2xl text-foreground underline mb-3">About Me</h3>
             </div>
              
-              <h2 className="font-mono text-lg text-foreground mt-4">Jay (@PotatoTurf)</h2>
+              <h2 className="font-mono text-lg text-foreground mt-4 border-b border-border w-fit">Jay (@PotatoTurf)</h2>
               <p className="mt-2 text-sm text-foreground leading-relaxed font-mono ">
-                • Passionate developer<br/>
-                • Love exploring new technologies and turning ideas into code<br/>
-                • This website showcases my journey and work<br/>
+              Building real-time infrastructure and developer tools.
+              I care about type safety, clean code. 
+              Writing TypeScript and Tailwind.
+              Trying to contirbute to the open source community.
               </p>
             </div>
           
@@ -101,9 +102,7 @@ export default function Home() {
         </section>
 
   
-        <div className="max-w-3xl  pt-2 ">
-            <Separator />
-      </div>
+     
         <section className="py-20">
           <div className="flex justify-center items-center border-b border-border relative">
             
