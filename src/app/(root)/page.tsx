@@ -4,8 +4,6 @@ import Image from "next/image";
 import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
 import techStack from "@/data/techtsack";
-import Button from "@/components/ui/button2";
-import { cn } from "@/lib/utils";
 export default function Home() {
 
   
@@ -15,7 +13,7 @@ export default function Home() {
         [background-image:linear-gradient(to_right,#FBFAF5_1px,transparent_1px),linear-gradient(to_bottom,#FBFAF5_1px,transparent_1px)]
         [background-size:40px_40px]
     
-    flex flex-col items-center justify-center  text-foreground selection:bg-selection selection:text-selection-foreground ">
+    flex flex-col items-center justify-center  text-black selection:bg-selection selection:text-selection-foreground ">
    
       <div className="max-w-3xl w-full px-6 bg-[#FFFFFC]">
         <section className="py-2">
@@ -25,11 +23,11 @@ export default function Home() {
          
             <div>
             <div className="flex items-start border-b border-border"> 
-               <h3 className="font-mono text-2xl text-foreground underline mb-3">About Me</h3>
+               <h3 className="font-mono text-2xl text-black underline mb-3">About Me</h3>
             </div>
              
-              <h2 className="font-mono text-lg text-foreground mt-4 border-b border-border w-fit">Jay (@PotatoTurf)</h2>
-              <p className="mt-2 text-sm text-foreground leading-relaxed font-mono ">
+              <h2 className="font-mono text-lg text-black mt-4 border-b border-border w-fit">Jay (@PotatoTurf)</h2>
+              <p className="mt-2 text-sm text-black leading-relaxed font-mono ">
               Building real-time infrastructure and developer tools.
               I care about type safety, clean code. 
               Writing TypeScript and Tailwind.
@@ -41,10 +39,10 @@ export default function Home() {
         </section>
         <section className="mt-8">
           <div className="flex items-start border-b border-border">
-              <h2 className="text-2xl font-mono text-foreground mb-3 underline">Projects</h2>
+              <h2 className="text-2xl font-mono text-black mb-3 underline">Projects</h2>
           </div>
           <div>
-            <h3 className="font-mono text-lg text-foreground mb-3 pt-6 ">All Projects <strong className="text-muted-foreground">{'>'}</strong></h3>
+            <h3 className="font-mono text-lg text-black mb-3 pt-6 ">All Projects <strong className="text-muted-foreground">{'>'}</strong></h3>
 
           </div>
           
@@ -52,7 +50,7 @@ export default function Home() {
         <div className="grid grid-cols-1  gap-2">
           <Projects/>
          <div className="flex justify-end">
-          <p className="text-sm text-muted-foreground mt-1 font-mono">More projects on my github...</p>
+          <p className="text-sm text-black mt-1 font-mono">More projects on my github...</p>
          </div>
         </div>
         </section>
@@ -61,11 +59,11 @@ export default function Home() {
           <div className=" overflow-hidden">
            
           <div className="flex items-start border-b border-border w-full">
-              <h2 className="text-2xl font-mono text-foreground mb-3 underline">Contributions</h2>
+              <h2 className="text-2xl font-mono text-black mb-3 underline">Contributions</h2>
           </div>
 
           <div>
-            <h3 className="font-mono text-lg text-foreground mb-3 pt-6 ">All Contributions </h3>
+            <h3 className="font-mono text-lg text-black mb-3 pt-6 ">All Contributions </h3>
 
           </div>
            <div className="grid grid-cols-1 gap-2">
@@ -76,7 +74,7 @@ export default function Home() {
 
         <section className="mt-10">
         <div className="flex items-start border-b border-border w-full">
-              <h2 className="text-2xl font-mono text-foreground mb-3 underline">Stack</h2>
+              <h2 className="text-2xl font-mono text-black mb-3 underline">Stack</h2>
           </div>
           <div className="grid grid-cols-5 gap-2 pt-6">
               {techStack().map((tech) => (
@@ -95,7 +93,7 @@ export default function Home() {
                       height={32}
                       className="h-8 w-8 object-contain"
                     />
-                <span className="text-xs text-muted-foreground">{tech.name}</span>
+                <span className="text-xs text-black">{tech.name}</span>
                 </a>
               ))}
             </div>
@@ -106,7 +104,7 @@ export default function Home() {
         <section className="py-20">
           <div className="flex justify-center items-center border-b border-border relative">
             
-            <h4 className="font-mono text-lg text-foreground mb-3 pt-6 "> Thanks a lot for checking out my work! </h4>
+            <h4 className="font-mono text-lg text-black mb-3 pt-6 "> Thanks a lot for checking out my work! </h4>
           </div>
         </section>
       </div>

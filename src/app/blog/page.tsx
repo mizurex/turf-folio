@@ -6,6 +6,9 @@ export default function BlogIndex() {
         <p className="text-muted-foreground mt-2 font-mono">
           Stay tuned for updates...
         </p>
+        <a href="/" className="text-sm text-muted-foreground mt-2 font-mono underline">
+        home
+        </a>
       </div>
     </main>
   );

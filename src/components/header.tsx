@@ -26,10 +26,10 @@ export function Header() {
           </button>
 
           <nav className="hidden md:flex items-center gap-4">
-            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200 bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
+            <button className="text-sm text-foreground hover:scale-105 transition-transform duration-200 delay-100  bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
               <Link href="/components">Components</Link>
             </button>
-            <button className="text-sm text-foreground hover:scale-110 transition-transform duration-200 bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
+            <button className="text-sm text-foreground hover:scale-105 transition-transform duration-200 delay-100  bg-[#e0dedd]/20 rounded-md px-1 py-1 border">
               <Link href="/blog">Blog</Link>
             </button>
           </nav>

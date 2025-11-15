@@ -2,6 +2,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { motion } from "motion/react";
 import { contributionsData, PalisaFoundationContributions, tamboContributionsData } from "@/data/contribution";
 import Pulse from "./pulse";
+import { Link21Linear } from 'mx-icons'
 
 
 export default function Contributions() {
@@ -29,7 +30,10 @@ export default function Contributions() {
                      >
                        <span className="truncate text-link hover:underline">{item.title}</span>
                        <motion.div>
-                         <ArrowUpRight className="h-4 w-4 text-indigo-500" size={16} />
+                       <Link21Linear
+  size={15}
+  color="#1c5db8"
+/>
                        </motion.div>
                      </motion.a>
                      <p className="text-sm text-muted-foreground mt-1">{item.description}</p>

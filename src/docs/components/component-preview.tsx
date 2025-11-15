@@ -4,9 +4,8 @@ import React from "react";
 
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import * as MX from 'mx-icons'
 import { TutorialRegistry } from "../registry";
-import { CodeIcon, EyeIcon } from "lucide-react";
 
 export function ComponentPreview({
   name,
@@ -23,8 +22,18 @@ export function ComponentPreview({
     <div className="my-6 not-prose">
       <Tabs defaultValue="preview" className="gap-4">
         <TabsList>
-          <TabsTrigger value="preview"><EyeIcon className="w-4 h-4 " /></TabsTrigger>
-          <TabsTrigger value="code"><CodeIcon className="w-4 h-4 " /></TabsTrigger>
+          <TabsTrigger value="preview">
+          <MX.EyeLinear
+  size={15}
+ color="#8d91a0"
+/>
+      </TabsTrigger>
+
+
+          <TabsTrigger value="code"><MX.CodeLinear
+  size={15}
+  color="#8d91a0"
+/></TabsTrigger>
         </TabsList>
 
         <TabsContent value="preview">
