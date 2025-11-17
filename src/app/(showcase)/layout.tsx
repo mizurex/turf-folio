@@ -33,9 +33,9 @@ export default function ShowcaseLayout({
             <div className="flex items-center justify-between sticky top-0 z-50 bg-background">
                 <div className="flex items-center justify-center gap-2 ml-5">
                     <Link href="/">
-                        <BiLeftArrowAlt className="w-4 h-4 cursor-pointer hover:scale-110 transition-transform duration-200 text-blue-500" /> 
-                    </Link>
                     <span className="text-sm text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200">Back</span>
+                    </Link>
+                    
                 </div>
             <div className="flex items-center justify-end p-4  gap-3">
             <div className="flex items-center gap-2">

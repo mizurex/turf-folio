@@ -1,0 +1,54 @@
+---
+title: Fast and Slow Pointers
+date: 2025-11-17
+description: A quick intro to the fast and slow pointers technique.
+link: ""
+---
+Reading this will guarantee you can solve at least one Leetcode question.
+
+The fast and slow pointer technique uses two pointers moving at different speeds to
+detect cycles, loop or repetitions efficiently.
+
+You’ll mostly use this in linked lists and arrays problems.  
+
+Simple analogy:  
+if two friends are running on a circular track, one at **2 km/h** and one at **4 km/h**,  
+the faster friend will eventually catch up to the slower one.  
+That’s literally the whole logic behind cycle detection.
+
+We apply the same idea in linked lists or arrays  
+(assuming the array has at least one repeating element).
+
+<img src="/blog/slow-fast.svg" alt="Fast & Slow" className="rounded-md w-full h-70 border border-border" />
+
+Basically, At some point the fast pointer will always meet the slow pointer if a cycle exists.
+
+---
+
+## Snippet
+
+```ts
+function hasCycle(head) { // head of linkedlist
+  let slow = head, fast = head;
+  while (true) {
+    slow = slow.next;
+    fast = fast.next.next; // 2x speed
+    if (slow === fast) return true;
+  }
+  return false;
+}
+```
+**Understanding the code:**
+Both pointers start from the same starting point.
+
+Slow moves one step at a time.
+Fast moves two steps at a time.
+
+If the linked list has a cycle, both slow and fast will eventually enter that cycle and keep looping inside it. Since fast is moving faster, it will catch up to slow at some point, and when slow and fast become equal, we know there is a cycle.
+<img src="/blog/list.svg" alt="Fast & Slow" className="rounded-md w-full h-70 border border-border" />
+
+Easy LeetCode Question You can now solve.
+
+[#141- Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/)
+
+

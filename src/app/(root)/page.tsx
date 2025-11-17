@@ -12,7 +12,7 @@ export default function Home() {
      relative min-h-dvh grid 
         [background-image:linear-gradient(to_right,#FBFAF5_1px,transparent_1px),linear-gradient(to_bottom,#FBFAF5_1px,transparent_1px)]
         [background-size:40px_40px]
-    
+    bg-white
     flex flex-col items-center justify-center  text-black selection:bg-selection selection:text-selection-foreground ">
    
       <div className="max-w-3xl w-full px-6 bg-[#FFFFFC]">

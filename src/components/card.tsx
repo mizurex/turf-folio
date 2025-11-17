@@ -1,6 +1,8 @@
-export default function Card({children}:{children:React.ReactNode}) {
+import { cn } from "@/lib/utils";
+
+export default function Card({children, className}:{children:React.ReactNode, className?:string}) {
     return (
-    <div className="bg-card text-card-foreground p-4 container flex justify-center">
+    <div className={cn(" p-4 border", className)}>
         {children}
     </div>
     )

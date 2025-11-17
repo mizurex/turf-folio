@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight, Github } from "lucide-react";
 import { motion } from "motion/react";
 import { projectsData } from "@/data/projects";
-import { Link21Linear } from "mx-icons";
+import * as MX from 'mx-icons'
 
 export default function Projects() {
   return (
@@ -38,7 +38,7 @@ export default function Projects() {
                   {project.title}
                 </span>
                 <motion.div>
-                  <Link21Linear size={15} color="#1c5db8" />
+                  <MX.Link21Linear size={15} color="#1c5db8" />
                 </motion.div>
               </motion.a>
               <p className="text-sm text-muted-foreground mt-1">

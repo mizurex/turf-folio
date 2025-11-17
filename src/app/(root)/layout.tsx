@@ -26,10 +26,10 @@ export default function ShowcaseLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        
           <Header />
           {children}
-        </ThemeProvider>
+
       </body>
     </html>
   );
