@@ -162,6 +162,28 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/meteor-card")
     ),
   },
+
+  //navbar
+  navBarDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/nav-bar-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/nav-bar-demo")
+    ),
+  },
+  navBar:{
+    files: [
+      {
+        path: "src/docs/registry/components/nav-bar.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/nav-bar")
+    ),
+  },
 };
 
 

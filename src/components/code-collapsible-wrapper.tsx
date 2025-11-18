@@ -1,6 +1,4 @@
 "use client";
-import { ArrowDown, ArrowUp } from "lucide-react";
-import { Button } from "./ui/button";
 import * as MX from 'mx-icons'
 
 import {
@@ -8,7 +6,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 export function CodeCollapsibleWrapper({

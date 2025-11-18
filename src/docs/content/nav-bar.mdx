@@ -1,0 +1,46 @@
+<Steps className ="py-5">
+<Step> Navigation Bar  </Step>
+<ComponentPreview name="navBarDemo" showLineNumbers>
+</ComponentPreview>
+  <ComponentSource
+  name="navBar"
+  title="navBar/demo.tsx"
+  showLineNumbers
+  codeCollapsible
+/>
+</Steps>
+
+### Packages
+
+```bash
+npm i motion
+```
+
+### Props
+
+| Prop      | Type                              | Default        | Description                               |
+|-----------|-----------------------------------|----------------|-------------------------------------------|
+| `tabs`    | `{label: string, href: string}[]` | Default tabs   | Array of tab objects with label and href  |
+| `colors`  | `string[]`                        | Default colors | Array of hex color codes for hover effects|
+
+**Usage**
+
+```tsx
+// Custom tabs
+<NavBar 
+  tabs={[
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" }
+  ]}
+/>
+
+// Custom tabs and colors
+<NavBar 
+  tabs={[
+    { label: "Dashboard", href: "/dashboard" },
+    { label: "Settings", href: "/settings" }
+  ]}
+  colors={["#FF0080", "#00CFFF", "#32FF7A"]}
+/>
+```

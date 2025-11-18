@@ -5,7 +5,6 @@ import React, { useOptimistic, useTransition } from "react";
 
 import { cn } from "@/lib/utils";
 import {motion} from "motion/react";
-import { FaCopy } from "react-icons/fa";
 export function CopyButton({
   value,
   className,
@@ -37,9 +36,9 @@ export function CopyButton({
       {...props}
     >
       {state === "idle" ? (
-        <Copy className="size-4" />
+        <Copy className="size-3" />
       ) : state === "copied" ? (
-        <CheckIcon className="size-4" />
+        <CheckIcon className="size-3" />
       ) : state === "failed" ? (
         <CircleXIcon className="size-3" />
       ) : null}

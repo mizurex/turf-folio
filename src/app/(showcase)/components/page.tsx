@@ -40,12 +40,17 @@ export default function Page() {
     process.cwd(),
     "src/docs/content/meteor-card.mdx"
   );
+  const navBarDemoPath = path.join(
+    process.cwd(),
+    "src/docs/content/nav-bar.mdx"
+  );
   const analogWatchDemoCode = fs.readFileSync(analogWatchDemoPath, "utf8");
   const browserDemoCode = fs.readFileSync(browserDemoPath, "utf8");
   const bouncyButtonDemoCode = fs.readFileSync(bouncyButtonDemoPath, "utf8");
   const dashedButtonDemoCode = fs.readFileSync(dashedButtonDemoPath, "utf8");
   const leetcodeGraphDemoCode = fs.readFileSync(leetcodeGraphDemoPath, "utf8");
   const meteorCardDemoCode = fs.readFileSync(meteorCardDemoPath, "utf8");
+  const navBarDemoCode = fs.readFileSync(navBarDemoPath, "utf8");
   return (
     <div className="mx-auto  max-w-[820px] p-6">
       <h1 className={cn("text-4xl font-semibold text-center", instrumentSans.className)}> Components</h1>
@@ -73,6 +78,8 @@ export default function Page() {
         <MDXTutorial code={leetcodeGraphDemoCode} />
         <Separator className="my-4 border-border" />
         <MDXTutorial code={meteorCardDemoCode} />
+        <Separator className="my-4 border-border" />
+        <MDXTutorial code={navBarDemoCode} />
       </div>
     </div>
   );
