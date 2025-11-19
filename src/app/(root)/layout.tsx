@@ -16,20 +16,20 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Components",
+  title: "Portfolio - Jay",
   icons: { icon: "/favicon.ico" },
 };
 
-export default function ShowcaseLayout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
       <body>
-        
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           {children}
-
+        </ThemeProvider>
       </body>
     </html>
   );

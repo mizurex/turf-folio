@@ -372,7 +372,7 @@
     background: var(--muted);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--muted) transparent; /* Change this to control hover color */
+    background: var(--muted) transparent;
   }
   * {
     scrollbar-width: thin;

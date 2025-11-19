@@ -1,28 +1,104 @@
 "use client";
 
+import * as React from "react";
 import { useEffect, useState, useMemo } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+const leetGraphVariants = cva(
+  "py-2 px-4 rounded-[10px] w-full max-w-2xl overflow-x-auto transition-all",
+  {
+    variants: {
+      variant: {
+        default:
+          "border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100",
+        shadow:
+          "border-none bg-neutral-100 dark:bg-neutral-800 shadow-md shadow-neutral-200 dark:shadow-neutral-700 text-neutral-900 dark:text-neutral-100 ",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
+
+const blockVariants = cva(
+  "rounded-[1px] border transition-all cursor-pointer",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent",
+        outline: "border-neutral-300 dark:border-neutral-700",
+      },
+      size: {
+        sm: "size-2",
+        default: "size-2.5",
+        lg: "size-4",
+        xl: "size-5",
+      },
+      animate: {
+        none: "",
+        pulse: "animate-pulse",
+        bounce: "animate-bounce",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+      animate: "none",
+    },
+  }
+);
+
 function formatDate(date: Date) {
   return date.toISOString().slice(0, 10);
 }
 
-function getColor(count: number) {
-  if (count < 2) return "#aff0b4";
-  if (count >= 2 && count < 4) return "#01b328";
-  if (count > 6) return "#008024";
-  return "#22c55e";
+type Theme = "green" | "blue" | "red" | "orange" | "purple" | "yellow";
+
+function getColor(count: number, theme: Theme = "green") {
+  const themes: Record<Theme, string[]> = {
+    green: ["#aff0b4", "#01b328", "#008024", "#22c55e"],
+    blue: ["#b3d9ff", "#3399ff", "#0066cc", "#004488"],
+    red: ["#ffb3b3", "#ff3333", "#cc0000", "#880000"],
+    orange: ["#ffe0b3", "#ff9933", "#cc6600", "#884400"],
+    purple: ["#d9b3ff", "#9933ff", "#6600cc", "#440088"],
+    yellow: ["#fff2b3", "#ffcc33", "#cc9900", "#886600"],
+  };
+
+  const colors = themes[theme] || themes.green;
+
+  if (count < 2) return colors[0];
+  if (count >= 2 && count < 4) return colors[1];
+  if (count > 6) return colors[2];
+  return colors[3];
 }
 
-export default function LeetContributionGraph({
-  username,
-}: {
+export interface LeetContributionGraphProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof leetGraphVariants> {
   username: string;
-}) {
+  blockVariant?: VariantProps<typeof blockVariants>["variant"];
+  blockSize?: VariantProps<typeof blockVariants>["size"];
+  blockAnimate?: VariantProps<typeof blockVariants>["animate"];
+  theme?: Theme;
+}
+
+function LeetContributionGraph({
+  username,
+  className,
+  variant,
+  blockVariant,
+  blockSize,
+  blockAnimate,
+  theme = "green",
+  ...props
+}: LeetContributionGraphProps) {
   const [calendar, setCalendar] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any>(null);
@@ -123,8 +199,15 @@ export default function LeetContributionGraph({
 
   if (loading) {
     return (
-      <div className="py-4 px-4 rounded-[10px] w-full max-w-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 h-[200px] flex items-center justify-center">
-        <span className="text-sm text-muted-foreground animate-pulse">
+      <div
+        className={cn(
+          leetGraphVariants({ variant }),
+          "h-[200px] flex items-center justify-center",
+          className
+        )}
+        {...props}
+      >
+        <span className="text-sm text-muted-foreground">
           Loading
         </span>
       </div>
@@ -132,8 +215,8 @@ export default function LeetContributionGraph({
   }
 
   return (
-    <div className="py-3 px-4 rounded-[10px] w-full max-w-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 overflow-x-auto">
-      <div className="pb-3 text-sm">
+    <div className={cn(leetGraphVariants({ variant }), className)} {...props}>
+      <div className="py-2 text-sm">
         <span className="font-semibold text-foreground">{total}</span>{" "}
         submissions in the past year
       </div>
@@ -149,20 +232,21 @@ export default function LeetContributionGraph({
                   <Tooltip key={row}>
                     <TooltipTrigger asChild>
                       <div
-                        className={`w-[10px] h-[10px] rounded-[1px] cursor-pointer transition-all ${
-                          isEmpty ? "bg-neutral-100 dark:bg-neutral-800" : ""
-                        } ${
-                          isHighActivity 
-                            ? "animate-pulse border-1 border-green-400 dark:border-green-500" 
-                            : ""
-                        }`}
+                        className={cn(
+                          blockVariants({
+                            variant: blockVariant,
+                            size: blockSize,
+                            animate: isHighActivity ? blockAnimate : "none",
+                          }),
+                          isEmpty ? "bg-neutral-100 dark:bg-neutral-800" : "",
+                        )}
                         style={
                           !isEmpty
-                            ? { 
-                                backgroundColor: getColor(day.count),
-                                ...(isHighActivity && {
-                                  boxShadow: "0 0 3px rgba(14, 250, 100, 0.9)"
-                                })
+                            ? {
+                                backgroundColor: getColor(day.count, theme),
+                                ...(isHighActivity && blockAnimate === "pulse" && {
+                                  borderColor: getColor(day.count, theme),
+                                }),
                               }
                             : undefined
                         }
@@ -227,3 +311,6 @@ function StatBadge({
     </div>
   );
 }
+
+export default LeetContributionGraph;
+export { LeetContributionGraph, leetGraphVariants };

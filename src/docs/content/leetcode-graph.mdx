@@ -1,7 +1,30 @@
 <Steps className ="py-5">
-<Step> Leetcode Graph </Step>
+
+
+GitHub-style contribution graph for LeetCode. Shows your coding activity with a color-coded heatmap.
+
 <ComponentPreview name="leetcodeGraphDemo" showLineNumbers>
+
 </ComponentPreview>
+
+**Packages**
+
+```bash
+npm i motion
+npx shadcn@latest add tooltip
+```
+
+### Utils.ts
+
+```tsx
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+```
   <ComponentSource
   name="leetcodeGraph"
   title="leetcodeGraph/demo.tsx"
@@ -10,9 +33,25 @@
 />
 </Steps>
 
-### Props
+**Themes**
 
-| Prop      | Type                    | Default | Description                               |
-|-----------|-------------------------|---------|-------------------------------------------|
-| `username`    | `string`                | `""`    | your leetcode username    |
+<ComponentPreview name="leetcodeGraphThemeDemo" />
+
+**Animations**
+
+
+<ComponentPreview name="leetcodeGraphAnimateDemo" />
+
+
+
+**Props**
+
+| Prop           | Type                    | Default    | Description                               |
+|----------------|-------------------------|------------|-------------------------------------------|
+| `username`     | `string`                | `""`       | your leetcode username                    |
+| `theme`        | `string`                | `"green"`  | `"green"`, `"blue"`, `"red"`, `"orange"`, `"purple"`, `"yellow"` |
+| `blockVariant` | `string`                | `"default"`| `"default"`, `"outline"`                 |
+| `blockSize`    | `string`                | `"default"`| `"sm"`, `"default"`, `"lg"`, `"xl"`      |
+| `blockAnimate` | `string`                | `"none"`   | `"none"`, `"pulse"`, `"bounce"` (only on high activity days) |
+| `variant`      | `string`                | `"default"`| `"default"`, `"shadow"`                  |
 

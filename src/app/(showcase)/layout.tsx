@@ -5,7 +5,9 @@ import { ThemeProvider } from "next-themes";
 import { ThemeToggleNext } from "@/components/ui/theme-toggle-next";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { BiLeftArrowAlt } from "react-icons/bi";
+import { MobileProvider } from "@/providers/mobile-provider";
+import { ComponentsHeader } from "@/components/components-header";
+import Mascot from "@/components/ui/mascot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,27 +31,26 @@ export default function ShowcaseLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <div className="flex items-center justify-between sticky top-0 z-50 bg-background">
-                <div className="flex items-center justify-center gap-2 ml-5">
-                    <Link href="/">
-                    <span className="text-sm text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200">Back</span>
-                    </Link>
-                    
-                </div>
-            <div className="flex items-center justify-end p-4  gap-3">
-            <div className="flex items-center gap-2">
-                <Link href="https://github.com/mizurex">
-                 <FaGithub className="w-4 h-4" />
+        <MobileProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <div className="flex items-center justify-between sticky top-0 z-50 bg-background border-b px-4 py-2">
+              <Link href='/'>
+              <Mascot size={30}/>
+              </Link>
+              
+              
+              <div className="flex items-center gap-3">
+                <Link href="https://github.com/mizurex" target="_blank" rel="noopener noreferrer" className="hidden md:block">
+                  <FaGithub className="w-4 h-4" />
                 </Link>
                 <ThemeToggleNext />
+                <ComponentsHeader />
+              </div>
             </div>
-            
-          </div>
-            </div>
-        
-          {children}
-        </ThemeProvider>
+                 
+            {children}
+          </ThemeProvider>
+        </MobileProvider>
       </body>
     </html>
   );

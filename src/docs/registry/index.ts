@@ -129,6 +129,26 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/demo/leetcode-graph-demo")
     ),
   },
+  leetcodeGraphThemeDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/leetcode-graph-theme-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/leetcode-graph-theme-demo")
+    ),
+  },
+  leetcodeGraphAnimateDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/leetcode-graph-animate-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/leetcode-graph-animate-demo")
+    ),
+  },
   leetcodeGraph:{
     files: [
       {

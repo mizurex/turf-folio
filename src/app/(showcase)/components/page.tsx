@@ -1,7 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
-import { MDXTutorial } from "@/docs/components/mdx";
-import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 import { Instrument_Serif } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -10,76 +7,79 @@ const instrumentSans = Instrument_Serif({
   weight: ["400"],
 });
 
-export default function Page() {
-  const mdxPath = path.join(
-    process.cwd(),
-    "src/docs/content/demo.mdx"
-  );
-  const code = fs.readFileSync(mdxPath, "utf8");
-  const browserDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/browser-demo.mdx"
-  );
-  const analogWatchDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/analog-watch.mdx"
-  );
-  const bouncyButtonDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/bouncy-button.mdx"
-  );
-  const dashedButtonDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/dashed-button.mdx"
-  );
-  const leetcodeGraphDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/leetcode-graph.mdx"
-  );
-  const meteorCardDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/meteor-card.mdx"
-  );
-  const navBarDemoPath = path.join(
-    process.cwd(),
-    "src/docs/content/nav-bar.mdx"
-  );
-  const analogWatchDemoCode = fs.readFileSync(analogWatchDemoPath, "utf8");
-  const browserDemoCode = fs.readFileSync(browserDemoPath, "utf8");
-  const bouncyButtonDemoCode = fs.readFileSync(bouncyButtonDemoPath, "utf8");
-  const dashedButtonDemoCode = fs.readFileSync(dashedButtonDemoPath, "utf8");
-  const leetcodeGraphDemoCode = fs.readFileSync(leetcodeGraphDemoPath, "utf8");
-  const meteorCardDemoCode = fs.readFileSync(meteorCardDemoPath, "utf8");
-  const navBarDemoCode = fs.readFileSync(navBarDemoPath, "utf8");
-  return (
-    <div className="mx-auto  max-w-[820px] p-6">
-      <h1 className={cn("text-4xl font-semibold text-center", instrumentSans.className)}> Components</h1>
-      <p className="text-center text-sm text-muted-foreground pt-3">A collection built with React and Tailwind CSS</p>
+const components = [
+  {
+    title: "Bouncy Button",
+    href: "/components/bouncy-button",
+    description: "A button that bounces when clicked.",
+  },
+  {
+    title: "Browser",
+    href: "/components/browser-demo",
+    description: "A browser window mockup.",
+  },
+  {
+    title: "Dashed Button",
+    href: "/components/dashed-button",
+    description: "A button with a dashed border.",
+  },
+  {
+    title: "LeetCode Graph",
+    href: "/components/leetcode-graph",
+    description: "A contribution graph like LeetCode's.",
+  },
+  {
+    title: "Meteor Card",
+    href: "/components/meteor-card",
+    description: "A card with a meteor shower effect.",
+  },
+  {
+    title: "Nav Bar",
+    href: "/components/nav-bar",
+    description: "A responsive navigation bar.",
+  },
+  {
+    title: "Skeleton",
+    href: "/components/skeleton",
+    description: "A skeleton loading animation.",
+  },
+];
 
-      <section aria-label="About these components" className="mt-4">
-        <div className="rounded-lg border border-border bg-accent/30 p-4">
-         
-          <p className={cn("mt-1 text-sm text-foreground text-center font-mono leading-relaxed whitespace-pre-line")}>
-            I like crafting small UI pieces. This is my own collection of
-            reusable components that you can drop into your projects.
+export default function Page() {
+  return (
+    <div className=" max-w-4xl py-6 lg:py-10 mx-auto">
+      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
+        <div className="flex-1 space-y-4">
+          <h1 className={cn("inline-block font-heading text-4xl tracking-tight lg:text-5xl font-light")}>
+            UI Collection
+          </h1>
+          <p className="text-sm md:text-base text-muted-foreground/80 italic">
+            this is my personal collection. i like to build small ui components.
+            feel free to go through and use them in your projects.
           </p>
+          
         </div>
-      </section>
-     
-      <div className="mt-1">
-        <MDXTutorial code={code} />
-        <Separator className="my-4 border-border" />
-        <MDXTutorial code={browserDemoCode} />
-        <Separator className="my-4 border-border" />
-        <MDXTutorial code={bouncyButtonDemoCode} />
-        <Separator className="my-4 border-border" />
-        <MDXTutorial code={dashedButtonDemoCode} />
-        <Separator className="my-4 border-border" />
-        <MDXTutorial code={leetcodeGraphDemoCode} />
-        <Separator className="my-4 border-border" />
-        <MDXTutorial code={meteorCardDemoCode} />
-        <Separator className="my-4 border-border" />
-        <MDXTutorial code={navBarDemoCode} />
+      </div>
+      <hr className="my-8" />
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {components.map((component) => (
+          <Link
+            key={component.href}
+            href={component.href}
+            className="group relative p-3 hover:bg-accent border border-border transition-colors overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-0 h-0 border-r-2 opacity-0 border-t-2 border-primary group-hover:w-[8px] group-hover:h-[8px] group-hover:opacity-100 transition-all duration-300 delay-200 ease-out" />
+            
+            <div className="absolute bottom-0 left-0 w-0 h-0 border-l-2 opacity-0 border-b-2 border-primary group-hover:w-[8px] group-hover:h-[8px] group-hover:opacity-100 transition-all duration-300 delay-200 ease-out" />
+            
+            <h3 className="font-light leading-none tracking-tight">
+              {component.title}
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground font-light">
+              {component.description}
+            </p>
+          </Link>
+        ))}
       </div>
     </div>
   );
