@@ -187,11 +187,11 @@
   /* zinc-100 */
   --code-highlight: oklch(0.967 0.001 286.375);
 
-  /* zinc-950 */
-  --selection: #ababab;
+  /* Custom brown selection */
+  --selection: hsl(26, 49%, 22%);
 
-  /* zinc-50 */
-  --selection-foreground: #2d1818;
+  /* Light text on dark selection */
+  --selection-foreground: hsl(0, 0%, 100%);
 
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
 
@@ -304,11 +304,11 @@
   /* zinc-800 */
   --code-highlight: oklch(0.274 0.006 286.033);
 
-  /* zinc-50 */
-  --selection: neutral-950;
+  /* Custom brown selection for dark mode */
+  --selection: hsl(26, 49%, 22%);
 
-  /* zinc-950 */
-  --selection-foreground: neutral-50;
+  /* Light text on dark selection */
+  --selection-foreground: hsl(0, 0%, 100%);
 
   --shadow-popover: 0 0 24px rgba(0, 0, 0, 0.5);
 

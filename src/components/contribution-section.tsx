@@ -1,0 +1,138 @@
+import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import Pulse from "./pulse";
+import * as MX from "mx-icons";
+
+interface ContributionItem {
+  title: string;
+  link: string;
+  description: string;
+  year: string;
+}
+
+interface ContributionSectionProps {
+  title: string;
+  sectionId: string;
+  items: ContributionItem[];
+  isOpen: boolean;
+  onToggle: () => void;
+  openItems: { [key: string]: boolean };
+  onToggleItem: (itemId: string) => void;
+  iconColor?: string;
+  useCustomIcon?: boolean;
+}
+
+export function ContributionSection({
+  title,
+  sectionId,
+  items,
+  isOpen,
+  onToggle,
+  openItems,
+  onToggleItem,
+  iconColor = "#1c5db8",
+  useCustomIcon = false,
+}: ContributionSectionProps) {
+  return (
+    <div className="overflow-hidden">
+      {/* Section Header */}
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-3 group cursor-pointer hover:bg-accent/30 rounded transition-colors"
+      >
+        <div className="flex items-center gap-2">
+          <Pulse />
+          <h3 className="font-mono text-lg text-foreground">
+            {title} <strong className="text-muted-foreground">{">"}</strong>
+          </h3>
+        </div>
+        <ChevronDown
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="relative ml-6 pl-6 pr-6 py-2 border-l-2 border-r-2 border-border">
+              <div className="space-y-1">
+                {items.map((item, idx) => {
+                  const itemId = `${sectionId}-${idx}`;
+                  const isItemOpen = openItems[itemId];
+
+                  return (
+                    <div key={idx} className="group relative">
+                      <button
+                        onClick={() => onToggleItem(itemId)}
+                        className="w-full flex items-center justify-between py-2 hover:bg-accent/30 rounded transition-colors cursor-pointer"
+                      >
+                        <div className="flex items-center gap-2">
+                          <motion.a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 font-mono text-sm text-foreground cursor-pointer"
+                            aria-label={`${item.title} link`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="text-link hover:underline">
+                              {item.title}
+                            </span>
+                            {useCustomIcon ? (
+                              <MX.Link21Linear size={15} color={iconColor} />
+                            ) : (
+                              <ArrowUpRight
+                                className="h-4 w-4"
+                                style={{ color: iconColor }}
+                              />
+                            )}
+                          </motion.a>
+                          <span className="text-xs text-muted-foreground">
+                            {item.year}
+                          </span>
+                        </div>
+                        <ChevronDown
+                          className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${
+                            isItemOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {/* Description Dropdown */}
+                      <AnimatePresence>
+                        {isItemOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="ml-4 pl-4 py-2 border-l-2 border-border">
+                              <p className="text-sm text-muted-foreground">
+                                {item.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+

@@ -58,7 +58,7 @@ export default function Mascot({ size = 40, className }: MascotDotFace2Props) {
         borderRadius: size / 3,
        
         position: 'relative',
-        border: '1px solid var(--border)',
+   
         overflow: 'visible', 
       }}
     >

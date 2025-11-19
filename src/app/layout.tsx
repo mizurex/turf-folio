@@ -24,6 +24,7 @@ export default function ShowcaseLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
+      
       <body>
         
           {children}

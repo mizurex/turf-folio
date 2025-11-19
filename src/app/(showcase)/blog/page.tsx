@@ -15,19 +15,18 @@ export default function BlogIndex() {
     }
   };
   return (
-    <main className="min-h-dvh  p-8">
+    <main className="min-h-dvh max-w-3xl w-full mx-auto px-6 py-8">
       <div>
         <div className="text-center">
-
-           <h1 className="text-2xl font-mono"> Find my blogs and learning resources</h1>
-        <p className="text-muted-foreground mt-2 font-mono">
-          Stay tuned for updates...
-        </p>
+          <h1 className="text-2xl font-mono">Find my blogs and learning resources</h1>
+          <p className="text-muted-foreground mt-2 font-mono">
+            Stay tuned for updates...
+          </p>
         </div>
        
-        <div className="mt-10 grid h-50">
+        <div className="mt-10 grid gap-4">
           {posts.map((p) => (
-            <Card key={p.slug} className="w-full max-w-sm text-left relative">
+            <Card key={p.slug} className="w-full text-left relative">
               <div>
                 <h2 className="text-lg font-mono">{p.metadata.title}</h2>
                 {p.metadata.createdAt ? (
