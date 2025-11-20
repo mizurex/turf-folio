@@ -14,7 +14,7 @@ export default function Home() {
           {/* ... Profile content ... */}
           <div className="relative flex items-start justify-between gap-3 ">
             <div className="border-l border-border px-4 py-3">
-              <Separator width="w-[100rem]" />
+              <Separator width="w-100%" />
               <div className="flex items-center gap-2 border-r border-border w-fit pr-2">
                 <div className="relative p-2 group">
                   <Image
@@ -30,9 +30,9 @@ export default function Home() {
                   <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary transition-all duration-75 group-hover:bottom-2 group-hover:right-2"></div>
                 </div>
               </div>
-              <Separator width="w-[100rem]" />
+              <Separator width="w-100%" />
               <div className="flex items-center gap-4   ">
-                <h2 className="font-mono text-lg mt-4 border-b pb-2 border-border w-fit">
+                <h2 className="font-mono text-lg mt-4  pb-2 border-border w-fit">
                   <span className="bg-accent text-foreground border border-border rounded-md px-2 py-1 text-sm">
                     Jay
                   </span>{" "}
@@ -40,6 +40,7 @@ export default function Home() {
                     (@PotatoTurf)
                   </span>
                 </h2>
+                
                 <div className=" flex items-center gap-3 pt-3">
                   <a
                     href="https://github.com/mizurex"
@@ -78,23 +79,26 @@ export default function Home() {
                     <img src="/gmail.png" alt="Email" className="h-4 w-4" />
                   </a>
                 </div>
+                
               </div>
 
-              <p className=" text-sm leading-relaxed font-mono text-muted-foreground">
-                Building and learning, I care about type safety, clean code.
+              <p className="text-xs sm:text-sm leading-relaxed font-mono text-muted-foreground text-left">
+                Building and learning<br />
                 Writing{" "}
-                <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
+                <span className="bg-accent text-foreground border border-border rounded-md px-2 text-sm">
                   TypeScript
                 </span>{" "}
                 and{" "}
-                <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
+                <span className="bg-accent text-foreground border border-border rounded-md px-2 text-sm">
                   Tailwind
                 </span>
-                . Trying to contirbute to the open source community. Open to
-                collaborations and{" "}
-                <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
+                .<br />
+                Trying to contribute to the open source <br /> community.<br />
+                Open to collaborations and{" "}
+                <span className="bg-accent text-foreground border border-border rounded-md px-2 text-sm">
                   opportunities
                 </span>
+                
               </p>
             </div>
           </div>
