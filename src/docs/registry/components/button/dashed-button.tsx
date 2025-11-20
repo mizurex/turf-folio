@@ -1,68 +1,33 @@
-"use client"
+"use client";
 import { cn } from "@/lib/utils";
-import { CircleDot, Dot} from "lucide-react";
-import { motion } from "motion/react";
 
-interface ButtonProps {
+interface ButtonProps extends React.ComponentProps<"button"> {
   text?: string;
+  className?: string;
+  children?: React.ReactNode;
 }
-export default function DashedButton({ text }: ButtonProps){
-  return(
-      <motion.button
-        initial="rest"
-        animate="rest"
-        whileHover="hover"
-        className={cn("relative bg-neutral-100 dark:bg-neutral-900 px-3 py-1 border border-dashed border-neutral-400 border-[1px] text-black dark:text-white cursor-pointer select-none font-light")}
-      >
-        <motion.span
-          variants={{ rest: { opacity: 1, scale: 1 }, hover: { opacity: 0, scale: 0.8, transition: { duration: 0.18 } } }}
-          className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 text-xs font-medium"
-        >
-          <Dot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 1, transition: { duration: 0.22, delay: 0.04 } } }}
-          className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 text-xs font-medium"
-        >
-          <CircleDot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 1, scale: 1 }, hover: { opacity: 0, scale: 0.8, transition: { duration: 0.18 } } }}
-          className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 text-xs font-medium"
-        >
-          <Dot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 1, transition: { duration: 0.22, delay: 0.04 } } }}
-          className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 text-xs font-medium"
-        >
-          <CircleDot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 1, scale: 1 }, hover: { opacity: 0, scale: 0.8, transition: { duration: 0.18 } } }}
-          className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 text-xs font-medium"
-        >
-          <Dot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 1, transition: { duration: 0.22, delay: 0.04 } } }}
-          className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 text-xs font-medium"
-        >
-          <CircleDot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 1, scale: 1 }, hover: { opacity: 0, scale: 0.8, transition: { duration: 0.18 } } }}
-          className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 text-xs font-medium"
-        >
-          <Dot className="size-4" />
-        </motion.span>
-        <motion.span
-          variants={{ rest: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 1, transition: { duration: 0.22, delay: 0.04 } } }}
-          className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 text-xs font-medium"
-        >
-          <CircleDot className="size-4" />
-        </motion.span>
-        {text ? text : "Hover Me"}
-      </motion.button>
-    )
+
+export default function DashedButton({
+  text,
+  className,
+  children,
+  ...props
+}: ButtonProps & React.ComponentProps<"button">) {
+  return (
+    <button
+      className={cn(
+        "relative group p-3 bg-neutral-100 dark:bg-neutral-900 px-3 py-1 border border-border/20 border-neutral-400 flex items-center justify-center gap-2",
+        className,
+      )}
+      {...props}
+    >
+      <div className="absolute top-0 right-0 -translate-y-0 -translate-x-0 w-0 h-0 border-r-2 opacity-0 border-t-2 border-primary group-hover:w-[8px] group-hover:h-[8px] group-hover:opacity-100 transition-all duration-300 delay-200 ease-out" />
+
+      <div className="absolute -translate-y-0 -translate-x-0 bottom-0 left-0 w-0 h-0 border-l-2 opacity-0 border-b-2 border-primary group-hover:w-[8px] group-hover:h-[8px] group-hover:opacity-100 transition-all duration-300 delay-200 ease-out" />
+      <span className="relative z-10 flex items-center gap-2">
+        {text}
+        {children}
+      </span>
+    </button>
+  );
 }

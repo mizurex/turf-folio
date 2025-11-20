@@ -1,10 +1,25 @@
 <Steps className ="py-5">
 
 
-A playful button with a bounce animation on hover. Perfect for CTAs that need personality.
+A playful button with a bounce animation on hover. 
 
 <ComponentPreview name="bouncyButtonDemo" showLineNumbers>
 </ComponentPreview>
+
+### Utils.ts
+
+```bash
+npm i clsx tailwind-merge
+```
+
+```tsx
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
   <ComponentSource
   name="bouncyButton"
   title="bouncyButton/demo.tsx"
@@ -19,10 +34,4 @@ A playful button with a bounce animation on hover. Perfect for CTAs that need pe
 ```bash
 npm i motion
 ```
-
-### Props
-
-| Prop      | Type                    | Default | Description                               |
-|-----------|-------------------------|---------|-------------------------------------------|
-| `text`     | `string`                | `"Hover me"`    | Button text.    |
 

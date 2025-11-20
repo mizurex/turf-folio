@@ -1,11 +1,15 @@
 <Steps className ="py-5">
 
 
-Outlined button with a modern dashed border effect. Clean and minimalist.
+Outlined button with a modern border effect.
 
 <ComponentPreview name="dashedButtonDemo" showLineNumbers>
 </ComponentPreview>
 ### Utils.ts
+
+```bash
+npm i clsx tailwind-merge
+```
 
 ```tsx
 import { ClassValue, clsx } from "clsx";
@@ -14,13 +18,6 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
-```
-
-### Packages
-
-```bash
-npm i clsx tailwind-merge motion lucide-react
 ```
   <ComponentSource
   name="dashedButton"
@@ -31,10 +28,4 @@ npm i clsx tailwind-merge motion lucide-react
 </Steps>
 
 
-
-### Props
-
-| Prop      | Type                    | Default | Description                               |
-|-----------|-------------------------|---------|-------------------------------------------|
-| `text`    | `string`                | `"Hover me"`    | Button text.    |
 

@@ -10,7 +10,7 @@ export default function Projects() {
       {projectsData.slice(0, 6).map((project, index) => (
         <div
           key={index}
-          className="group relative  p-2 transition focus-within:ring-2 focus-within:ring-border border-b border-border"
+          className="group relative  p-2 transition focus-within:ring-2 focus-within:ring-border"
         >
           <div className="pointer-events-none absolute -top-28 left-1/2 z-10 w-40 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <div className="overflow-hidden rounded-md bg-background shadow-md ring-1 ring-border">
@@ -41,7 +41,7 @@ export default function Projects() {
                   <MX.Link21Linear size={15} color="#1c5db8" />
                 </motion.div>
               </motion.a>
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">
                 {project.description}
               </p>
             </div>

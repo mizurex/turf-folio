@@ -38,12 +38,12 @@ export function ContributionSection({
       {/* Section Header */}
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-3 group cursor-pointer hover:bg-accent/30 rounded transition-colors"
+        className="w-full flex items-center justify-between py-3 group cursor-pointer hover:bg-accent/70 rounded transition-colors"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center pl-3 gap-2">
           <Pulse />
-          <h3 className="font-mono text-lg text-foreground">
-            {title} <strong className="text-muted-foreground">{">"}</strong>
+          <h3 className="font-mono text-sm sm:text-base text-foreground">
+            {title}
           </h3>
         </div>
         <ChevronDown
@@ -62,7 +62,7 @@ export function ContributionSection({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="relative ml-6 pl-6 pr-6 py-2 border-l-2 border-r-2 border-border">
+            <div className="relative ml-6 pl-6 pr-6 py-2 border-l-1 border-r-1 border-border">
               <div className="space-y-1">
                 {items.map((item, idx) => {
                   const itemId = `${sectionId}-${idx}`;
@@ -83,7 +83,7 @@ export function ContributionSection({
                             aria-label={`${item.title} link`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <span className="text-link hover:underline">
+                            <span className="text-link hover:underline text-xs sm:text-sm">
                               {item.title}
                             </span>
                             {useCustomIcon ? (
@@ -116,8 +116,8 @@ export function ContributionSection({
                             transition={{ duration: 0.2, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <div className="ml-4 pl-4 py-2 border-l-2 border-border">
-                              <p className="text-sm text-muted-foreground">
+                            <div className="ml-4 pl-4 py-2 border-l-1 border-border">
+                              <p className="text-xs sm:text-sm text-muted-foreground">
                                 {item.description}
                               </p>
                             </div>

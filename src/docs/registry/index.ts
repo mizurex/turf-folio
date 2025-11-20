@@ -83,7 +83,7 @@ export const TutorialRegistry: Record<
       },
     ],
     component: React.lazy(
-      () => import("@/docs/registry/components/button/bouncy-button")
+      () => import("@/docs/registry/demo/button/bouncy-button.demo")
     ),
   },
   bouncyButton:{
@@ -104,7 +104,7 @@ export const TutorialRegistry: Record<
       },
     ],
     component: React.lazy(
-      () => import("@/docs/registry/components/button/dashed-button")
+      () => import("@/docs/registry/demo/button/dashed-button-demo")
     ),
   },
   dashedButton:{

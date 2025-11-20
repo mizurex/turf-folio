@@ -5,14 +5,17 @@ import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
 import techStack from "@/data/techtsack";
 import LeetContribution from "@/components/ui-components/lc";
+
 export default function Home() {
   return (
-    <main className="relative min-h-dvh flex flex-col items-center justify-center bg-background">
+    <main className="relative min-h-dvh flex flex-col items-center bg-background overflow-x-hidden">
       <div className="max-w-3xl w-full px-6">
-        <section className="py-2">
-          <div className="relative flex items-start justify-between gap-3 pt-4">
-            <div>
-              <div className="flex items-center gap-2">
+        <section className="">
+          {/* ... Profile content ... */}
+          <div className="relative flex items-start justify-between gap-3 ">
+            <div className="border-l border-border px-4 py-3">
+              <Separator width="w-[100rem]" />
+              <div className="flex items-center gap-2 border-r border-border w-fit pr-2">
                 <div className="relative p-2 group">
                   <Image
                     src="/pfp.jpg"
@@ -27,12 +30,15 @@ export default function Home() {
                   <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary transition-all duration-75 group-hover:bottom-2 group-hover:right-2"></div>
                 </div>
               </div>
-              <div className="flex items-center gap-4  ">
+              <Separator width="w-[100rem]" />
+              <div className="flex items-center gap-4   ">
                 <h2 className="font-mono text-lg mt-4 border-b pb-2 border-border w-fit">
-                <span className="bg-accent text-foreground border border-border rounded-md px-2 py-1 text-sm">
-  Jay
-</span> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">(@PotatoTurf)
-                      </span>
+                  <span className="bg-accent text-foreground border border-border rounded-md px-2 py-1 text-sm">
+                    Jay
+                  </span>{" "}
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    (@PotatoTurf)
+                  </span>
                 </h2>
                 <div className=" flex items-center gap-3 pt-3">
                   <a
@@ -74,76 +80,71 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="mt-2 text-sm leading-relaxed font-mono text-muted-foreground">
-                Building and learning, I care
-                about type safety, clean code. Writing <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
-  TypeScript
-</span> and <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
-  Tailwind
-</span>.
-                Trying to contirbute to the open source community. Open to collaborations and <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
-  opportunities
-</span>
+              <p className=" text-sm leading-relaxed font-mono text-muted-foreground">
+                Building and learning, I care about type safety, clean code.
+                Writing{" "}
+                <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
+                  TypeScript
+                </span>{" "}
+                and{" "}
+                <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
+                  Tailwind
+                </span>
+                . Trying to contirbute to the open source community. Open to
+                collaborations and{" "}
+                <span className="bg-accent text-foreground border border-border rounded-md px-2  text-sm">
+                  opportunities
+                </span>
               </p>
             </div>
           </div>
         </section>
-        <section className="mt-8">
-          <div className="flex items-start border-b border-border">
-            <h2 className="text-2xl font-mono font-light mb-3 underline">
+
+        <section className="border-l border-border">
+          <Separator width="w-[44rem]" />
+          <div className="flex justify-center border-r border-border w-fit px-4">
+            <h2 className="text-2xl font-mono font-light  text-center">
               Projects
             </h2>
           </div>
-          <div>
-            <h3 className="font-mono text-lg mb-3 pt-6 ">
-              All Projects{" "}
-              <strong className="text-muted-foreground">{">"}</strong>
-            </h3>
-          </div>
+          <Separator width="w-[44rem]" />
 
-          <div className="grid grid-cols-1  gap-2">
+          <div className="grid grid-cols-1  gap-2 px-2">
             <Projects />
-            <div className="flex justify-end">
-              <p className="text-sm text-muted-foreground mt-1 font-mono">
-                More projects on my github...
-              </p>
-            </div>
           </div>
         </section>
 
-        <section className="mt-10">
-          <div className=" overflow-hidden">
-            <div className="flex items-start border-b border-border w-full">
-              <h2 className="text-2xl font-mono font-light mb-3 underline">
+        <section className="border-l border-border">
+          <div className=" ">
+            <Separator width="w-[44rem]" />
+            <div className="flex  w-fit border-r border-border">
+              <h2 className="text-2xl font-mono font-light px-4">
                 Contributions
               </h2>
             </div>
+            <Separator width="w-[44rem]" />
 
-            <div>
-              <h3 className="font-mono text-lg mb-3 pt-6 ">
-                All Contributions{" "}
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 gap-2">
+            <div className="grid grid-cols-1 gap-2 ">
               <Contributions />
             </div>
           </div>
         </section>
 
-        <section className="mt-10">
-          <div className="flex items-start border-b border-border w-full">
-            <h2 className="text-2xl font-mono font-light mb-3 underline">
-              Stack
-            </h2>
+        <section className=" border-l border-border">
+          <Separator width="w-[44rem]" />
+          <div className="flex  w-fit border-r border-border">
+            <h2 className="text-2xl font-mono font-light  px-4">Stack</h2>
           </div>
-          <div className="grid grid-cols-5 gap-2 pt-6">
+          <Separator width="w-[44rem]" />
+
+          <div className="grid grid-cols-5 ">
             {techStack().map((tech) => (
               <a
                 key={tech.name}
                 href={tech.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 p-2 group"
+                className="flex flex-col md:px-10  p-4 group  "
                 aria-label={tech.name}
               >
                 <Image
@@ -153,42 +154,46 @@ export default function Home() {
                   height={32}
                   className="size-8 object-contain dark:invert transition-all group-hover:scale-110"
                 />
-                <span className="text-xs text-muted-foreground">
-                  {tech.name}
-                </span>
+               
               </a>
             ))}
           </div>
         </section>
-<section className="mt-10">
-  <h2 className="text-2xl font-mono font-light mb-3 underline">
-    LeetCode Contributions
-  </h2>
-<div className="ml-3">
-  <LeetContribution username="dhananjaycw" theme="orange" blockAnimate="bounce"/>
-</div>
 
-</section>
-        <section className="py-20">
-          <div className="flex justify-center items-center border-b border-border relative">
-            <h4 className="font-mono text-sm opacity-70 mb-3 pt-6 ">
+        <section className=" border-l border-border">
+          <Separator width="w-[44rem]" />
+          <div className="flex w-fit border-r border-border ">
+            <h2 className="text-2xl font-mono font-light  px-4">LeetCode</h2>
+          </div>
+          <Separator width="w-[44rem]" />
+
+          <div className="ml-3 pt-4.5">
+            <LeetContribution
+              username="dhananjaycw"
+              theme="orange"
+              blockAnimate="bounce"
+            />
+          </div>
+        </section>
+        <section className="mb-6 pb-10">
+          <Separator width="w-[100rem]" />
+          <div className="flex justify-center  relative py-10 border-r border-border border-l px-2">
+            <h4 className="font-mono text-sm md:text-lg opacity-70 text-center  ">
               {" "}
               Thanks a lot for checking out my work!{" "}
             </h4>
           </div>
+          <Separator width="w-[100rem]" />
         </section>
       </div>
     </main>
   );
 }
 
-function Separator() {
+function Separator({ width = "w-[30rem]" }: { width?: string }) {
   return (
     <div
-      className="relative flex h-[30px] w-full 
-        before:absolute before:inset-0
-        before:bg-[repeating-linear-gradient(315deg,#e5e7eb_0,#d1d5db_1px,transparent_0,transparent_50%)]
-        before:bg-[length:10px_10px] "
+      className={`${width} relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-b border-border`}
     />
   );
 }

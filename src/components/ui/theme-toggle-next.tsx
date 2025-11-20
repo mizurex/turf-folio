@@ -10,13 +10,9 @@ export function ThemeToggleNext({ className }: { className?: string }) {
   const [mounted, setMounted] = useState(false);
   const clickSoundRef = useRef<HTMLAudioElement | null>(null);
   
+  // Set mounted to true after component mounts
   useEffect(() => {
     setMounted(true);
-    // Preload audio file
-    clickSoundRef.current = new Audio('/sounds/click.wav');
-    
-    // Set volume
-    if (clickSoundRef.current) clickSoundRef.current.volume = 0.3;
   }, []);
   
   if (!mounted) return null;
@@ -25,10 +21,16 @@ export function ThemeToggleNext({ className }: { className?: string }) {
   const label = current === "dark" ? "Light" : "Dark";
 
   const handleThemeToggle = () => {
-    // Play click sound
-    clickSoundRef.current?.play().catch(() => {});
+    // Check if browser supports View Transition API
+    if (!document.startViewTransition) {
+      setTheme(current === "dark" ? "light" : "dark");
+      return; // Exit early for old browsers
+    }
     
-    setTheme(current === "dark" ? "light" : "dark");
+    // Use View Transition API for smooth animation
+    document.startViewTransition(() => {
+      setTheme(current === "dark" ? "light" : "dark");
+    });
   };
 
   return (
@@ -39,7 +41,7 @@ export function ThemeToggleNext({ className }: { className?: string }) {
       className={`rounded-md px-3 py-1.5 text-sm cursor-pointer ${className || ""}`}
     >
     
-     {current === "dark"?<SunIcon props={{className:"size-4"}} />: <MoonStar className="size-4" />}
+     {current === "dark"?<span className=""> <SunIcon props={{className:"size-5 border border-primary/40 shadow-lg  rounded-full"}} /></span>: <span className=""><MoonStar className="size-5 border border-primary/20 shadow-lg rounded-full" /></span>}
         
       
     </button>

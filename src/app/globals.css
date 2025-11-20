@@ -515,3 +515,47 @@
     @apply bg-background text-foreground;
   }
 }
+
+  /* Light mode: wipe up (bottom to top) */
+::view-transition-new(root) {
+  mask: linear-gradient(to top, black 0%, black 100%);
+  mask-size: 100% 0%;
+  mask-position: bottom;
+  mask-repeat: no-repeat;
+  animation: wipeUp 1s ease-in-out;
+  animation-fill-mode: both;
+}
+
+/* Dark mode: wipe down (top to bottom) */
+.dark::view-transition-new(root) {
+  mask: linear-gradient(to bottom, black 0%, black 100%);
+  mask-size: 100% 0%;
+  mask-position: top;
+  mask-repeat: no-repeat;
+  animation: wipeDown 1s ease-in-out;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: none;
+  z-index: -1;
+}
+
+@keyframes wipeDown {
+  from {
+    mask-size: 100% 0%;
+  }
+  to {
+    mask-size: 100% 100%;
+  }
+}
+
+@keyframes wipeUp {
+  from {
+    mask-size: 100% 0%;
+  }
+  to {
+    mask-size: 100% 100%;
+  }
+}

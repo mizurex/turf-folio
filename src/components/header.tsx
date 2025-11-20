@@ -25,10 +25,10 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-4">
-          <Link href="/components" className="text-sm hover:text-primary transition-colors">
+          <Link href="/components" className="text-sm hover:text-primary transition-colors font-sans text-muted-foreground">
             Components
           </Link>
-          <Link href="/blog" className="text-sm hover:text-primary transition-colors">
+          <Link href="/blog" className="text-sm hover:text-primary transition-colors font-sans text-muted-foreground">
             Blog
           </Link>
         </nav>
