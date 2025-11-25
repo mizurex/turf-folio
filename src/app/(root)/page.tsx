@@ -5,6 +5,7 @@ import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
 import techStack from "@/data/techtsack";
 import LeetContribution from "@/components/ui-components/lc";
+import ContributionsDisplay from "@/components/github-graph";
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
           {/* ... Profile content ... */}
           <div className="relative flex items-start justify-between gap-3 ">
             <div className="border-l border-border px-4 py-3">
-              <Separator width="w-100%" />
+              <Separator width="w-[100rem]" />
               <div className="flex items-center gap-2 border-r border-border w-fit pr-2">
-                <div className="relative p-2 group">
+                <div className="relative p-2 group z-40">
                   <Image
                     src="/pfp.jpg"
                     alt="Potato"
@@ -24,13 +25,16 @@ export default function Home() {
                     height={100}
                     className="rounded-sm"
                   />
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary transition-all duration-75 group-hover:top-2 group-hover:left-2"></div>
-                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary transition-all duration-75 group-hover:top-2 group-hover:right-2"></div>
-                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary transition-all duration-75 group-hover:bottom-2 group-hover:left-2"></div>
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary transition-all duration-75 group-hover:bottom-2 group-hover:right-2"></div>
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-1s border-l-1 border-primary/30 "></div>
+                  
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-1s border-r-1 border-primary/30 "></div>
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-1s border-l-1 border-primary/30 "></div>
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-1s border-r-1 border-primary/30 "></div>
                 </div>
+                
               </div>
-              <Separator width="w-100%" />
+              <Separator width="w-[100rem]" />
+              <Separator width="w-[100rem]" className="my-[12px]" />
               <div className="flex items-center gap-4   ">
                 <h2 className="font-mono text-lg mt-4  pb-2 border-border w-fit">
                   <span className="bg-accent text-foreground border border-border rounded-md px-2 py-1 text-sm">
@@ -92,8 +96,8 @@ export default function Home() {
                 <span className="bg-accent text-foreground border border-border rounded-md px-2 text-sm">
                   Tailwind
                 </span>
-                .<br />
-                Trying to contribute to the open source <br /> community.<br />
+                <br />
+              
                 Open to collaborations and{" "}
                 <span className="bg-accent text-foreground border border-border rounded-md px-2 text-sm">
                   opportunities
@@ -105,13 +109,13 @@ export default function Home() {
         </section>
 
         <section className="border-l border-border">
-          <Separator width="w-[44rem]" />
+          <Separator width="w-[100rem] " />
           <div className="flex justify-center border-r border-border w-fit px-4">
             <h2 className="text-2xl font-mono font-light  text-center">
               Projects
             </h2>
           </div>
-          <Separator width="w-[44rem]" />
+          <Separator width="w-[100rem]" />
 
           <div className="grid grid-cols-1  gap-2 px-2">
             <Projects />
@@ -120,13 +124,13 @@ export default function Home() {
 
         <section className="border-l border-border">
           <div className=" ">
-            <Separator width="w-[44rem]" />
+            <Separator width="w-[100rem]" />
             <div className="flex  w-fit border-r border-border">
               <h2 className="text-2xl font-mono font-light px-4">
                 Contributions
               </h2>
             </div>
-            <Separator width="w-[44rem]" />
+            <Separator width="w-[100rem]" />
 
             <div className="grid grid-cols-1 gap-2 ">
               <Contributions />
@@ -135,11 +139,11 @@ export default function Home() {
         </section>
 
         <section className=" border-l border-border">
-          <Separator width="w-[44rem]" />
+          <Separator width="w-[100rem]" />
           <div className="flex  w-fit border-r border-border">
             <h2 className="text-2xl font-mono font-light  px-4">Stack</h2>
           </div>
-          <Separator width="w-[44rem]" />
+          <Separator width="w-[100rem]" />
 
           <div className="grid grid-cols-5 ">
             {techStack().map((tech) => (
@@ -148,40 +152,58 @@ export default function Home() {
                 href={tech.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col md:px-10  p-4 group  "
+                className="flex flex-col md:px-10  p-4 group items-center justify-center "
                 aria-label={tech.name}
               >
+               
                 <Image
                   src={tech.icon}
                   alt={tech.name}
                   width={32}
                   height={32}
-                  className="size-8 object-contain dark:invert transition-all group-hover:scale-110"
+                  className="size-8 object-contain dark:invert transition-all group-hover:scale-90 duration-300 delay-100"
                 />
+
+                <span className="hidden md:block text-xs font-mono  pt-[2px] text-center">  {tech.name}</span>
                
               </a>
             ))}
           </div>
         </section>
-
         <section className=" border-l border-border">
-          <Separator width="w-[44rem]" />
+      
+        <Separator width="w-[100rem]" />
           <div className="flex w-fit border-r border-border ">
-            <h2 className="text-2xl font-mono font-light  px-4">LeetCode</h2>
+            <h2 className="text-lg font-mono font-light  px-4">GitHub</h2>
           </div>
-          <Separator width="w-[44rem]" />
+          <Separator width="w-[100rem]" />
 
-          <div className="ml-3 pt-4.5">
+          <div className=" ml-1 overflow-auto bg-background flex justify-center items-center">
+          <ContributionsDisplay username="mizurex" variant='compact' />
+          </div>
+        </section>
+        <section className=" border-l border-border">
+
+
+        
+          <Separator width="w-[100rem]" />
+
+          <div className="flex w-fit border-r border-border ">
+            <h2 className="text-lg font-mono  px-4">LeetCode</h2>
+          </div>
+   
+          <Separator width="w-[100rem]" />
+          <div className="bg-background flex justify-center items-center">
             <LeetContribution
               username="dhananjaycw"
-              theme="orange"
+              theme="monochrome"
               blockAnimate="bounce"
             />
           </div>
         </section>
-        <section className="mb-6 pb-10">
+        <section className="mb-6">
           <Separator width="w-[100rem]" />
-          <div className="flex justify-center  relative py-10 border-r border-border border-l px-2">
+          <div className="flex justify-center  relative  border-r border-border border-l px-2 py-10">
             <h4 className="font-mono text-sm md:text-lg opacity-70 text-center  ">
               {" "}
               Thanks a lot for checking out my work!{" "}
@@ -189,15 +211,16 @@ export default function Home() {
           </div>
           <Separator width="w-[100rem]" />
         </section>
+      
       </div>
     </main>
   );
 }
 
-function Separator({ width = "w-[30rem]" }: { width?: string }) {
+function Separator({ width = "w-[30rem]" ,className}: { width?: string ,className?: string }) {
   return (
     <div
-      className={`${width} relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-b border-border`}
+      className={`${width} relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-b border-border dark:border-[#333333] ${className}`}
     />
   );
 }

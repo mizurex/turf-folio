@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useEffect, useState, useMemo } from "react";
+import { useTheme } from "next-themes";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import {
@@ -11,12 +12,12 @@ import {
 } from "@/components/ui/tooltip";
 
 const leetGraphVariants = cva(
-  "py-2 px-4 rounded-[10px] w-full max-w-2xl overflow-x-auto transition-all",
+  "py-2 px-4 rounded-[10px] w-full max-w-3xl overflow-x-auto transition-all",
   {
     variants: {
       variant: {
         default:
-          "border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100",
+          " bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100",
         shadow:
           "border-none bg-neutral-100 dark:bg-neutral-800 shadow-md shadow-neutral-200 dark:shadow-neutral-700 text-neutral-900 dark:text-neutral-100 ",
       },
@@ -59,24 +60,42 @@ function formatDate(date: Date) {
   return date.toISOString().slice(0, 10);
 }
 
-type Theme = "green" | "blue" | "red" | "orange" | "purple" | "yellow";
+type Theme =
+  | "green"
+  | "blue"
+  | "red"
+  | "orange"
+  | "purple"
+  | "yellow"
+  | "monochrome";
 
-function getColor(count: number, theme: Theme = "green") {
+function getColor(
+  count: number,
+  theme: Theme = "green",
+  scheme: "light" | "dark" = "light"
+) {
+  const halloweenOrange =
+    scheme === "dark"
+      ? ["#27212a", "#53354a", "#a64e1e", "#ffd580", "#ff9900"]
+      : ["#ffe0b3", "#ffd580", "#ff9900", "#b34700", "#27212a"];
+  const blackAndWhite =
+    scheme === "dark"
+      ? ["#5a5a5a", "#1f1f1f", "#4c4c4c", "#f5f5f5"]
+      : ["#f5f5f5", "#dcdcdc", "#9a9a9a", "#050505"];
   const themes: Record<Theme, string[]> = {
     green: ["#aff0b4", "#01b328", "#008024", "#22c55e"],
     blue: ["#b3d9ff", "#3399ff", "#0066cc", "#004488"],
     red: ["#ffb3b3", "#ff3333", "#cc0000", "#880000"],
-    orange: ["#ffe0b3", "#ff9933", "#cc6600", "#884400"],
+    orange: halloweenOrange,
     purple: ["#d9b3ff", "#9933ff", "#6600cc", "#440088"],
     yellow: ["#fff2b3", "#ffcc33", "#cc9900", "#886600"],
+    monochrome: blackAndWhite,
   };
 
   const colors = themes[theme] || themes.green;
 
-  if (count < 2) return colors[0];
-  if (count >= 2 && count < 4) return colors[1];
-  if (count > 6) return colors[2];
-  return colors[3];
+  const index = Math.min(colors.length - 1, Math.floor(count / 2));
+  return colors[index];
 }
 
 export interface LeetContributionGraphProps
@@ -102,6 +121,8 @@ function LeetContribution({
   const [calendar, setCalendar] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any>(null);
+  const { resolvedTheme } = useTheme();
+  const colorScheme = resolvedTheme === "dark" ? "dark" : "light";
 
   useEffect(() => {
     async function fetchData() {
@@ -222,9 +243,9 @@ function LeetContribution({
       </div>
 
       <div className="mt-2 overflow-x-auto pb-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700">
-        <div className="inline-flex gap-[2px]">
+        <div className="inline-flex gap-[3px]">
           {weeks.map((week, wi) => (
-            <div key={wi} className="flex flex-col gap-[2px] ">
+            <div key={wi} className="flex flex-col gap-[3px] ">
               {week.map((day: any, row: number) => {
                 const isEmpty = day.count === 0;
                 const isHighActivity = day.count > 7;
@@ -239,14 +260,23 @@ function LeetContribution({
                             animate: isHighActivity ? blockAnimate : "none",
                           }),
                           isEmpty ? "bg-neutral-100 dark:bg-neutral-800" : "",
+                          "rounded-md",
                         )}
                         style={
                           !isEmpty
                             ? {
-                                backgroundColor: getColor(day.count, theme),
+                                backgroundColor: getColor(
+                                  day.count,
+                                  theme,
+                                  colorScheme
+                                ),
                                 borderRadius: "10px",
                                 ...(isHighActivity && blockAnimate === "pulse" && {
-                                  borderColor: getColor(day.count, theme),
+                                  borderColor: getColor(
+                                    day.count,
+                                    theme,
+                                    colorScheme
+                                  ),
                                 }),
                               }
                             : undefined
@@ -269,19 +299,19 @@ function LeetContribution({
       <div className="flex flex-wrap justify-center sm:justify-end gap-2 sm:gap-3 mt-4 border-t pt-2 border-neutral-100 dark:border-neutral-800">
         <StatBadge
           label="Easy"
-          color="text-teal-500"
+          color="text-foreground"
           solved={easy.solved}
           total={easy.total}
         />
         <StatBadge
           label="Med."
-          color="text-yellow-500"
+          color="text-foreground"
           solved={medium.solved}
           total={medium.total}
         />
         <StatBadge
           label="Hard"
-          color="text-red-500"
+          color="text-foreground"
           solved={hard.solved}
           total={hard.total}
         />

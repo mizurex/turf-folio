@@ -14,6 +14,13 @@ export const projectsData = [
       description: "AI learning platform.",
     },
     {
+      title: "Dashboard",
+      image: "/dashboard.jpeg",
+      live: "https://nice-dashboard-three.vercel.app/",
+      github: "https://github.com/mizurex/nice_dashboard",
+      description: "A dashboard with tons of moving parts",
+    },
+    {
       title: "Turfex",
       image: "/minimal.jpeg",
       live: "https://github.com/mizurex/turfex",
@@ -39,6 +46,6 @@ export const projectsData = [
       image: "/vault.jpeg",
       live: "https://gridvault.projects.turfworks.site/",
       github: "https://github.com/mizurex/grid-vault",
-      description: "A collection of bento grid layouts you can copy and paste into your project, built with Tailwind CSS.",
+      description: "A collection of bento grid layouts you can copy and paste.",
     },
   ];

@@ -38,10 +38,10 @@ export function ThemeToggleNext({ className }: { className?: string }) {
       type="button"
       onClick={handleThemeToggle}
       aria-label="Toggle theme"
-      className={`rounded-md px-3 py-1.5 text-sm cursor-pointer ${className || ""}`}
+      className={`shadow-md rounded-full  cursor-pointer ${className || ""}`}
     >
     
-     {current === "dark"?<span className=""> <SunIcon props={{className:"size-5 border border-primary/40 shadow-lg  rounded-full"}} /></span>: <span className=""><MoonStar className="size-5 border border-primary/20 shadow-lg rounded-full" /></span>}
+     {current === "dark"?<span className=""> <SunIcon props={{className:"size-5  shadow-md "}} /></span>: <span className=""><MoonStar className="size-5 " /></span>}
         
       
     </button>

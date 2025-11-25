@@ -7,7 +7,7 @@ import * as MX from 'mx-icons'
 export default function Projects() {
   return (
     <div>
-      {projectsData.slice(0, 6).map((project, index) => (
+      {projectsData.slice(0, 7).map((project, index) => (
         <div
           key={index}
           className="group relative  p-2 transition focus-within:ring-2 focus-within:ring-border"
@@ -34,11 +34,11 @@ export default function Projects() {
                 className="group/title inline-flex items-center gap-1 font-mono text-sm text-foreground truncate"
                 aria-label={`${project.title} live demo`}
               >
-                <span className="truncate text-link hover:underline">
+                <span className=" hover:underline" style={{fontWeight:500}}>
                   {project.title}
                 </span>
                 <motion.div>
-                  <MX.Link21Linear size={15} color="#1c5db8" />
+                  <MX.Link21Linear size={15} color="#0076fc" />
                 </motion.div>
               </motion.a>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">
