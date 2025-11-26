@@ -14,9 +14,19 @@ export default function Home() {
       <div className="max-w-3xl w-full px-6">
       <DiagonalPattern side="left" />
       <DiagonalPattern side="right" />
-      <div className="pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-14 w-full h-full"></div>
-      <div className="pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-96.5 w-full h-full"></div>
-      <div className="pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-280.5 w-full h-[195px]"></div>
+      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-15 w-full h-full"></div>
+      <div
+  className="
+    hidden       /* default: invisible on small screens */
+    min-[1500px]:block     /* visible on large screens */
+    pointer-events-none 
+    border-l border-border 
+    dark:border-[#333333]
+    absolute top-0 left-96
+    fixed w-full h-full
+  "
+></div>
+      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-281 w-full h-[195px]"></div>
         <section className="">
           {/* ... Profile content ... */}
           <div className=" flex items-start justify-between gap-3 ">

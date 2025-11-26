@@ -19,6 +19,21 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Portfolio - Jay",
   icons: { icon: "/favicon.ico" },
+  description: "Portfolio of Jay, a software developer. Building and learning. Writing TypeScript and Tailwind, Open to collaborations and opportunities.",
+  keywords: ["Portfolio", "Jay", "Software Engineer", "Developer", "Web Developer", "React", "Next.js", "Tailwind", "TypeScript", "JavaScript", "HTML", "CSS"],
+  authors: [{ name: "Jay", url: "https://turfworks.site" }],
+  creator: "Jay",
+  publisher: "Jay",
+  openGraph: {
+    title: "Portfolio - Jay",
+    description: "Portfolio of Jay, a software developer. Building and learning. Writing TypeScript and Tailwind, Open to collaborations and opportunities.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio - Jay",
+    description: "Portfolio of Jay, a software developer. Building and learning. Writing TypeScript and Tailwind, Open to collaborations and opportunities.",
+    images: ["/pfp.jpg"],
+  },
 };
 
 export default function RootLayout({
