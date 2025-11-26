@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { MDXTutorial } from "@/docs/components/mdx";
-import { Instrument_Serif } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { notFound } from "next/navigation";
 

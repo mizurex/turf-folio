@@ -38,7 +38,7 @@ export function ContributionSection({
       {/* Section Header */}
       <button
         onClick={onToggle}
-        className="w-full px-5.5 flex items-center justify-between py-3 group cursor-pointer hover:bg-accent/70 rounded transition-colors"
+        className="w-full px-5.5 flex items-center justify-between  group cursor-pointer hover:bg-accent/70  transition-colors"
       >
         <div className="flex items-center pl-3 gap-2">
           <Pulse />
@@ -62,7 +62,7 @@ export function ContributionSection({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="relative ml-6 pl-6 pr-6 py-2 border-l-2 border-r-2 border-border">
+            <div className="relative ml-6 pl-6 pr-6 py-2 border-l-1 dark:border-[#333333] border-border">
               <div className="space-y-1">
                 {items.map((item, idx) => {
                   const itemId = `${sectionId}-${idx}`;
@@ -72,7 +72,7 @@ export function ContributionSection({
                     <div key={idx} className="group relative">
                       <button
                         onClick={() => onToggleItem(itemId)}
-                        className="w-full flex items-center justify-between py-2 hover:bg-accent rounded transition-colors cursor-pointer px-[10px]"
+                        className="w-full flex items-center justify-between py-[4px] hover:bg-accent  transition-colors cursor-pointer px-[10px]"
                       >
                         <div className="flex items-center gap-2">
                           <motion.a
@@ -116,7 +116,7 @@ export function ContributionSection({
                             transition={{ duration: 0.2, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <div className="ml-4 pl-4 py-2 border-l-2 border-border">
+                            <div className="ml-4 pl-4 py-2 border-l-1 dark:border-[#333333] border-border">
                               <p className="text-xs sm:text-sm text-muted-foreground">
                                 {item.description}
                               </p>

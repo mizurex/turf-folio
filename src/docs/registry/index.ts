@@ -118,6 +118,27 @@ export const TutorialRegistry: Record<
     ),
   },
 
+  //Rainbow button
+  rainbowButtonDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/button/rainbow-button-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/button/rainbow-button-demo")
+    ),
+  },
+  rainbowButton:{
+    files: [
+      {
+        path: "src/docs/registry/components/button/rainbow-button.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/button/rainbow-button")
+    ),
+  },
   // LeetCode Graph
   leetcodeGraphDemo:{
     files: [

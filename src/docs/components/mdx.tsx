@@ -10,7 +10,7 @@ import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 
 import { CodeTabs } from "@/components/code-tabs";
-import { getIconForLanguageExtension, Icons } from "@/components/icons";
+
 import {
   Table,
   TableBody,
@@ -47,7 +47,7 @@ const components: MDXRemoteProps["components"] = {
     const p = props as Record<string, unknown> & { [key: string]: unknown };
     const iconExtension =
       "data-language" in p && typeof p["data-language"] === "string"
-        ? getIconForLanguageExtension(p["data-language"] as string)
+        ? null
         : null;
 
     return (
@@ -69,7 +69,7 @@ const components: MDXRemoteProps["components"] = {
   ),
   TabsTriggerShadcnCLI: () => (
     <TabsTrigger className="pl-2" value="cli">
-      <Icons.shadcn />
+      
       shadcn CLI
     </TabsTrigger>
   ),

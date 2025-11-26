@@ -1,11 +1,5 @@
 import Link from "next/link";
-import { Instrument_Serif } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const instrumentSans = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 const components = [
   {
@@ -42,6 +36,11 @@ const components = [
     title: "Skeleton",
     href: "/components/skeleton",
     description: "A skeleton loading animation.",
+  },
+  {
+    title: "Rainbow Button",
+    href: "/components/rainbow-button",
+    description: "A button with a rainbow glow effect.",
   },
 ];
 

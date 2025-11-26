@@ -12,6 +12,7 @@ export default function Projects() {
           key={index}
           className="group relative  p-2 transition focus-within:ring-2 focus-within:ring-border"
         >
+          
           <div className="pointer-events-none absolute -top-28 left-1/2 z-10 w-40 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <div className="overflow-hidden rounded-md bg-background shadow-md ring-1 ring-border">
               <div className="relative h-24 w-40">

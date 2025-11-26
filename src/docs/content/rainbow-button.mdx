@@ -1,0 +1,38 @@
+<Steps className ="py-5">
+
+
+Button with rainbow effect.
+
+<ComponentPreview name="rainbowButtonDemo" showLineNumbers>
+</ComponentPreview>
+### Utils.ts
+
+```bash
+npm i clsx tailwind-merge
+```
+
+```tsx
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+### Packages
+
+```bash
+npm i motion
+```
+
+  <ComponentSource
+  name="rainbowButton"
+  title="dashedButton/demo.tsx"
+  showLineNumbers
+  codeCollapsible
+/>
+</Steps>
+
+
+

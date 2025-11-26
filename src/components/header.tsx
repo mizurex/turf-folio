@@ -18,17 +18,17 @@ export function Header() {
   const isComponentsPage = pathname?.startsWith('/components');
 
   return (
-    <div className="sticky top-0 z-50 border-b bg-background font-mono">
+    <div className="sticky top-0 z-50 border-b dark:border-[#333333] border-border bg-background font-mono">
       <div className="flex items-center justify-between max-w-3xl w-full mx-auto px-6 py-2">
         <Link href="/" className="flex items-center">
           <Mascot />
         </Link>
 
         <nav className="hidden md:flex items-center gap-4">
-          <Link href="/components" className="text-sm hover:text-primary transition-colors font-sans text-muted-foreground">
+          <Link href="/components" className="text-sm hover:text-primary transition-colors font-sans font-medium text-muted-foreground dark:text-muted-foreground">
             Components
           </Link>
-          <Link href="/blog" className="text-sm hover:text-primary transition-colors font-sans text-muted-foreground">
+          <Link href="/blog" className="text-sm hover:text-primary transition-colors font-sans font-medium text-muted-foreground dark:text-muted-foreground">
             Blog
           </Link>
         </nav>

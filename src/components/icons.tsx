@@ -268,24 +268,7 @@ export const Icons = {
   ),
 };
 
-export function getIconForLanguageExtension(language: string) {
-  switch (language) {
-    case "json":
-      return <Icons.json />;
-    case "css":
-      return <Icons.css />;
-    case "js":
-      return <Icons.js />;
-    case "ts":
-    case "typescript":
-      return <Icons.ts />;
-    case "jsx":
-    case "tsx":
-      return <FolderCode />;
-    default:
-      return <FileIcon />;
-  }
-}
+
 
 export function getIconForPackageManager(manager: string) {
   switch (manager) {

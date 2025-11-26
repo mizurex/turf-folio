@@ -50,6 +50,10 @@ export const navigation: NavigationItem[] = [
       {
         title:"Skeleton",
         href: "/components/skeleton",
+      },
+      {
+        title: "Rainbow Button",
+        href: "/components/rainbow-button",
       }
     ],
   },
