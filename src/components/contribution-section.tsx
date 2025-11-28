@@ -83,7 +83,7 @@ export function ContributionSection({
                             aria-label={`${item.title} link`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <span className="text-link hover:underline text-xs sm:text-sm">
+                            <span className="text-link text-left hover:underline text-xs sm:text-sm">
                               {item.title}
                             </span>
                             {useCustomIcon ? (
