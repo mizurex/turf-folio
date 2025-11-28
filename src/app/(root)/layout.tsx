@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Space_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/header"; 
@@ -8,12 +8,6 @@ import { MobileProvider } from "@/providers/mobile-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +34,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${spaceMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={geistSans.variable}>
       <body>
         <MobileProvider>
 

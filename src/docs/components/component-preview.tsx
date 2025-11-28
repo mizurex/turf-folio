@@ -4,7 +4,6 @@ import React from "react";
 
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import * as MX from 'mx-icons'
 import { TutorialRegistry } from "../registry";
 
 export function ComponentPreview({
@@ -21,23 +20,21 @@ export function ComponentPreview({
   return (
     <div className="my-6 not-prose">
       <Tabs defaultValue="preview" className="gap-4">
-        <TabsList>
-          <TabsTrigger value="preview">
-          <MX.EyeLinear
-  size={15}
- color="#8d91a0"
-/>
-      </TabsTrigger>
-
-
-          <TabsTrigger value="code"><MX.CodeLinear
-  size={15}
-  color="#8d91a0"
-/></TabsTrigger>
+        <TabsList className="flex gap-2 bg-zinc-100 border border-border dark:bg-zinc-950 py-3 rounded-[4px] dark:border-border">
+          <TabsTrigger value="preview" className="group dark:data-[state=active]:bg-black dark:data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:border-border data-[state=active]:bg-neutral-50 data-[state=active]:text-neutral-900 data-[state=active]:rounded-[4px] transition-all duration-200 font-sans font-medium dark:border-transparent">
+            <span>Preview</span>
+          </TabsTrigger>
+          <TabsTrigger value="code" className="group dark:data-[state=active]:bg-black dark:data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:border-border data-[state=active]:bg-neutral-50 data-[state=active]:text-neutral-900 data-[state=active]:rounded-[4px] transition-all duration-200 font-sans font-medium dark:border-transparent">
+            <span>Code</span>
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="preview">
-          <div className="rounded-lg border border-edge bg-zinc-950/0.75 bg-[repeating-linear-gradient(40deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_1px,transparent_5px)] bg-center p-4 [--pattern-foreground:var(--color-zinc-600)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
+          <div className="rounded-[8px] dark:border dark:border-border bg-zinc-950/0.75 bg-[repeating-linear-gradient(40deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_1px,transparent_5px)] bg-center p-4 [--pattern-foreground:var(--color-zinc-600)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5"
+          style={{
+            boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px -1px rgba(0, 0, 0, 0.06), 0px 2px 4px 0px rgba(0, 0, 0, 0.04)"
+          }}
+          >
             <div className="flex min-h-80 items-center justify-center font-sans">
               <React.Suspense fallback={<div className="text-sm text-muted-foreground">Loading…</div>}>
                 {Component ? <Component /> : <div className="text-sm text-muted-foreground">Component not found: {name}</div>}

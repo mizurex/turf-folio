@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui-components/preview/content/demo/demo.mdx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui-components/preview/content/demo/demo.mdx", "src/features/blog/content/speedingup-react-app.mdx"],
   "exclude": ["node_modules"]
 }

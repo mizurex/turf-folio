@@ -15,7 +15,7 @@ export function CodeCollapsibleWrapper({
 }: React.ComponentProps<typeof Collapsible>) {
   return (
     <Collapsible
-      className={cn("group/collapsible not-prose relative mt-3", className)}
+      className={cn("group/collapsible not-prose relative mt-3 ", className)}
       {...props}
     >
       <CollapsibleTrigger asChild>

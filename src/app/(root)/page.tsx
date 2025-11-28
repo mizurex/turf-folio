@@ -8,6 +8,7 @@ import LeetContribution from "@/components/ui-components/lc";
 import ContributionsDisplay from "@/components/github-graph";
 import DiagonalPattern from "@/components/pattern";
 import Separator from "@/components/line-separator";
+
 export default function Home() {
   return (
     <main className="relative min-h-dvh flex flex-col items-center bg-background overflow-x-hidden">
@@ -26,7 +27,8 @@ export default function Home() {
     fixed w-full h-full
   "
 ></div>
-      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-281 w-full h-[195px]"></div>
+      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-283 w-full h-[154px]"></div>
+      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-367 w-full h-full"></div>
         <section className="">
           {/* ... Profile content ... */}
           <div className=" flex items-start justify-between gap-3 ">
@@ -96,11 +98,19 @@ export default function Home() {
                 
               </div>
 
-              <p className="text-xs sm:text-sm  font-medium text-muted-foreground text-left">
-              Building and learning
-              <br />
-Writing TypeScript and Tailwind,
-Open to collaborations and opportunities
+              <p
+                className="text-sm sm:text-base text-muted-foreground dark:text-foreground font-normal whitespace-pre-line leading-relaxed sm:text-left py-[4px]"
+                style={{ fontWeight: 400 }}
+              >
+                I’m a full stack developer.
+                <br />
+                <span>
+                  I enjoy building things from scratch
+                  <span className="hidden sm:inline"> — from idea to production.</span>
+                </span>
+                <br />
+                I write TypeScript and Tailwind.
+                <span className="hidden sm:inline"> Open to collaborations and opportunities.</span>
               </p>
             </div>
           </div>

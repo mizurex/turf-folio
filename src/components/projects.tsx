@@ -32,10 +32,10 @@ export default function Projects() {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/title inline-flex items-center gap-1 font-mono text-sm text-foreground truncate"
+                className="group/title inline-flex items-center  gap-1 font-medium font-mono text-base text-foreground truncate"
                 aria-label={`${project.title} live demo`}
               >
-                <span className=" hover:underline" style={{fontWeight:500}}>
+                <span className=" hover:underline ">
                   {project.title}
                 </span>
                 <motion.div>

@@ -76,10 +76,10 @@ const components: MDXRemoteProps["components"] = {
   pre(
     props: { __rawString__?: string; __withMeta__?: boolean } & React.ComponentProps<"pre">
   ) {
-    const { __rawString__, __withMeta__, ...rest } = props as any;
+    const { __rawString__, __withMeta__, className, ...rest } = props as any;
     return (
       <>
-        <pre {...rest} />
+        <pre className={cn("font-mono text-sm", className)} {...rest} />
         {__rawString__ ? <CopyButton value={__rawString__} /> : null}
       </>
     );

@@ -15,10 +15,11 @@ export default async function Post({
   return (
     <article className="mx-auto max-w-3xl p-6 prose dark:prose-invert">
         <div className="h-40 rounded-[3px] relative border border-border bg-zinc-950/0.75 bg-[repeating-linear-gradient(130deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_1px,transparent_5px)] bg-center p-4 [--pattern-foreground:var(--color-zinc-600)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5 ">
-            {metadata.title? <h1 className="font-light absolute bottom-0 right-0 px-3 text-lg" >{metadata.title}</h1> : null} 
+            {metadata.title? <h1 className="font-light absolute bottom-0 right-0 px-3 text-xl" >{metadata.title}</h1> : null} 
         </div>
-<div className="mt-6">
-    <span className=" text-sm text-muted-foreground">
+<div className="mt-6 flex justify-between items-center">
+    <div className="flex items-center gap-2">
+  <span className=" text-sm text-muted-foreground">
         Links
     </span>
     <span className="flex items-center gap-2 text-muted-foreground">
@@ -33,6 +34,11 @@ export default async function Post({
         ) : null}
     </span>
 
+    </div>
+  
+ <span className=" text-sm text-foreground">
+    [4 min read]
+ </span>
 </div>
 <div className="mt-2 border-t border-border pt-2">
      <MDXRemote source={content} />

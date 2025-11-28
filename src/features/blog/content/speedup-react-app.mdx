@@ -1,0 +1,111 @@
+---
+title: Speeding up your React app
+date: 2025-11-17
+description: Few optimizations you can do to make your react app faster.
+link: "https://stackoverflow.com/questions/79768124/why-does-react-not-re-render-components-passed-as-children-when-the-containing"
+---
+
+Now As a beginner, you don’t need crazy optimizations but these small ones actually help in real projects.
+
+
+### 1. Lazy loading
+
+- This one is super easy to understand. What you need to understand is that this tells react please dont render my component
+or page until user lands there, thats it !
+
+you can see a  little implimentation here
+
+
+```tsx
+
+const DemoComponent = React.lazy(() => import("./DemoComponent"));
+
+```
+You have to add a suspense fallback , it basically shows loading or a placeholder while react renders that specific component.
+```tsx
+
+export default function Page() {
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <DemoComponent />
+    </React.Suspense>
+  );
+}
+
+```
+This helps when you have big pages or heavy components.
+
+
+### 2. Image optimizations
+
+You can also lazy load images, or you can use WebP instead of PNG/JPEG or if you are using Next.js, just use the ```<Image />``` component.
+This automatically handles resizing, compression, and lazy loading.
+
+
+### 3. Component re-rendering
+
+React re-renders your component when state changes.
+Imagine you have a component where you are updating the state and calling an another heavy component
+
+```tsx
+
+export default function App() {
+  const [clicked, setClicked] = React.useState(false);
+
+  return (
+    <>
+      <button onClick={() => 
+      setClicked(true)}>click</button>
+      <BigHeavyComponent />
+    </>
+  );
+}
+
+```
+As you know React will rerender the entire component, and that also includes the heavy component.
+We can avoid this by just passing the big component as children into another component.
+React doesn’t rerender the children unless its props actually change.
+
+```tsx
+export function ChildrenStyleTwo({ children }: { children: React.ReactNode }) {
+    const [value, setValue] = React.useState(0);
+    return (
+        <>
+            <button
+                onClick={() => {
+                    setValue((prev) => prev + 1);
+                }}
+            >
+                Increase count: {value}
+            </button>
+            {children}
+        </>
+    );
+}
+```
+
+### 4. Styles object
+
+Same goes for the Inline styles, Inline style objects re-render on every parent render because they create a new object each time.
+you can avoid that by assigning a value and then passing it 
+
+```tsx
+
+<Child style={{ color: "red" }} />
+
+```
+
+
+now if you pass this react does not rerender the childer component passed.
+
+```tsx
+const redText = { color: "red" };
+
+<Child style={redText} />
+
+```
+
+These are small things, but if you keep using them, you naturally start writing cleaner and faster React code.
+
+If you reached this far, thank you.
+
