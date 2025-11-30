@@ -1,32 +1,3 @@
-<Steps className ="py-5">
-
-
-Card with animated meteor shower effect in the background. 
-
-<ComponentPreview name="meteorCardDemo" showLineNumbers>
-</ComponentPreview>
-### Utils.ts
-
-```tsx
-import { ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-```
-
-### Packages
-
-```bash
-npm i motion
-```
-
-### Add fields
-
-```tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -70,23 +41,3 @@ export const Meteors = ({ number = 20 }: MeteorsProps) => {
 };
 
 export default Meteors;
-
-```
-
-  <ComponentSource
-  name="meteorCard"
-  title="meteorCard/demo.tsx"
-  showLineNumbers
-  codeCollapsible
-/>
-</Steps>
-
-
-
-
-### Props
-
-| Prop      | Type                    | Default | Description                               |
-|-----------|-------------------------|---------|-------------------------------------------|
-| `text`    | `string`                | `""`    | card text   |
-| `Image`    | `string`                | `""`    | Image url   |

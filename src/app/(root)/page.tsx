@@ -4,7 +4,7 @@ import Image from "next/image";
 import Projects from "@/components/projects";
 import Contributions from "@/components/contributions";
 import techStack from "@/data/techtsack";
-import LeetContribution from "@/components/lc";
+import LeetContribution from "@/components/ui-components/lc";
 import ContributionsDisplay from "@/components/github-graph";
 import DiagonalPattern from "@/components/pattern";
 import Separator from "@/components/line-separator";
