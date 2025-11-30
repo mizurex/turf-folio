@@ -54,7 +54,11 @@ export const navigation: NavigationItem[] = [
       {
         title: "Rainbow Button",
         href: "/components/rainbow-button",
-      }
+      },
+      {
+        title: "Payment Form",
+        href: "/components/payment-form",
+      },
     ],
   },
 ];

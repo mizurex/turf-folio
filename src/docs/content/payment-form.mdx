@@ -1,0 +1,51 @@
+<Steps className ="py-5">
+
+
+A modern payment form component with animated card input fields, validation, and smooth transitions.
+
+<ComponentPreview name="paymentFormDemo" showLineNumbers>
+</ComponentPreview>
+### Utils.ts
+
+```tsx
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+```
+
+### Packages
+
+```bash
+npm i motion lucide-react 
+npx shadcn@latest add button
+```
+  <ComponentSource
+  name="paymentForm"
+  title="payment-form/demo.tsx"
+  showLineNumbers
+  codeCollapsible
+/>
+</Steps>
+
+
+
+
+### Props
+
+| Prop                | Type                                                                 | Default | Description                                                          |
+|---------------------|----------------------------------------------------------------------|---------|----------------------------------------------------------------------|
+| `title`             | `string`                                                            | -       | The main title displayed at the top of the payment form.            |
+| `description`       | `string`                                                            | -       | A description text shown below the title.                            |
+| `price`             | `string`                                                            | -       | The price amount to be displayed.                                    |
+| `feature`           | `string`                                                            | -       | Optional first feature title to display.                            |
+| `featuredescription`| `string`                                                            | -       | Optional description for the first feature.                          |
+| `feature2`          | `string`                                                            | -       | Optional second feature title to display.                            |
+| `feature2description`| `string`                                                            | -       | Optional description for the second feature.                         |
+| `finalText`         | `Array<{ text: string }>`                                           | `[]`    | Array of text items to display in the final section.                 |
+| `onPay`             | `(data: { cardNumber: string; expiry: string; cvc: string }) => Promise<void> \| void` | - | Callback function called when payment is submitted. Receives card details. |
+| `className`         | `string`                                                            | -       | Optional additional CSS classes to apply to the component.         |
+

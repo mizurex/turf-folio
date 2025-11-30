@@ -225,6 +225,29 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/nav-bar")
     ),
   },
+  //payment form
+  paymentFormDemo:{
+    files: [
+      {
+        path: "src/docs/registry/demo/payment-form-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/payment-form-demo")
+    ),
+  },
+  paymentForm:{
+    files: [
+      {
+        path: "src/docs/registry/components/payment-form.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/payment-form")
+    ),
+  },
 };
+
+
 
 

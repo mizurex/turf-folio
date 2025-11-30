@@ -42,6 +42,11 @@ const components = [
     href: "/components/rainbow-button",
     description: "A button with a rainbow glow effect.",
   },
+  {
+    title: "Payment Form",
+    href: "/components/payment-form",
+    description: "A payment form with a card design.",
+  },
 ];
 
 export default function Page() {

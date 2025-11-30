@@ -43,7 +43,7 @@ function TabsTrigger({
       data-slot="tabs-trigger"
       className={cn(
         "relative cursor-pointer  gap-3 flex justify-center items-center px-2 transition-all duration-300 pb-1",
-        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-full after:origin-bottom after:scale-x-0 after:bg-gray-400 after:rounded after:transition-transform after:duration-300",
+        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-full after:origin-bottom after:scale-x-0 after:shadow-lg after:rounded after:transition-transform after:duration-300",
         "data-[state=active]:after:scale-x-70 dark:after:bg-white",
         className
       )}

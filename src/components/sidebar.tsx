@@ -158,7 +158,7 @@ export function Sidebar({ className }: SidebarProps) {
       <aside
         className={cn(
           "fixed top-14 bottom-0 left-0 w-64 z-40",
-          "bg-background border-r border-border/40",
+          "bg-background border-r border-primary/10",
           "p-4 overflow-y-auto flex flex-col",
           className,
         )}
