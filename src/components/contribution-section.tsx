@@ -42,7 +42,7 @@ export function ContributionSection({
       >
         <div className="flex items-center pl-3 gap-2">
           <Pulse />
-          <h3 className="font-mono text-sm sm:text-base text-foreground">
+          <h3 className="font-mono text-sm sm:text-base text-foreground/78">
             {title}
           </h3>
         </div>

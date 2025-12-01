@@ -27,12 +27,12 @@ export default function Home() {
     fixed w-full h-full
   "
 ></div>
-      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-283 w-full h-[154px]"></div>
-      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-367 w-full h-full"></div>
+      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border/60 absolute top-0 left-283 w-full h-full"></div>
+      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border/60 absolute top-0 left-367 w-full h-full"></div>
         <section className="">
           {/* ... Profile content ... */}
           <div className=" flex items-start justify-between gap-3 ">
-            <div className="border-l border-r border-border dark:border-[#333333] pl-4 pr-15 pt-3">
+            <div className="border-l  border-border dark:border-[#333333]/50 pl-4 pr-15 pt-3">
               <Separator width="w-[200rem]" />
               <div className="flex items-center gap-2 border-r border-border w-fit pr-2">
                 <div className="relative p-2 group z-40">
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
 
               <p
-                className="text-sm sm:text-base text-muted-foreground dark:text-foreground font-normal whitespace-pre-line leading-relaxed sm:text-left py-[4px]"
+                className="text-sm sm:text-base text-muted-foreground dark:text-foreground/78 font-normal whitespace-pre-line leading-relaxed sm:text-left py-[4px]"
                 style={{ fontWeight: 400 }}
               >
                 I’m a full stack developer.
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-l border-border dark:border-[#333333]">
+        <section className="border-l border-border dark:border-[#333333]/50">
           <Separator width="w-[150rem] " />
           <div className="flex justify-center border-r border-dashed border-border w-fit px-4">
             <h2 className="text-2xl font-mono font-light  text-center">
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
         </section>
 <Separator width="w-[150rem]" />
-        <section className="border-l border-border dark:border-[#333333]">
+        <section className="border-l border-border dark:border-[#333333]/50">
           <div className=" w-full">
             
             <div className="flex  w-fit border-r border-dashed border-border">
@@ -147,13 +147,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className=" border-l border-border dark:border-[#333333]">
+        <section className=" border-l border-border dark:border-[#333333]/50">
           <Separator width="w-[150rem]" />
           <div className="flex  w-fit border-r border-dashed border-border">
             <h2 className="text-2xl font-mono font-light  px-4">Stack</h2>
-        
+            
           </div>
-       
+       <Separator width="w-[150rem]" />
 
           <div className="grid grid-cols-5 ">
             {techStack().map((tech) => (
@@ -162,10 +162,10 @@ export default function Home() {
                 href={tech.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col md:px-10 group items-center justify-center  border-r border-border "
+                className="flex flex-col md:px-10 group items-center justify-center py-[4px] "
                 aria-label={tech.name}
               >
-               <Separator width="w-[150rem]" />
+           
                 <Image
                   src={tech.icon}
                   alt={tech.name}
@@ -180,11 +180,11 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className=" border-l  border-border dark:border-[#333333]">
+        <section className=" border-l  border-border dark:border-[#333333]/50">
       
         <Separator width="w-[150rem]" />
           <div className="flex w-fit border-r border-dashed border-border ">
-            <h2 className="text-lg font-mono font-light  px-4">GitHub</h2>
+          <h2 className="text-2xl font-mono font-light  px-4">GitHub</h2>
           </div>
           <Separator width="w-[150rem]" />
 
@@ -192,14 +192,14 @@ export default function Home() {
           <ContributionsDisplay username="mizurex" variant='compact' />
           </div>
         </section>
-        <section className=" border-l border-border dark:border-[#333333]">
+        <section className=" border-l border-border dark:border-[#333333]/50">
 
 
         
           <Separator width="w-[150rem]" />
 
-          <div className="flex w-fit border-r border-dashed border-border dark:border-[#333333] ">
-            <h2 className="text-lg font-mono  px-4">LeetCode</h2>
+          <div className="flex w-fit border-r border-dashed border-border dark:border-[#333333]/50 ">
+          <h2 className="text-2xl font-mono font-light  px-4">LeetCode</h2>
           </div>
    
           <Separator width="w-[150rem]" />
@@ -213,7 +213,7 @@ export default function Home() {
         </section>
         <section className="mb-6">
           <Separator width="w-[150rem]" />
-          <div className="flex justify-center  relative  border-r border-border dark:border-[#333333] border-l px-2 py-10">
+          <div className="flex justify-center  relative   border-border dark:border-[#333333]/50 border-l px-2 py-10">
             <h4 className="font-mono text-sm md:text-lg opacity-70 text-center  ">
               {" "}
               Thanks a lot for checking out my work!{" "}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { DM_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/header"; 
@@ -8,6 +9,13 @@ import { MobileProvider } from "@/providers/mobile-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +42,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={geistSans.variable}>
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${dmMono.variable}`}>
       <body>
         <MobileProvider>
 
