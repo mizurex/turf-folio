@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <main className="relative min-h-dvh flex flex-col items-center bg-background overflow-x-hidden">
       <div className="max-w-3xl w-full px-6">
-      <DiagonalPattern side="left" />
-      <DiagonalPattern side="right" />
-      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-15 w-full h-full"></div>
-      <div
-  className="
+        <DiagonalPattern side="left" />
+        <DiagonalPattern side="right" />
+        <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-15 w-full h-full"></div>
+        <div
+          className="
     hidden       /* default: invisible on small screens */
     min-[1500px]:block     /* visible on large screens */
     pointer-events-none 
@@ -26,9 +26,9 @@ export default function Home() {
     absolute top-0 left-96
     fixed w-full h-full
   "
-></div>
-      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border/60 absolute top-0 left-283 w-full h-full"></div>
-      <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border/60 absolute top-0 left-367 w-full h-full"></div>
+        ></div>
+        <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border/60 absolute top-0 left-283 w-full h-full"></div>
+        <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border/60 absolute top-0 left-367 w-full h-full"></div>
         <section className="">
           {/* ... Profile content ... */}
           <div className=" flex items-start justify-between gap-3 ">
@@ -44,58 +44,66 @@ export default function Home() {
                     className="rounded-sm"
                   />
                   <div className="absolute top-0 left-0 w-4 h-4 border-t-1s border-l-1 border-primary/30 "></div>
-                  
+
                   <div className="absolute top-0 right-0 w-4 h-4 border-t-1s border-r-1 border-primary/30 "></div>
                   <div className="absolute bottom-0 left-0 w-4 h-4 border-b-1s border-l-1 border-primary/30 "></div>
                   <div className="absolute bottom-0 right-0 w-4 h-4 border-b-1s border-r-1 border-primary/30 "></div>
                 </div>
-                
+
               </div>
               <Separator width="w-[150rem] " />
               <div className=" flex items-center gap-3 py-[4px]">
-                  <a
-                    href="https://github.com/mizurex"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
-                  >
-                    <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
-                  >
-                    <img
-                      src="/linkedin.webp"
-                      alt="LinkedIn"
-                      className="h-4 w-4"
-                    />
-                  </a>
-                  <a
-                    href="https://x.com/PotatoTurf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
-                  >
-                    <img src="/x.webp" alt="Twitter" className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="mailto:dhananjayadhal3@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
-                  >
-                    <img src="/gmail.png" alt="Email" className="h-4 w-4" />
-                  </a>
+                <a
+                  href="https://github.com/mizurex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  <img
+                    src="/linkedin.webp"
+                    alt="LinkedIn"
+                    className="h-4 w-4"
+                  />
+                </a>
+                <a
+                  href="https://x.com/PotatoTurf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  <img src="/x.webp" alt="Twitter" className="h-4 w-4" />
+                </a>
+                <a
+                  href="mailto:dhananjayadhal3@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  <img src="/gmail.png" alt="Email" className="h-4 w-4" />
+                </a>
+
+                <div>
+                  <button
+                    onClick={() => {
+                      window.location.href = "/contact";
+                    }}
+                    className="bg-primary text-background px-4 py-2 rounded-md hover:opacity-90 transition-opacity"> Send message</button>
                 </div>
+              </div>
               <Separator width="w-[150rem]" className="" />
               <div className="flex items-center gap-4   ">
-              
-                
-              
-                
+
+
+
+
               </div>
 
               <p
@@ -126,14 +134,14 @@ export default function Home() {
           <Separator width="w-[150rem]" />
 
           <div className="grid grid-cols-1  gap-2 px-2">
-            
+
             <Projects />
           </div>
         </section>
-<Separator width="w-[150rem]" />
+        <Separator width="w-[150rem]" />
         <section className="border-l border-border dark:border-[#333333]/50">
           <div className=" w-full">
-            
+
             <div className="flex  w-fit border-r border-dashed border-border">
               <h2 className="text-2xl font-mono font-light px-4">
                 Contributions
@@ -151,9 +159,9 @@ export default function Home() {
           <Separator width="w-[150rem]" />
           <div className="flex  w-fit border-r border-dashed border-border">
             <h2 className="text-2xl font-mono font-light  px-4">Stack</h2>
-            
+
           </div>
-       <Separator width="w-[150rem]" />
+          <Separator width="w-[150rem]" />
 
           <div className="grid grid-cols-5 ">
             {techStack().map((tech) => (
@@ -165,7 +173,7 @@ export default function Home() {
                 className="flex flex-col md:px-10 group items-center justify-center py-[4px] "
                 aria-label={tech.name}
               >
-           
+
                 <Image
                   src={tech.icon}
                   alt={tech.name}
@@ -175,33 +183,33 @@ export default function Home() {
                 />
 
                 <span className="hidden md:block text-xs font-mono  pb-[2px] text-center">  {tech.name}</span>
-               
+
               </a>
             ))}
           </div>
         </section>
         <section className=" border-l  border-border dark:border-[#333333]/50">
-      
-        <Separator width="w-[150rem]" />
+
+          <Separator width="w-[150rem]" />
           <div className="flex w-fit border-r border-dashed border-border ">
-          <h2 className="text-2xl font-mono font-light  px-4">GitHub</h2>
+            <h2 className="text-2xl font-mono font-light  px-4">GitHub</h2>
           </div>
           <Separator width="w-[150rem]" />
 
           <div className=" ml-1 overflow-auto bg-background flex justify-center items-center">
-          <ContributionsDisplay username="mizurex" variant='compact' />
+            <ContributionsDisplay username="mizurex" variant='compact' />
           </div>
         </section>
         <section className=" border-l border-border dark:border-[#333333]/50">
 
 
-        
+
           <Separator width="w-[150rem]" />
 
           <div className="flex w-fit border-r border-dashed border-border dark:border-[#333333]/50 ">
-          <h2 className="text-2xl font-mono font-light  px-4">LeetCode</h2>
+            <h2 className="text-2xl font-mono font-light  px-4">LeetCode</h2>
           </div>
-   
+
           <Separator width="w-[150rem]" />
           <div className="bg-background flex justify-center items-center">
             <LeetContribution
@@ -221,7 +229,7 @@ export default function Home() {
           </div>
           <Separator width="w-[150rem]" />
         </section>
-      
+
       </div>
     </main>
   );
