@@ -12,7 +12,7 @@ export default function Contact() {
     const [isLoading, setIsLoading] = useState(false);
     const [result, setResult] = useState<"success" | "error" | null>(null);
     const [message, setMessage] = useState("");
-    const [rateLimit, setRateLimit] = useState(Date.now());
+    const [limitError, setLimitError] = useState("");
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 
@@ -25,21 +25,29 @@ export default function Contact() {
         formData.append("access_key", "f7d10745-f5bc-4a35-b327-7d90d56d13b6");
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-            });
+            const check = await fetch('/api');
+            const checkData = await check.json();
 
-            const data = await response.json();
+            if (checkData === 'ok') {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData,
+                });
 
-            if (data.success) {
-                setResult("success");
-                setMessage("Sent successfully! I'll get back to you soon.");
-                (event.target as HTMLFormElement).reset();
+                const data = await response.json();
+
+                if (data.success) {
+                    setResult("success");
+                    setMessage("Sent successfully! I'll get back to you soon.");
+                    (event.target as HTMLFormElement).reset();
+                } else {
+                    setResult("error");
+                    setMessage(data.message || "Something went wrong. Please try again.");
+                }
             } else {
-                setResult("error");
-                setMessage(data.message || "Something went wrong. Please try again.");
+                setLimitError(checkData.error);
             }
+
         } catch (error) {
             setResult("error");
             setMessage("Failed to send message. Please check your connection.");
@@ -123,7 +131,14 @@ export default function Contact() {
                                             className="flex min-h-[120px] max-h-[200px] w-full focus:border-none border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 resize-y transition-all"
                                         />
                                     </div>
-
+                                    {limitError && (
+                                        <div className={cn(
+                                            "p-3 rounded-md flex items-center gap-2 text-sm animate-in fade-in slide-in-from-top-2",
+                                            "bg-destructive/15 text-destructive"
+                                        )}>
+                                            {limitError}
+                                        </div>
+                                    )}
                                     {result && (
                                         <div className={cn(
                                             "p-3 rounded-md flex items-center gap-2 text-sm animate-in fade-in slide-in-from-top-2",
@@ -135,7 +150,7 @@ export default function Contact() {
                                     )}
                                     <div className="flex justify-center">
 
-                                        <Button type="submit" className="w-fit rounded-none cursor-pointer" disabled={isLoading}>
+                                        <Button variant="outline" className="w-fit rounded-none cursor-pointer " disabled={isLoading}>
                                             {isLoading ? (
                                                 <>
                                                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -165,7 +180,7 @@ export default function Contact() {
                             <a href="https://github.com/mizurex" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4">
                                 GitHub
                             </a>
-                            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4">
+                            <a href="https://www.linkedin.com/in/dhanjaya/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4">
                                 LinkedIn
                             </a>
                             <a href="https://x.com/PotatoTurf" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4">
