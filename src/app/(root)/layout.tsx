@@ -3,7 +3,7 @@ import { Geist } from "next/font/google";
 import { DM_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "next-themes";
-import { Header } from "@/components/header"; 
+import { Header } from "@/components/header";
 import { MobileProvider } from "@/providers/mobile-provider";
 
 const geistSans = Geist({
@@ -43,15 +43,20 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${dmMono.variable}`}>
+      <head>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="5608995c-4730-4804-be1c-d585497a676d"></script>
+      </head>
+
       <body>
+
         <MobileProvider>
 
-             <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Header />
-          {children}
-        </ThemeProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <Header />
+            {children}
+          </ThemeProvider>
         </MobileProvider>
-     
+
       </body>
     </html>
   );
