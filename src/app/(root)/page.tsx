@@ -95,7 +95,7 @@ export default function Home() {
                     onClick={() => {
                       window.location.href = "/contact";
                     }}
-                    className="bg-primary text-background px-4 py-2 rounded-md hover:opacity-90 transition-opacity"> Send message</button>
+                    className="bg-primary text-background px-[5px]  py-[3px] text-xs cursor-pointer hover:opacity-90 transition-opacity">quick message</button>
                 </div>
               </div>
               <Separator width="w-[150rem]" className="" />
