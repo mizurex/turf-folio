@@ -13,7 +13,7 @@ export default async function Post({
   if (!post) notFound();
   const { metadata, content } = post;
   return (
-    <article className="mx-auto max-w-3xl p-6 prose dark:prose-invert">
+    <article className="mx-auto max-w-3xl p-6 prose dark:prose-invert border-l border-border/80 dark:border-[#333333]/50">
         <div className="h-40 rounded-[3px] relative border border-border bg-zinc-950/0.75 bg-[repeating-linear-gradient(130deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_1px,transparent_5px)] bg-center p-4 [--pattern-foreground:var(--color-zinc-600)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5 ">
             {metadata.title? <h1 className="font-light absolute bottom-0 right-0 px-3 text-xl" >{metadata.title}</h1> : null} 
         </div>

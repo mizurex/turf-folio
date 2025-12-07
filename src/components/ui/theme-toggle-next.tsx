@@ -3,7 +3,7 @@
 import { Eclipse, Moon, MoonStar, SunDimIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState, useRef } from "react";
-import { FaGhost, FaSun, FaUmbrellaBeach } from "react-icons/fa";
+import { motion } from "motion/react";
 
 export function ThemeToggleNext({ className }: { className?: string }) {
   const { theme, setTheme, systemTheme } = useTheme();
@@ -41,7 +41,16 @@ export function ThemeToggleNext({ className }: { className?: string }) {
       className={`p-[3px] rounded-full border border-border  dark:bg-neutral-800 cursor-pointer ${className || ""}`}
     >
 
-      {current === "dark" ? <span className=""><SunDimIcon className="size-5" /></span> : <span className=""><Moon className="size-5" /></span>}
+      <span>
+        {current === "dark" ? (
+          <SunDimIcon className="size-5 hover:[animation:spin_0.8s_linear] hover:text-primary" />
+        ) : (
+          <Moon className="size-5 hover:[animation:spin_0.8s_linear] hover:text-primary" />
+        )}
+        <style>
+          {`@keyframes spin { to { transform: rotate(360deg); } }`}
+        </style>
+      </span>
 
 
     </button>
