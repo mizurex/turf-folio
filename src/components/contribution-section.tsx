@@ -2,6 +2,7 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Pulse from "./pulse";
 import * as MX from "mx-icons";
+import { cn } from "@/lib/utils";
 
 interface ContributionItem {
   title: string;
@@ -46,11 +47,14 @@ export function ContributionSection({
             {title}
           </h3>
         </div>
-        <ChevronDown
-          className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${
+        <div className={cn( !isOpen ?"border border-border dark:border-neutral-700 rounded-[5px] bg-neutral-100 dark:bg-background " :"")}>
+             <ChevronDown
+          className={`h-4 w-4 text-foreground  transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
+        </div>
+     
       </button>
 
       <AnimatePresence>
@@ -99,11 +103,14 @@ export function ContributionSection({
                             {item.year}
                           </span>
                         </div>
-                        <ChevronDown
-                          className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${
+                        <div className={cn( !isItemOpen ?"border border-border dark:border-neutral-700 rounded-[5px] bg-neutral-100 dark:bg-background " :"")}>
+                           <ChevronDown
+                          className={`h-4 w-4 text-foreground transition-transform duration-300 ${
                             isItemOpen ? "rotate-180" : ""
                           }`}
                         />
+                        </div>
+                       
                       </button>
 
                       {/* Description Dropdown */}

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 
 const leetGraphVariants = cva(
-  "py-2 px-4 rounded-[10px] w-full max-w-3xl overflow-x-auto transition-all",
+  "py-2 px-4  w-full max-w-3xl overflow-x-auto transition-all",
   {
     variants: {
       variant: {
@@ -29,7 +29,7 @@ const leetGraphVariants = cva(
 );
 
 const blockVariants = cva(
-  "rounded-[1px] border transition-all cursor-pointer",
+  " border transition-all cursor-pointer",
   {
     variants: {
       variant: {
@@ -80,8 +80,8 @@ function getColor(
       : ["#ffe0b3", "#ffd580", "#ff9900", "#b34700", "#27212a"];
   const blackAndWhite =
     scheme === "dark"
-      ? ["#5a5a5a", "#1f1f1f", "#4c4c4c", "#f5f5f5"]
-      : ["#f5f5f5", "#dcdcdc", "#9a9a9a", "#050505"];
+      ? ["#c3d8faff", "#aebef4ff", "#7c94ccff", "#4a5f9eff"]
+      : ["#bcd3f6ff", "#96b4e6ff", "#728fcaff", "#4e66aaff"];
   const themes: Record<Theme, string[]> = {
     green: ["#aff0b4", "#01b328", "#008024", "#22c55e"],
     blue: ["#b3d9ff", "#3399ff", "#0066cc", "#004488"],
@@ -260,7 +260,7 @@ function LeetContribution({
                             animate: isHighActivity ? blockAnimate : "none",
                           }),
                           isEmpty ? "bg-neutral-100 dark:bg-neutral-800" : "",
-                          "rounded-md",
+                          "",
                         )}
                         style={
                           !isEmpty
@@ -270,7 +270,7 @@ function LeetContribution({
                                   theme,
                                   colorScheme
                                 ),
-                                borderRadius: "10px",
+                                borderRadius: "2px",
                                 ...(isHighActivity && blockAnimate === "pulse" && {
                                   borderColor: getColor(
                                     day.count,

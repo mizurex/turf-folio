@@ -23,11 +23,23 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
     setMounted(true);
   }, []);
 
-  const theme = {
+ const theme = {
+  light: [
+    "#ecebe1ff", // softer white
+    "#bcbcbcff", // gentle grey
+    "#aebef4ff", // soft muted blue
+    "#7c94ccff", // medium soft blue
+    "#4a5f9eff"  // dim deep blue
+  ],
 
-    light:  ["#f5f5f5", "#dcdcdc", "#9a9a9a", "#050505","#050505"],
-    dark: ["#1f1f1f", "#1f1f1f", "#4c4c4c", "#f5f5f5","#f5f5f5"],
-  };
+  dark: [
+    "#1a1a1a", // slightly softer black
+    "#242424", // muted dark grey
+    "#5a5a5a", // soft grey for mid elements
+    "#c3d8faff", // pale soft blue (readable highlight)
+    "#aebef4ff"  // dim bright accent
+  ],
+};
 
   if (!mounted) {
     return (
@@ -56,15 +68,7 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
           </div>
         </div>
       </motion.div>
-      <style jsx>{`
-        .gh-calendar-wrapper :global(rect) {
-          rx: ${Math.round((compact ? 10 : 12) / 2)}px;
-          ry: ${Math.round((compact ? 10 : 12) / 2)}px;
-          filter: none !important;
-          stroke: none !important;
-          shape-rendering: geometricPrecision;
-        }
-      `}</style>
+   
     </div>
   );
 };

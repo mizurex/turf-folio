@@ -51,7 +51,7 @@ export default function Projects() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground"
+                className="inline-flex h-5 w-5 items-center border border-border  justify-center rounded-[5px] bg-neutral-100 dark:bg-background text-muted-foreground"
                 aria-label={`${project.title} repository`}
               >
                 <Github className="w-4 h-4" />

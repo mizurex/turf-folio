@@ -8,8 +8,21 @@ import LeetContribution from "@/components/ui-components/lc";
 import ContributionsDisplay from "@/components/github-graph";
 import DiagonalPattern from "@/components/pattern";
 import Separator from "@/components/line-separator";
+import { useEffect, useState } from "react";
+import { Clock } from "lucide-react";
 
 export default function Home() {
+  const [date,setDate] = useState<Date | null>(null);
+
+  useEffect(()=>{
+     setDate(new Date());
+
+  const id = setInterval(() => {
+    setDate(new Date());
+  }, 1000); 
+
+  return () => clearInterval(id);
+  },[])
   return (
     <main className="relative min-h-dvh flex flex-col items-center bg-background overflow-x-hidden">
       <div className="max-w-3xl w-full px-6">
@@ -32,24 +45,32 @@ export default function Home() {
         <section className="">
           {/* ... Profile content ... */}
           <div className=" flex items-start justify-between gap-3 ">
-            <div className="border-l  border-border dark:border-[#333333]/50 pl-4 pr-15 pt-3">
+            <div className="border-l  border-border dark:border-[#333333]/50 pl-4 pr-15 pt-3 relative">
               <Separator width="w-[200rem]" />
-              <div className="flex items-center gap-2 border-r border-border w-fit pr-2">
+              <div className="flex items-center gap-2 border-r border-border w-fit pr-2 ">
                 <div className="relative p-2 group z-40">
                   <Image
                     src="/pfp.jpg"
                     alt="Potato"
                     width={100}
                     height={100}
-                    className="rounded-sm"
+                    className="rounded-sm group-hover:invert transition-all duration-200 delay-100"
                   />
                   <div className="absolute top-0 left-0 w-4 h-4 border-t-1s border-l-1 border-primary/30 "></div>
 
                   <div className="absolute top-0 right-0 w-4 h-4 border-t-1s border-r-1 border-primary/30 "></div>
                   <div className="absolute bottom-0 left-0 w-4 h-4 border-b-1s border-l-1 border-primary/30 "></div>
                   <div className="absolute bottom-0 right-0 w-4 h-4 border-b-1s border-r-1 border-primary/30 "></div>
+                    <div
+    className="
+      w-2 h-2 bg-green-500 rounded-full absolute top-1 left-1 z-10
+   
+    "
+  />
                 </div>
-
+                <div className="absolute right-0 top-27">
+                <span className = 'text-xs text-muted-foreground flex justify-center items-center gap-1.5'> <Clock className='size-3 mt-[2px]'/> {date?.toLocaleTimeString()}</span> 
+                </div>
               </div>
               <Separator width="w-[150rem] " />
               <div className=" flex items-center gap-3 py-[4px]">
@@ -110,15 +131,15 @@ export default function Home() {
                 className="text-sm sm:text-base text-muted-foreground dark:text-foreground/78 font-normal whitespace-pre-line leading-relaxed sm:text-left py-[4px]"
                 style={{ fontWeight: 400 }}
               >
-                I’m a full stack developer.
+                Full stack developer.
                 <br />
                 <span>
-                  I enjoy building things from scratch
-                  <span className="hidden sm:inline"> — from idea to production.</span>
+                  I enjoy building things,
+                  <span className="hidden sm:inline"> from idea to production.</span>
                 </span>
                 <br />
-                I write TypeScript and Tailwind.
-                <span className="hidden sm:inline"> Open to collaborations and opportunities.</span>
+                Writing TypeScript and Tailwind.
+                <span className="hidden sm:inline"> Open to collaborations.</span>
               </p>
             </div>
           </div>
