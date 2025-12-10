@@ -25,7 +25,7 @@ export default function BlogIndex() {
       <div>
         <div className="">
           <Separator width="w-[150rem]" />
-          <h1 className="text-2xl text-left font-mono font-light border-r border-border dark:border-[#333333]/50 w-fit pr-4">Find my blogs <br /> and learning resources</h1>
+          <h1 className="text-2xl text-left font-mono font-light border-r border-border dark:border-[#333333]/50 w-fit pr-4">Find my blogs </h1>
           <Separator width="w-[150rem]" />
           <p className="text-muted-foreground mt-2 font-mono">
             Stay tuned for updates...

@@ -52,7 +52,7 @@ export function SidebarLink({ item, level = 0, onNavigate }: SidebarLinkProps) {
           >
             <path
               d="M0 0C2.20914 0 4 1.79086 4 4V16C4 18.2091 2.20914 20 0 20V0Z"
-              fill="#000000"
+              fill="currentColor"
             />
           </svg>
         </motion.span>

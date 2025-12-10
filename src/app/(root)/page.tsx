@@ -9,7 +9,8 @@ import ContributionsDisplay from "@/components/github-graph";
 import DiagonalPattern from "@/components/pattern";
 import Separator from "@/components/line-separator";
 import { useEffect, useState } from "react";
-import { Clock } from "lucide-react";
+import { Clock, ArrowUpRight, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const [date,setDate] = useState<Date | null>(null);
@@ -134,8 +135,7 @@ export default function Home() {
                 Full stack developer.
                 <br />
                 <span>
-                  I enjoy building things,
-                  <span className="hidden sm:inline"> from idea to production.</span>
+                  I enjoy building things.
                 </span>
                 <br />
                 Writing TypeScript and Tailwind.
@@ -238,6 +238,40 @@ export default function Home() {
               theme="monochrome"
               blockAnimate="bounce"
             />
+          </div>
+        </section>
+        <Separator width="w-[150rem]" />
+        <section className=" border-l border-border dark:border-[#333333]/50">
+          
+          <div className="flex w-fit border-r border-dashed border-border">
+            <h2 className="text-2xl font-mono font-light px-4">Blogs</h2>
+          </div>
+          <Separator width="w-[150rem]" />
+          
+          <div className="px-2 py-[4px]">
+            <Link 
+              href="/blog"
+              className="group block border border-border/60 dark:border-[#333333]/50 hover:border-border dark:hover:border-[#333333] transition-colors"
+            >
+              <div className="p-4 flex flex-col gap-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-4 w-4 text-muted-foreground" />
+                    <h3 className="font-mono text-sm sm:text-base text-foreground/78 group-hover:text-foreground transition-colors">
+                      Read my latest thoughts
+                    </h3>
+                  </div>
+                  
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground font-mono leading-relaxed">
+                  Exploring ideas, sharing learnings, and documenting my journey in software development.
+                </p>
+                <div className="flex items-center gap-2 pt-1">
+                  <span className="text-xs text-muted-foreground font-mono">View all posts</span>
+                  <ArrowUpRight className="h-3 w-3 text-muted-foreground group-hover:text-foreground border rounded-[4px] bg-neutral-100 dark:bg-background flex-shrink-0" />
+                </div>
+              </div>
+            </Link>
           </div>
         </section>
         <section className="mb-6">
