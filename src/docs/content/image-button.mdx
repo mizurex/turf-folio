@@ -1,0 +1,36 @@
+<Steps className ="py-5">
+
+
+A compact image button that expands to show a full image preview with a label and a remove action.
+
+<ComponentPreview name="imageButtonDemo" showLineNumbers>
+</ComponentPreview>
+
+### Utils.ts
+
+```tsx
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+```
+
+### Packages
+
+```bash
+npm i lucide-react
+```
+
+  <ComponentSource
+  name="imageButton"
+  title="image-button/demo.tsx"
+  showLineNumbers
+  codeCollapsible
+/>
+</Steps>
+
+
+

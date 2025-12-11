@@ -139,6 +139,28 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/button/rainbow-button")
     ),
   },
+
+  // Image button
+  imageButtonDemo: {
+    files: [
+      {
+        path: "src/docs/registry/demo/image-button-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/image-button-demo")
+    ),
+  },
+  imageButton: {
+    files: [
+      {
+        path: "src/docs/registry/components/image-button.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/image-button")
+    ),
+  },
   // LeetCode Graph
   leetcodeGraphDemo:{
     files: [

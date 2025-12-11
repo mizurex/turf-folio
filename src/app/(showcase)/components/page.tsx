@@ -43,6 +43,11 @@ const components = [
     description: "A button with a rainbow glow effect.",
   },
   {
+    title: "Image Button",
+    href: "/components/image-button",
+    description: "An expandable image button with image preview and remove action.",
+  },
+  {
     title: "Payment Form",
     href: "/components/payment-form",
     description: "A payment form with a card design.",
