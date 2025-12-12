@@ -25,7 +25,7 @@ export default function ImageButtonDemo() {
   return (
     <ImageContextBadge
       image={SAMPLE_IMAGE}
-      displayName="Profile picture"
+      displayName="Froggy"
       isExpanded={isExpanded}
       onToggle={() => setIsExpanded((prev) => !prev)}
       onRemove={() => setVisible(false)}
