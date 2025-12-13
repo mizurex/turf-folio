@@ -154,8 +154,8 @@ export default function Home() {
           </div>
           <Separator width="w-[150rem]" />
 
-          <div className="grid grid-cols-1  gap-2 px-2">
-
+          <div className="grid grid-cols-1  gap-2 px-2   ">
+         
             <Projects />
           </div>
         </section>
