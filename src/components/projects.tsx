@@ -6,59 +6,34 @@ import * as MX from 'mx-icons'
 
 export default function Projects() {
   return (
-    <div>
+    <div className="text-xs font-satoshi text-primary dark:text-foreground/78 whitespace-none sm:text-left py-[4px]">
       {projectsData.slice(0, 7).map((project, index) => (
-        <div
+        <motion.a
           key={index}
-          className="group relative  p-2 transition focus-within:ring-2 focus-within:ring-border"
+          href={project.live}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative cursor-pointer p-2 transition-all rounded-[5px] block"
+          whileHover={{ scale: 1.01 }}
+          transition={{ duration: 0.1 }}
+          aria-label={`${project.title} live demo`}
         >
-          
-          <div className="pointer-events-none absolute -top-28 left-1/2 z-10 w-40 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <div className="overflow-hidden rounded-md bg-background shadow-md ring-1 ring-border">
-              <div className="relative h-24 w-40">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
           <div className="grid grid-cols-3 items-start gap-2">
             <div className="col-span-2">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/title inline-flex items-center  gap-1 text-foreground/78 truncate"
-                aria-label={`${project.title} live demo`}
-              >
-                <span className=" hover:underline ">
+              <span className="group/title inline-flex items-center gap-1 text-primary truncate">
+                <span className="hover:underline text-foreground/80 text-sm">
                   {project.title}
                 </span>
                 <motion.div>
                   <MX.Link21Linear size={15} color="#0076fc" />
                 </motion.div>
-              </motion.a>
+              </span>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">
                 {project.description}
               </p>
             </div>
-            <div className="col-span-1 flex justify-end">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-5 w-5 items-center border border-border  justify-center rounded-[5px] bg-neutral-100 dark:bg-background text-muted-foreground"
-                aria-label={`${project.title} repository`}
-              >
-                <Github className="w-4 h-4" />
-              </a>
-            </div>
           </div>
-        </div>
+        </motion.a>
       ))}
     </div>
   );

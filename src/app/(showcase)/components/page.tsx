@@ -56,16 +56,16 @@ const components = [
 
 export default function Page() {
   return (
-    <div className=" max-w-4xl py-6 lg:py-10 mx-auto">
+    <div className=" max-w-4xl py-6 lg:py-10 mx-auto font-satoshi">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
-          <h1 className={cn("inline-block font-heading text-4xl tracking-tight lg:text-5xl font-light")}>
+          <h1 className={cn("inline-block text-foreground/80 text-4xl tracking-tight lg:text-5xl font-light")}>
             UI Collection
           </h1>
           <p className="text-sm md:text-base text-muted-foreground/80 italic">
             this is my personal collection. i like to build small ui components.
             feel free to go through and use them in your projects.
-          </p>
+          </p>  
           
         </div>
       </div>
@@ -81,10 +81,10 @@ export default function Page() {
             
             <div className="absolute bottom-0 left-0 w-0 h-0 border-l-2 opacity-0 border-b-2 border-primary group-hover:w-[8px] group-hover:h-[8px] group-hover:opacity-100 transition-all duration-300 delay-200 ease-out" />
             
-            <h3 className="font-light leading-none tracking-tight">
+            <h3 className="font-light leading-none tracking-tight text-foreground/80 ">
               {component.title}
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground font-light">
+            <p className="mt-2 text-sm text-muted-foreground font-light text-foreground/80 ">
               {component.description}
             </p>
           </Link>

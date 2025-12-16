@@ -4,6 +4,7 @@ import "../globals.css";
 import { ThemeProvider } from "next-themes";
 import { MobileProvider } from "@/providers/mobile-provider";
 import { Header } from "@/components/header";
+import { satoshi } from "@/font/satoshi";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,7 @@ export default function ShowcaseLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable}`}>
       <body>
         <MobileProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

@@ -4,6 +4,7 @@ import "../globals.css";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/header";
 import { MobileProvider } from "@/providers/mobile-provider";
+import { satoshi } from "@/font/satoshi";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable}`}>
       <head>
         <script defer src="https://cloud.umami.is/script.js" data-website-id="5608995c-4730-4804-be1c-d585497a676d"></script>
       </head>

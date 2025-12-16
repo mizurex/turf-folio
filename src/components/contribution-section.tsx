@@ -43,13 +43,13 @@ export function ContributionSection({
       >
         <div className="flex items-center pl-3 gap-2">
           <Pulse />
-          <h3 className="font-mono text-sm sm:text-base text-foreground/78">
+          <h3 className="font-satoshi text-sm sm:text-base text-foreground/78">
             {title}
           </h3>
         </div>
-        <div className={cn( !isOpen ?"border border-border dark:border-neutral-700 rounded-[5px] bg-neutral-100 dark:bg-background " :"")}>
+        <div className={cn( !isOpen ?"bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] " :"")}>
              <ChevronDown
-          className={`h-4 w-4 text-foreground  transition-transform duration-300 ${
+          className={`h-4 w-4 text-muted-foreground hover:text-foreground transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -76,7 +76,7 @@ export function ContributionSection({
                     <div key={idx} className="group relative">
                       <button
                         onClick={() => onToggleItem(itemId)}
-                        className="w-full flex items-center justify-between py-[4px] hover:bg-accent  transition-colors cursor-pointer px-[10px]"
+                        className="w-full flex items-center justify-between py-[4px] hover:bg-accent font-satoshi transition-colors cursor-pointer px-[10px]"
                       >
                         <div className="flex items-center gap-2">
                           <motion.a
@@ -87,7 +87,7 @@ export function ContributionSection({
                             aria-label={`${item.title} link`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <span className="text-link text-left hover:underline text-xs sm:text-sm">
+                            <span className="text-foreground/80 font-satoshi text-left hover:underline text-xs sm:text-sm">
                               {item.title}
                             </span>
                             {useCustomIcon ? (
@@ -103,9 +103,9 @@ export function ContributionSection({
                             {item.year}
                           </span>
                         </div>
-                        <div className={cn( !isItemOpen ?"border border-border dark:border-neutral-700 rounded-[5px] bg-neutral-100 dark:bg-background " :"")}>
+                        <div className={cn( !isItemOpen ?" bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] " :"")}>
                            <ChevronDown
-                          className={`h-4 w-4 text-foreground transition-transform duration-300 ${
+                          className={`h-4 w-4 text-muted-foreground hover:text-foreground transition-transform duration-300 ${
                             isItemOpen ? "rotate-180" : ""
                           }`}
                         />
@@ -121,7 +121,7 @@ export function ContributionSection({
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2, ease: "easeInOut" }}
-                            className="overflow-hidden"
+                            className="overflow-hidden font-satoshi"
                           >
                             <div className="ml-4 pl-4 py-2 border-l-1 dark:border-[#333333] border-border">
                               <p className="text-xs sm:text-sm text-muted-foreground">

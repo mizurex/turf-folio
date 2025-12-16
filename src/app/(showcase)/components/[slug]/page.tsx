@@ -30,9 +30,9 @@ export default async function ComponentPage({ params }: PageProps) {
     .join(" ");
 
   return (
-    <div className=" max-w-4xl py-6 lg:py-10 mx-auto">
+    <div className=" max-w-4xl py-6 lg:py-10 mx-auto font-satoshi ">
       <div className="flex flex-col items-start gap-4 mb-8">
-        <h1 className={cn("inline-block font-light text-3xl tracking-tight lg:text-4xl")}>
+        <h1 className={cn("inline-block font-light text-3xl tracking-tight lg:text-4xl text-foreground/80 ")}>
           {title}
         </h1>
       </div>

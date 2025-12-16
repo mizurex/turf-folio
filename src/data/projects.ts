@@ -11,14 +11,14 @@ export const projectsData = [
       image: "/flowidget.png",
       live: "https://flowidget.projects.turfworks.site/",
       github: "https://github.com/mizurex/flowidget",
-      description: "Embedding widget for your website,trained on your custom data to answer questions.",
+      description: "Embedding widget for your website.",
     },
     {
       title: "Printin",
       image: "/printin.png",
       live: "https://printin.projects.turfworks.site/",
       github: "https://github.com/mizurex/printin",
-      description: "Fast A4 printing service for businesses, with options for color and black & white,lamination,and binding.",
+      description: "Fast A4 printing service for businesses.",
     },
     {
       title: "Welp",
@@ -32,14 +32,14 @@ export const projectsData = [
       image: "/dashboard.jpeg",
       live: "https://nice-dashboard-three.vercel.app/",
       github: "https://github.com/mizurex/nice_dashboard",
-      description: "A dashboard with tons of moving parts",
+      description: "Admin dashboard",
     },
     {
       title: "Turfex",
       image: "/minimal.jpeg",
       live: "https://github.com/mizurex/turfex",
       github: "https://github.com/mizurex/turfex",
-      description: "AI chat template.Features clean UI interface for conversations.",
+      description: "AI chat template.",
     },
     {
       title: "8ightbit",
@@ -54,6 +54,6 @@ export const projectsData = [
       image: "/vault.jpeg",
       live: "https://gridvault.projects.turfworks.site/",
       github: "https://github.com/mizurex/grid-vault",
-      description: "A collection of bento grid layouts you can copy and paste.",
+      description: "A collection of bento grid layouts.",
     },
   ];

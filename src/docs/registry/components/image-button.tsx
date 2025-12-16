@@ -28,9 +28,9 @@ const ImageContextBadge = ({
       onClick={onToggle}
       aria-expanded={isExpanded}
       className={cn(
-        "relative flex items-center overflow-hidden cursor-pointer rounded-xl",
+        "relative flex items-center overflow-hidden cursor-pointer rounded-[6px]",
         "bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950",
-        "border border-zinc-200/80 dark:border-zinc-800/80",
+        "border border-zinc-200/80 dark:border-zinc-800",
         "shadow-[0_1px_3px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]",
         "dark:shadow-[0_1px_3px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)]",
         "hover:shadow-[0_4px_12px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)]",
@@ -88,32 +88,6 @@ const ImageContextBadge = ({
       </span>
  
       )}
-     
-    </button>
-
-    <button
-      type="button"
-      onClick={(e) => {
-        e.stopPropagation();
-        onRemove();
-      }}
-      className={cn(
-        "absolute z-10 flex items-center justify-center transition-all duration-200 ease-out cursor-pointer",
-        isExpanded ? "-right-1 -top-1" : "-right-5 top-2.5",
-        "w-5 h-5 rounded-full",
-        "bg-zinc-900 dark:bg-zinc-100",
-        "text-zinc-100 dark:text-zinc-900",
-        "border-2 border-white dark:border-zinc-900",
-        "shadow-md",
-        "hover:bg-red-500 hover:border-red-500 dark:hover:bg-red-500 dark:hover:border-red-500",
-        "hover:text-white dark:hover:text-white",
-        "hover:scale-110 active:scale-95",
-        "transition-all duration-200 ease-out",
-        "opacity-0 group-hover:opacity-100"
-      )}
-      aria-label={`Remove ${displayName}`}
-    >
-      <X className="w-3 h-3" strokeWidth={2.5} />
     </button>
   </div>
 );

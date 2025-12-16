@@ -57,7 +57,7 @@ export default function Contact() {
     };
 
     return (
-        <main className="relative min-h-dvh flex flex-col items-center bg-background overflow-x-hidden font-mono">
+        <main className="relative min-h-dvh flex flex-col items-center bg-background overflow-x-hidden font-satoshi">
             <div className="max-w-3xl w-full px-6 relative min-h-dvh flex flex-col">
                 <DiagonalPattern side="left" />
                 <DiagonalPattern side="right" />
@@ -69,9 +69,9 @@ export default function Contact() {
                 {/* Main Content Area */}
                 <div className="flex-1 border-l border-r border-border dark:border-[#333333]/50 bg-background z-10">
                     <div className=" pb-6 px-4 md:px-10">
-                        <div className='w-50 pt-6 border-r border-border dark:border-[#333333]/50'>
-                            <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 group">
-                                <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+                        <div className='w-50 pt-2 border-r border-border dark:border-[#333333]/50'>
+                            <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors group">
+                                <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform duration-300" />
                                 Back to home
                             </Link>
                         </div>
@@ -79,9 +79,9 @@ export default function Contact() {
 
                         <div className="space-y-2 mb-10">
                             <Separator width="w-[150rem]" />
-                            <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Get in touch</h1>
+                            <h1 className="text-3xl md:text-4xl text-muted-foreground    tracking-tight">Get in touch</h1>
                             <Separator width="w-[150rem]" />
-                            <p className="text-muted-foreground">
+                            <p className="text-muted-foreground text-sm">
                                 Have a project in mind or just want to say hi? <br className="hidden sm:block" />
                                 I'm always open to new opportunities and collaborations.
                             </p>

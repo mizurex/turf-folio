@@ -17,7 +17,7 @@ export default function BlogIndex() {
     }
   };
   return (
-    <div className="">
+    <div className="font-satoshi">
        
     <main className="min-h-dvh border-l  border-border/80 dark:border-[#333333]/50 max-w-3xl w-full mx-auto px-6 py-8">
       <DiagonalPattern side="left" />
@@ -25,9 +25,9 @@ export default function BlogIndex() {
       <div>
         <div className="">
           <Separator width="w-[150rem]" />
-          <h1 className="text-2xl text-left font-mono font-light border-r border-border dark:border-[#333333]/50 w-fit pr-4">Find my blogs </h1>
+          <h1 className="text-2xl text-left text-muted-foreground font-light border-r border-border dark:border-[#333333]/50 w-fit pr-4">Find my blogs </h1>
           <Separator width="w-[150rem]" />
-          <p className="text-muted-foreground mt-2 font-mono">
+          <p className="text-muted-foreground mt-2 text-sm ">
             Stay tuned for updates...
           </p>
         </div>
@@ -37,17 +37,17 @@ export default function BlogIndex() {
           {posts.map((p) => (
             <Card key={p.slug} className="w-full text-left relative">
               <div className="pb-5">
-                <h2 className="text-lg font-mono">{p.metadata.title}</h2>
+                <h2 className="text-lg text-foreground/80 ">{p.metadata.title}</h2>
                 {p.metadata.createdAt ? (
-                  <div className="text-xs text-muted-foreground font-mono">{formatDate(p.metadata.createdAt)}</div>
+                  <div className="text-xs text-muted-foreground ">{formatDate(p.metadata.createdAt)}</div>
                 ) : null}
                 {p.metadata.description ? (
-                  <p className="text-muted-foreground mt-2 font-mono">{p.metadata.description}</p>
+                  <p className="text-muted-foreground mt-2 ">{p.metadata.description}</p>
                 ) : null}
               </div>
               <div className="absolute bottom-0 right-5">
                 <Link href={`/blog/${p.slug}`}>
-                  <span className="bg-background  rounded-[30px] text-sm text-muted-foreground font-mono underline hover:text-link">Read more</span>
+                  <span className="bg-background  rounded-[30px] text-sm text-muted-foreground  underline hover:text-link">Read more</span>
                 </Link>
               </div>
             </Card>

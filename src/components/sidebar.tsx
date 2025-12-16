@@ -85,7 +85,7 @@ export function Sidebar({ className }: SidebarProps) {
 
     return (
       <>
-        <div className="flex flex-col flex-grow">
+        <div className="flex flex-col flex-grow font-satoshi">
           <nav className="flex flex-col space-y-4">
             {topNavItems.length > 0 && (
               <div className="space-y-1">

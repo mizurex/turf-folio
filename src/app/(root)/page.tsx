@@ -11,6 +11,13 @@ import Separator from "@/components/line-separator";
 import { useEffect, useState } from "react";
 import { Clock, ArrowUpRight, BookOpen } from "lucide-react";
 import Link from "next/link";
+import { Instrument_Serif } from "next/font/google";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+
+});
 
 export default function Home() {
   const [date,setDate] = useState<Date | null>(null);
@@ -51,17 +58,17 @@ export default function Home() {
               <div className="flex items-center gap-2 border-r border-border w-fit pr-2 ">
                 <div className="relative p-2 group z-40">
                   <Image
-                    src="/pfp.jpg"
+                    src="/pfp2.jpg"
                     alt="Potato"
                     width={100}
                     height={100}
                     className="rounded-sm group-hover:invert transition-all duration-200 delay-100"
                   />
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t-1s border-l-1 border-primary/30 "></div>
+                  
 
                   <div className="absolute top-0 right-0 w-4 h-4 border-t-1s border-r-1 border-primary/30 "></div>
                   <div className="absolute bottom-0 left-0 w-4 h-4 border-b-1s border-l-1 border-primary/30 "></div>
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-1s border-r-1 border-primary/30 "></div>
+                
                     <div
     className="
       w-2 h-2 bg-green-500 rounded-full absolute top-1 left-1 z-10
@@ -69,9 +76,22 @@ export default function Home() {
     "
   />
                 </div>
-                <div className="absolute right-0 top-27">
-                <span className = 'text-xs text-muted-foreground flex justify-center items-center gap-1.5'> <Clock className='size-3 mt-[2px]'/> {date?.toLocaleTimeString()}</span> 
+                <div className="hidden sm:block sm:absolute sm:-translate-y-1/2 sm:-translate-x-1/2 z-10 sm:left-1/2">
+                  <span className={`text-4xl font-medium ${instrumentSerif.className} text-tan-primary flex justify-center items-center gap-1.5`}>Dhananjay</span>
                 </div>
+                <div className="hidden sm:block sm:absolute sm:-translate-y-1/5 sm:top-20 sm:-translate-x-1/2 z-10 sm:left-1/2">
+                  <span className={`text-sm font-medium ${instrumentSerif.className} text-tan-primary flex justify-center items-center gap-1.5`}>developer | builder | learner</span>
+                </div>
+                <div className="hidden sm:block sm:absolute sm:right-0 sm:top-25 bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] p-1">
+                  <span className="text-xs text-foreground flex justify-center items-center gap-1.5">
+                    <Clock className="size-3 mt-[2px]" /> {date?.toLocaleTimeString()}
+                  </span>
+                </div>
+              </div>
+                <div className="sm:hidden flex flex-col items-start py-2">
+                  
+                <span className={`text-2xl font-medium ${instrumentSerif.className} text-tan-primary`}>Dhananjay</span>
+                <span className={`text-xs font-medium ${instrumentSerif.className} text-tan-primary`}>developer | builder | learner</span>
               </div>
               <Separator width="w-[150rem] " />
               <div className=" flex items-center gap-3 py-[4px]">
@@ -84,7 +104,7 @@ export default function Home() {
                   <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/in/dhanjaya/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity"
@@ -129,17 +149,10 @@ export default function Home() {
               </div>
 
               <p
-                className="text-sm sm:text-base text-muted-foreground dark:text-foreground/78 font-normal whitespace-pre-line leading-relaxed sm:text-left py-[4px]"
-                style={{ fontWeight: 400 }}
+                className=" hidden  sm:block max-w-2xl text-xs font-satoshi text-muted-foreground dark:text-foreground/78 whitespace-normal break-words sm:text-left py-[4px]"
+                style={{ fontWeight: 300, fontSize: '14px' }}
               >
-                Full stack developer.
-                <br />
-                <span>
-                  I enjoy building things.
-                </span>
-                <br />
-                Writing TypeScript and Tailwind.
-                <span className="hidden sm:inline"> Open to collaborations.</span>
+               Hello!, I'm Dhananjay ( Jay ), a developer who loves to design and build stuff. I'm currently exploring advanced backend stuffs for creating more robust and <strong className="text-primary"> robust </strong> and <strong className="text-primary"> scalable </strong> applications. In my spare time, I enjoy making <strong className="text-primary underline hover:underline-offset-2 hover:text-primary/80"> <Link href="/components">  UI components  </Link> </strong>  or working on personal projects.
               </p>
             </div>
           </div>
@@ -148,8 +161,8 @@ export default function Home() {
         <section className="border-l border-border dark:border-[#333333]/50">
           <Separator width="w-[150rem] " />
           <div className="flex justify-center border-r border-dashed border-border w-fit px-4">
-            <h2 className="text-2xl font-mono font-light  text-center">
-              Projects
+            <h2 className="text-2xl font-satoshi font-light  text-center text-muted-foreground">
+              projects
             </h2>
           </div>
           <Separator width="w-[150rem]" />
@@ -164,8 +177,8 @@ export default function Home() {
           <div className=" w-full">
 
             <div className="flex  w-fit border-r border-dashed border-border">
-              <h2 className="text-2xl font-mono font-light px-4">
-                Contributions
+              <h2 className="text-2xl font-satoshi font-light text-muted-foreground   px-4">
+                contributions <span className="text-muted-foreground font-light text-xs"> (github)</span>
               </h2>
             </div>
             <Separator width="w-[150rem]" />
@@ -179,7 +192,7 @@ export default function Home() {
         <section className=" border-l border-border dark:border-[#333333]/50">
           <Separator width="w-[150rem]" />
           <div className="flex  w-fit border-r border-dashed border-border">
-            <h2 className="text-2xl font-mono font-light  px-4">Stack</h2>
+            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">stack</h2>
 
           </div>
           <Separator width="w-[150rem]" />
@@ -203,7 +216,7 @@ export default function Home() {
                   className="size-8 object-contain dark:invert transition-all pt-[4px]  group-hover:scale-90 duration-300 delay-100"
                 />
 
-                <span className="hidden md:block text-xs font-mono  pb-[2px] text-center">  {tech.name}</span>
+                <span className="hidden md:block text-xs font-satoshi text-muted-foreground pb-[2px] text-center">  {tech.name}</span>
 
               </a>
             ))}
@@ -213,7 +226,7 @@ export default function Home() {
 
           <Separator width="w-[150rem]" />
           <div className="flex w-fit border-r border-dashed border-border ">
-            <h2 className="text-2xl font-mono font-light  px-4">GitHub</h2>
+            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">github</h2>
           </div>
           <Separator width="w-[150rem]" />
 
@@ -228,14 +241,14 @@ export default function Home() {
           <Separator width="w-[150rem]" />
 
           <div className="flex w-fit border-r border-dashed border-border dark:border-[#333333]/50 ">
-            <h2 className="text-2xl font-mono font-light  px-4">LeetCode</h2>
+            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">leetcode</h2>
           </div>
 
           <Separator width="w-[150rem]" />
           <div className="bg-background flex justify-center items-center">
             <LeetContribution
               username="dhananjaycw"
-              theme="monochrome"
+              theme="green"
               blockAnimate="bounce"
             />
           </div>
@@ -244,11 +257,11 @@ export default function Home() {
         <section className=" border-l border-border dark:border-[#333333]/50">
           
           <div className="flex w-fit border-r border-dashed border-border">
-            <h2 className="text-2xl font-mono font-light px-4">Blogs</h2>
+            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">blogs</h2>
           </div>
           <Separator width="w-[150rem]" />
           
-          <div className="px-2 py-[4px]">
+          <div className="px-2 py-[4px] font-satoshi">
             <Link 
               href="/blog"
               className="group block border border-border/60 dark:border-[#333333]/50 hover:border-border dark:hover:border-[#333333] transition-colors"
@@ -256,18 +269,18 @@ export default function Home() {
               <div className="p-4 flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-2">
-                    <BookOpen className="h-4 w-4 text-muted-foreground" />
-                    <h3 className="font-mono text-sm sm:text-base text-foreground/78 group-hover:text-foreground transition-colors">
+                    <BookOpen className="h-4 w-4 text-muted-foreground  text-tan-primary/50 " />
+                    <h3 className=" text-sm sm:text-base text-foreground/70 group-hover:text-foreground transition-colors">
                       Read my latest thoughts
                     </h3>
                   </div>
                   
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground font-mono leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   Exploring ideas, sharing learnings, and documenting my journey in software development.
                 </p>
                 <div className="flex items-center gap-2 pt-1">
-                  <span className="text-xs text-muted-foreground font-mono">View all posts</span>
+                  <span className="text-xs text-muted-foreground ">View all posts</span>
                   <ArrowUpRight className="h-3 w-3 text-muted-foreground group-hover:text-foreground border rounded-[4px] bg-neutral-100 dark:bg-background flex-shrink-0" />
                 </div>
               </div>
@@ -277,7 +290,7 @@ export default function Home() {
         <section className="mb-6">
           <Separator width="w-[150rem]" />
           <div className="flex justify-center  relative   border-border dark:border-[#333333]/50 border-l px-2 py-10">
-            <h4 className="font-mono text-sm md:text-lg opacity-70 text-center  ">
+            <h4 className="font-satoshi underline text-sm md:text-lg opacity-70 text-center  ">
               {" "}
               Thanks a lot for checking out my work!{" "}
             </h4>

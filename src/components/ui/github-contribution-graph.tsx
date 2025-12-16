@@ -23,22 +23,22 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
     setMounted(true);
   }, []);
 
- const theme = {
+ // GitHub-like default green color palette for contribution graph
+const theme = {
   light: [
-    "#ecebe1ff", // softer white
-    "#bcbcbcff", // gentle grey
-    "#aebef4ff", // soft muted blue
-    "#7c94ccff", // medium soft blue
-    "#4a5f9eff"  // dim deep blue
+    "#ebedf0", // GitHub light background
+    "#9be9a8", // GitHub contribution level 1
+    "#40c463", // GitHub contribution level 2
+    "#30a14e", // GitHub contribution level 3
+    "#216e39"  // GitHub contribution level 4 (darkest green)
   ],
-
   dark: [
-    "#1a1a1a", // slightly softer black
-    "#242424", // muted dark grey
-    "#5a5a5a", // soft grey for mid elements
-    "#c3d8faff", // pale soft blue (readable highlight)
-    "#aebef4ff"  // dim bright accent
-  ],
+    "#161b22", // GitHub dark background
+    "#0e4429", // GitHub dark level 1
+    "#006d32", // GitHub dark level 2
+    "#26a641", // GitHub dark level 3
+    "#39d353"  // GitHub dark level 4 (brightest green)
+  ]
 };
 
   if (!mounted) {

@@ -37,7 +37,7 @@
   --color-code-highlight: var(--code-highlight);
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
-
+  --color-tan-primary: var(--tan-primary);
   /* Wire Tailwind font tokens to next/font variables with sensible fallbacks */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -226,6 +226,8 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
+
+  --tan-primary: #d4a796;
 }
 
 .dark {
@@ -337,6 +339,8 @@
   --sidebar-border: oklch(1 0 0 / 10%);
 
   --sidebar-ring: oklch(0.556 0 0);
+
+  --tan-primary: #d4a796;
 }
 
 @layer base {
@@ -381,6 +385,13 @@
 
   [id] {
     @apply scroll-mt-22;
+  }
+}
+
+@layer utilities {
+  .font-satoshi {
+    font-family: var(--font-satoshi), system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
   }
 }
 
