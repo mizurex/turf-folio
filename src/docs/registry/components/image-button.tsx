@@ -4,23 +4,21 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { X } from "lucide-react";
 
-interface ImageContextBadgeProps {
+  interface ImageButtonProps {
   image: {
     dataUrl: string;
   };
   displayName: string;
   isExpanded: boolean;
   onToggle: () => void;
-  onRemove: () => void;
 }
 
-const ImageContextBadge = ({
+const ImageButton = ({
   image,
   displayName,
   isExpanded,
   onToggle,
-  onRemove,
-}: ImageContextBadgeProps) => (
+}: ImageButtonProps) => (
   <div className="relative group flex-shrink-0">
     {/* Main button */}
     <button
@@ -92,4 +90,4 @@ const ImageContextBadge = ({
   </div>
 );
 
-export default ImageContextBadge;
+export default ImageButton;
