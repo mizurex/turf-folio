@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Projects from "@/components/projects";
+import Dashboards from "@/components/dashboards";
 import Contributions from "@/components/contributions";
 import techStack from "@/data/techtsack";
 import LeetContribution from "@/components/ui-components/lc";
@@ -9,9 +10,10 @@ import ContributionsDisplay from "@/components/github-graph";
 import DiagonalPattern from "@/components/pattern";
 import Separator from "@/components/line-separator";
 import { useEffect, useState } from "react";
-import { Clock, ArrowUpRight, BookOpen } from "lucide-react";
+import { Clock, ArrowUpRight, BookOpen, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { Instrument_Serif } from "next/font/google";
+import { AlarmClockIcon } from "@/components/ui/alarm-clock";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -36,14 +38,14 @@ export default function Home() {
       <div className="max-w-3xl w-full px-6">
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />
-        <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333] border-l border-border absolute top-0 left-15 w-full h-full"></div>
+        <div className=" hidden min-[1500px]:block pointer-events-none dark:border-[#333333]/50 border-l border-border absolute top-0 left-15 w-full h-full"></div>
         <div
           className="
     hidden       /* default: invisible on small screens */
     min-[1500px]:block     /* visible on large screens */
     pointer-events-none 
     border-l border-border 
-    dark:border-[#333333]
+    dark:border-[#333333]/50
     absolute top-0 left-96
     fixed w-full h-full
   "
@@ -82,9 +84,9 @@ export default function Home() {
                 <div className="hidden sm:block sm:absolute sm:-translate-y-1/5 sm:top-20 sm:-translate-x-1/2 z-10 sm:left-1/2">
                   <span className={`text-sm font-medium ${instrumentSerif.className} text-tan-primary flex justify-center items-center gap-1.5`}>developer | builder | learner</span>
                 </div>
-                <div className="hidden sm:block sm:absolute sm:right-0 sm:top-25 bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] p-1">
+                <div className="hidden sm:block sm:absolute sm:right-0 sm:top-25 bg-tan-primary/10  rounded-[5px] p-1">
                   <span className="text-xs text-foreground flex justify-center items-center gap-1.5">
-                    <Clock className="size-3 mt-[2px]" /> {date?.toLocaleTimeString()}
+                    <AlarmClockIcon size={16} /> {date?.toLocaleTimeString()}
                   </span>
                 </div>
               </div>
@@ -152,7 +154,7 @@ export default function Home() {
                 className=" hidden  sm:block max-w-2xl text-xs font-satoshi text-muted-foreground dark:text-foreground/78 whitespace-normal break-words sm:text-left py-[4px]"
                 style={{ fontWeight: 300, fontSize: '14px' }}
               >
-               Hello!, I'm Dhananjay ( Jay ), a developer who loves to design and build stuff. I'm currently exploring advanced backend stuffs for creating more robust and <strong className="text-primary"> robust </strong> and <strong className="text-primary"> scalable </strong> applications. In my spare time, I enjoy making <strong className="text-primary underline hover:underline-offset-2 hover:text-primary/80"> <Link href="/components">  UI components  </Link> </strong>  or working on personal projects.
+               Hello!, I'm Dhananjay ( Jay ), a developer who loves to design and build stuff. I'm currently exploring advanced <strong className="text-primary"> backend</strong> stuffs for creating more <strong className="text-primary"> robust </strong> and <strong className="text-primary"> scalable </strong> applications. In my spare time, I enjoy making <strong className="text-primary underline hover:underline-offset-2 hover:text-primary/80"> <Link href="/components">  UI components  </Link> </strong>  or working on personal projects.
               </p>
             </div>
           </div>
@@ -173,6 +175,19 @@ export default function Home() {
           </div>
         </section>
         <Separator width="w-[150rem]" />
+        
+        <section className="border-l border-border dark:border-[#333333]/50">
+          <div className="flex justify-center border-r border-dashed border-border w-fit px-4">
+            <h2 className="text-2xl font-satoshi font-light text-center text-muted-foreground">
+              dashboards
+            </h2>
+          </div>
+          <Separator width="w-[150rem]" />
+
+          <Dashboards />
+        </section>
+        <Separator width="w-[150rem]" />
+        
         <section className="border-l border-border dark:border-[#333333]/50">
           <div className=" w-full">
 
@@ -222,42 +237,13 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className=" border-l  border-border dark:border-[#333333]/50">
-
-          <Separator width="w-[150rem]" />
-          <div className="flex w-fit border-r border-dashed border-border ">
-            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">github</h2>
-          </div>
-          <Separator width="w-[150rem]" />
-
-          <div className=" ml-1 overflow-auto bg-background flex justify-center items-center">
-            <ContributionsDisplay username="mizurex" variant='compact' />
-          </div>
-        </section>
-        <section className=" border-l border-border dark:border-[#333333]/50">
-
-
-
-          <Separator width="w-[150rem]" />
-
-          <div className="flex w-fit border-r border-dashed border-border dark:border-[#333333]/50 ">
-            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">leetcode</h2>
-          </div>
-
-          <Separator width="w-[150rem]" />
-          <div className="bg-background flex justify-center items-center">
-            <LeetContribution
-              username="dhananjaycw"
-              theme="green"
-              blockAnimate="bounce"
-            />
-          </div>
-        </section>
+      
+       
         <Separator width="w-[150rem]" />
         <section className=" border-l border-border dark:border-[#333333]/50">
           
           <div className="flex w-fit border-r border-dashed border-border">
-            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">blogs</h2>
+            <h2 className="text-2xl font-satoshi font-light text-muted-foreground px-4">writings</h2>
           </div>
           <Separator width="w-[150rem]" />
           

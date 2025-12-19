@@ -23,18 +23,18 @@ export const navigation: NavigationItem[] = [
     title: "Components",
     href: "#",
     children: [
-      {
-        title: "Bouncy Button",
-        href: "/components/bouncy-button",
-      },
+     // {
+      //  title: "Bouncy Button",
+      //  href: "/components/bouncy-button",
+    //  },
       {
         title: "Browser",
         href: "/components/browser-demo",
       },
-      {
-        title: "Dashed Button",
-        href: "/components/dashed-button",
-      },
+     // {
+       // title: "Dashed Button",
+      //  href: "/components/dashed-button",
+     // },
       {
         title: "LeetCode Graph",
         href: "/components/leetcode-graph",

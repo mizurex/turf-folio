@@ -75,6 +75,7 @@ export const TutorialRegistry: Record<
     ),
   },
 
+  /*
   //Boucy button
   bouncyButtonDemo:{
     files: [
@@ -117,6 +118,7 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/button/dashed-button")
     ),
   },
+  */
 
   //Rainbow button
   rainbowButtonDemo:{

@@ -28,13 +28,6 @@ export const projectsData = [
       description: "AI learning platform.",
     },
     {
-      title: "Dashboard",
-      image: "/dashboard.jpeg",
-      live: "https://nice-dashboard-three.vercel.app/",
-      github: "https://github.com/mizurex/nice_dashboard",
-      description: "Admin dashboard",
-    },
-    {
       title: "Turfex",
       image: "/minimal.jpeg",
       live: "https://github.com/mizurex/turfex",

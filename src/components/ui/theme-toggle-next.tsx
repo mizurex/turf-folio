@@ -38,7 +38,7 @@ export function ThemeToggleNext({ className }: { className?: string }) {
       type="button"
       onClick={handleThemeToggle}
       aria-label="Toggle theme"
-      className={`p-[3px] bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] text-muted-foreground hover:text-foreground cursor-pointer ${className || ""}`}
+      className={`p-[3px] bg-tan-primary/10 shadow-sm rounded-[5px] text-muted-foreground hover:text-foreground cursor-pointer ${className || ""}`}
     >
 
       <span className="shadow-xl">

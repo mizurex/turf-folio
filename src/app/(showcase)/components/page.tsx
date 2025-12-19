@@ -2,21 +2,21 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const components = [
-  {
-    title: "Bouncy Button",
-    href: "/components/bouncy-button",
-    description: "A button that bounces when clicked.",
-  },
+   // {
+      //title: "Bouncy Button",
+      //href: "/components/bouncy-button",
+      //description: "A button that bounces when clicked.",
+    //},
   {
     title: "Browser",
     href: "/components/browser-demo",
     description: "A browser window mockup.",
   },
-  {
-    title: "Dashed Button",
-    href: "/components/dashed-button",
-    description: "A button with a dashed border.",
-  },
+ // {
+  //  title: "Dashed Button",
+  //  href: "/components/dashed-button",
+ //   description: "A button with a dashed border.",
+ // },
   {
     title: "LeetCode Graph",
     href: "/components/leetcode-graph",
@@ -45,7 +45,7 @@ const components = [
   {
     title: "Image Button",
     href: "/components/image-button",
-    description: "An expandable image button with image preview and remove action.",
+    description: "An expandable image button.",
   },
   {
     title: "Payment Form",

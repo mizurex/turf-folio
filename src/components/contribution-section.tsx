@@ -47,7 +47,7 @@ export function ContributionSection({
             {title}
           </h3>
         </div>
-        <div className={cn( !isOpen ?"bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] " :"")}>
+        <div className={cn( !isOpen ?"bg-tan-primary/10  rounded-[5px] " :"")}>
              <ChevronDown
           className={`h-4 w-4 text-muted-foreground hover:text-foreground transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
@@ -103,7 +103,7 @@ export function ContributionSection({
                             {item.year}
                           </span>
                         </div>
-                        <div className={cn( !isItemOpen ?" bg-tan-primary/10 border border-tan-primary/50 rounded-[5px] " :"")}>
+                        <div className={cn( !isItemOpen ?" bg-tan-primary/10  rounded-[5px] " :"")}>
                            <ChevronDown
                           className={`h-4 w-4 text-muted-foreground hover:text-foreground transition-transform duration-300 ${
                             isItemOpen ? "rotate-180" : ""
