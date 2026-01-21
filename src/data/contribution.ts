@@ -32,6 +32,13 @@ export const contributionsData = [
 
   export const tamboContributionsData = [
     {
+      title: "message persistence",
+      year: "2025",
+      description:
+        "Added message persistence to the tambo ai chat",
+      link: "https://github.com/tambo-ai/tambo/pull/1259",
+    },
+    {
       title: "added sidebar animation",
       year: "2025",
       description:
@@ -51,7 +58,14 @@ export const contributionsData = [
       description:
         "fixed table layout issue for better ui.",
       link: "https://github.com/tambo-ai/tambo/pull/1140",
-    }
+    },
+    {
+      title: "Added Tests",
+      year: "2026",
+      description:
+        "Added tests for components.",
+      link: "https://github.com/tambo-ai/tambo/pull/1785",
+    },
   ];
 
   export const PalisaFoundationContributions =[

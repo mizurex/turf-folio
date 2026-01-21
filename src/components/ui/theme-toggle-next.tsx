@@ -38,14 +38,14 @@ export function ThemeToggleNext({ className }: { className?: string }) {
       type="button"
       onClick={handleThemeToggle}
       aria-label="Toggle theme"
-      className={`p-[3px] bg-tan-primary/10 shadow-sm rounded-[5px] text-muted-foreground hover:text-foreground cursor-pointer ${className || ""}`}
+      className={`p-[3px] bg-tan-primary/10  rounded-[5px] text-muted-foreground hover:text-foreground cursor-pointer ${className || ""}`}
     >
 
-      <span className="shadow-xl">
+      <span className="">
         {current === "dark" ? (
           <SunDimIcon className="size-4 hover:[animation:spin_0.8s_linear] hover:text-primary" />
         ) : (
-          <Moon className="size-4 shadow-xl hover:text-primary" />
+          <Moon className="size-4 hover:text-primary" />
         )}
         <style>
           {`@keyframes spin { to { transform: rotate(360deg); } }`}
