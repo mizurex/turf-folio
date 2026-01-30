@@ -25,10 +25,10 @@ export default function Contact() {
         formData.append("access_key", "f7d10745-f5bc-4a35-b327-7d90d56d13b6");
 
         try {
-            const check = await fetch('/api');
-            const checkData = await check.json();
+            
+   
 
-            if (checkData === 'ok') {
+            if (true) {
                 const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
                     body: formData,
@@ -44,9 +44,7 @@ export default function Contact() {
                     setResult("error");
                     setMessage(data.message || "Something went wrong. Please try again.");
                 }
-            } else {
-                setLimitError(checkData.error);
-            }
+            } 
 
         } catch (error) {
             setResult("error");

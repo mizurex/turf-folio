@@ -21,11 +21,11 @@ export const projectsData = [
       description: "Fast A4 printing service for businesses.",
     },
     {
-      title: "Welp",
+      title: "Welp_",
       image: "/welp.jpeg",
-      live: "https://www.trywelp.live/chat",
+      live: "https://www.trywelp.live",
       github: "https://github.com/mizurex/welp",
-      description: "AI learning platform.",
+      description: "Website analytics tool.",
     },
     {
       title: "Turfex",
