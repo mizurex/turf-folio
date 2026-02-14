@@ -12,8 +12,6 @@ const ratelimit = new Ratelimit({
 export async function GET(request: NextRequest) {
 
     const ip = request.headers.get("x-forwarded-for") ?? '127.0.0.1';
-
-    console.log('hii');
     const { limit, reset, remaining } = await ratelimit.limit(ip);
     if (remaining === 0) {
         return new Response(JSON.stringify({ error: "Too many requests,  Please try again later" }), {
@@ -24,8 +22,6 @@ export async function GET(request: NextRequest) {
             }
         });
     }
-
-
 
     return Response.json({
         status: "ok",

@@ -63,6 +63,10 @@ export const navigation: NavigationItem[] = [
         title: "Payment Form",
         href: "/components/payment-form",
       },
+      {
+        title: "Price Map",
+        href: "/components/price-map",
+      },
     ],
   },
 ];

@@ -249,6 +249,28 @@ export const TutorialRegistry: Record<
       () => import("@/docs/registry/components/nav-bar")
     ),
   },
+  // Price Map
+  priceMapDemo: {
+    files: [
+      {
+        path: "src/docs/registry/demo/price-map-demo.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/demo/price-map-demo")
+    ),
+  },
+  priceMap: {
+    files: [
+      {
+        path: "src/docs/registry/components/price-map.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/docs/registry/components/price-map")
+    ),
+  },
+
   //payment form
   paymentFormDemo:{
     files: [

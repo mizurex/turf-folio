@@ -52,6 +52,11 @@ const components = [
     href: "/components/payment-form",
     description: "A payment form with a card design.",
   },
+  {
+    title: "Price Map",
+    href: "/components/price-map",
+    description: "Interactive map with search and store markers.",
+  },
 ];
 
 export default function Page() {

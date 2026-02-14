@@ -1,7 +1,9 @@
 
 
 export default function TestPage() {
-    return (
-    <div> hii</div>
-    )
+  return (
+    <div className="p-4">
+      test page
+    </div>
+  );
 }

@@ -1,0 +1,40 @@
+<Steps className="py-5">
+
+Interactive map with searchable store locations. Pass your own `stores` array (id, lat, lng, price, address). Click markers to show the detail popup.
+
+<ComponentPreview name="priceMapDemo" showLineNumbers>
+</ComponentPreview>
+
+<ComponentSource
+  name="priceMap"
+  title="price-map.tsx"
+  showLineNumbers
+  codeCollapsible
+/>
+
+### Packages
+
+```bash
+npm i pigeon-maps
+npx shadcn@latest add button
+```
+</Steps>
+
+### Props
+
+| Prop     | Type              | Description                                      |
+|----------|-------------------|--------------------------------------------------|
+| `stores` | `PriceMapStore[]` | Array of stores. Each has `id`, `lat`, `lng`, `price`, `address`. |
+
+### Usage
+
+```tsx
+import PriceMap from "@/docs/registry/components/price-map";
+
+const stores = [
+  { id: 1, lat: 28.6139, lng: 77.209, price: "₹3.50", address: "Shop 15, Connaught Place, New Delhi" },
+  { id: 2, lat: 19.076, lng: 72.8777, price: "₹5.50", address: "Unit 205, R City Mall, Mumbai" },
+];
+
+<PriceMap stores={stores} />
+```
