@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portfolio - Jay",
     description: "Portfolio of Jay, a software developer. Building and learning. Writing TypeScript and Tailwind, Open to collaborations and opportunities.",
-    images: ["/pfp.jpg"],
+    images: ["/pfp.jpeg"],
   },
 };
 
