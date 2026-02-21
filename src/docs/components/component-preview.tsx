@@ -20,11 +20,11 @@ export function ComponentPreview({
   return (
     <div className="my-6 not-prose">
       <Tabs defaultValue="preview" className="gap-4">
-        <TabsList className="flex gap-2 bg-zinc-100 border border-border dark:bg-zinc-950 py-3 rounded-[4px] dark:border-border">
-          <TabsTrigger value="preview" className="group dark:data-[state=active]:bg-black dark:data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:border-border data-[state=active]:bg-neutral-50 data-[state=active]:text-neutral-900 data-[state=active]:rounded-[4px] transition-all duration-200 font-sans font-medium dark:border-transparent">
+        <TabsList className="flex gap-2 bg-zinc-50 shadow-sm dark:bg-zinc-950 py-3 rounded-[20px] dark:border-border">
+          <TabsTrigger value="preview" className="group dark:data-[state=active]:bg-black dark:data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:border-border data-[state=active]:bg-zinc-100 data-[state=active]:text-neutral-900 data-[state=active]:rounded-[20px] transition-all duration-200 font-sans font-medium dark:border-transparent">
             <span>Preview</span>
           </TabsTrigger>
-          <TabsTrigger value="code" className="group dark:data-[state=active]:bg-black dark:data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:border-border data-[state=active]:bg-neutral-50 data-[state=active]:text-neutral-900 data-[state=active]:rounded-[4px] transition-all duration-200 font-sans font-medium dark:border-transparent">
+          <TabsTrigger value="code" className="group dark:data-[state=active]:bg-black dark:data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:border-border data-[state=active]:bg-neutral-50 data-[state=active]:text-neutral-900 data-[state=active]:rounded-[20px] transition-all duration-200 font-sans font-medium dark:border-transparent">
             <span>Code</span>
           </TabsTrigger>
         </TabsList>
