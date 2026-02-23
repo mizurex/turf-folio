@@ -105,18 +105,7 @@ export default function Home() {
                 >
                   <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/dhanjaya/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-70 transition-opacity"
-                >
-                  <img
-                    src="/linkedin.webp"
-                    alt="LinkedIn"
-                    className="h-4 w-4"
-                  />
-                </a>
+             
                 <a
                   href="https://x.com/PotatoTurf"
                   target="_blank"
