@@ -21,7 +21,7 @@ export function Header() {
     <div className="sticky top-0 z-50 border-b dark:border-[#333333] border-border bg-background font-mono">
       <div className="flex items-center justify-between max-w-3xl w-full mx-auto px-6 py-2">
         <Link href="/" className="flex items-center">
-          <Mascot />
+          <Mascot className="border border-border rounded-sm dark:border-white/10" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-4">

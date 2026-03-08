@@ -71,30 +71,21 @@ export default function Home() {
                   <div className="absolute top-0 right-0 w-4 h-4 border-t-1s border-r-1 border-primary/30 "></div>
                   <div className="absolute bottom-0 left-0 w-4 h-4 border-b-1s border-l-1 border-primary/30 "></div>
                 
-                    <div
-    className="
-      w-2 h-2 bg-green-500 rounded-full absolute top-1 left-1 z-10
-   
-    "
-  />
+               
                 </div>
-                <div className="hidden sm:block sm:absolute sm:-translate-y-1/2 sm:-translate-x-1/2 z-10 sm:left-1/2">
+                {/* <div className="hidden sm:block sm:absolute sm:-translate-y-1/2 sm:-translate-x-1/2 z-10 sm:left-1/2">
                   <span className={`text-4xl font-medium ${instrumentSerif.className} text-tan-primary flex justify-center items-center gap-1.5`}>Dhananjay</span>
                 </div>
                 <div className="hidden sm:block sm:absolute sm:-translate-y-1/5 sm:top-20 sm:-translate-x-1/2 z-10 sm:left-1/2">
                   <span className={`text-sm font-medium ${instrumentSerif.className} text-tan-primary flex justify-center items-center gap-1.5`}>developer | builder | learner</span>
-                </div>
+                </div> */}
                 <div className="hidden sm:block sm:absolute sm:right-0 sm:top-25 bg-tan-primary/10  rounded-[5px] p-1">
                   <span className="text-xs text-foreground flex justify-center items-center gap-1.5">
                     <AlarmClockIcon size={16} /> {date?.toLocaleTimeString()}
                   </span>
                 </div>
               </div>
-                <div className="sm:hidden flex flex-col items-start py-2">
-                  
-                <span className={`text-2xl font-medium ${instrumentSerif.className} text-tan-primary`}>Dhananjay</span>
-                <span className={`text-xs font-medium ${instrumentSerif.className} text-tan-primary`}>developer | builder | learner</span>
-              </div>
+             
               <Separator width="w-[150rem] " />
               <div className=" flex items-center gap-3 py-[4px]">
                 <a
@@ -106,14 +97,7 @@ export default function Home() {
                   <img src="/github.webp" alt="GitHub" className="h-4 w-4" />
                 </a>
              
-                <a
-                  href="https://x.com/PotatoTurf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-70 transition-opacity"
-                >
-                  <img src="/x.webp" alt="Twitter" className="h-4 w-4" />
-                </a>
+            
                 <a
                   href="mailto:dhananjayadhal3@gmail.com"
                   target="_blank"

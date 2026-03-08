@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { satoshi } from "@/font/satoshi";
+import Widget from "@/components/widget";
 
 
 const geistSans = Geist({
@@ -25,7 +26,7 @@ export default function ShowcaseLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable}`}>
-      
+  
       <body>
         
           {children}
