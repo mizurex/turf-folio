@@ -102,46 +102,70 @@ function LeetContributionGraph({
   const [calendar, setCalendar] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any>(null);
+  const [calendarUnavailable, setCalendarUnavailable] = useState(false);
+
+  async function fetchCalendar(usernameValue: string) {
+    const endpoints = [
+      `https://leetcode-api-pied.vercel.app/user/${usernameValue}/calendar`,
+      `https://leetcode-api-pied.vercel.app/${usernameValue}/calendar`,
+      `https://leetcode-api-pied.vercel.app/calendar/${usernameValue}`,
+    ];
+
+    for (const endpoint of endpoints) {
+      try {
+        const res = await fetch(endpoint, { cache: "no-store" });
+        if (!res.ok) continue;
+        const json = await res.json();
+
+        if (json && typeof json === "object") {
+          if (json.submissionCalendar && typeof json.submissionCalendar === "object") {
+            return json.submissionCalendar as Record<string, number>;
+          }
+
+          const keys = Object.keys(json);
+          if (keys.length > 0 && keys.every((key) => !Number.isNaN(Number(key)))) {
+            return json as Record<string, number>;
+          }
+        }
+      } catch {
+       
+      }
+    }
+
+    return null;
+  }
 
   useEffect(() => {
     async function fetchData() {
-      const CACHE_KEY = `leetcode-stats-${username}`;
-      const CACHE_DURATION = 1000 * 60 * 60;
-
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { data, timestamp } = JSON.parse(cached);
-        const age = Date.now() - timestamp;
-
-        if (age < CACHE_DURATION) {
-          setCalendar(data.submissionCalendar || {});
-          setData(data);
-          setLoading(false);
-          return;
-        }
-      }
-
       setLoading(true);
       try {
-        const res = await fetch(
-          `https://leetcode-stats-api.herokuapp.com/${username}`
-        );
+        const res = await fetch(`https://leetcode-api-pied.vercel.app/user/${username}`, {
+          cache: "no-store",
+        });
+        if (!res.ok) {
+          throw new Error(`LeetCode API request failed: ${res.status}`);
+        }
         const json = await res.json();
-
-        localStorage.setItem(
-          CACHE_KEY,
-          JSON.stringify({
-            data: json,
-            timestamp: Date.now(),
-          })
-        );
-
-        const cal =
-          json && json.submissionCalendar ? json.submissionCalendar : {};
-        setCalendar(cal);
+        console.log(json);
         setData(json);
+
+        if (json && json.submissionCalendar && typeof json.submissionCalendar === "object") {
+          setCalendar(json.submissionCalendar);
+          setCalendarUnavailable(false);
+        } else {
+          const fetchedCalendar = await fetchCalendar(username);
+          if (fetchedCalendar) {
+            setCalendar(fetchedCalendar);
+            setCalendarUnavailable(false);
+          } else {
+            setCalendar({});
+            setCalendarUnavailable(true);
+          }
+        }
       } catch (e) {
         setCalendar({});
+        setData(null);
+        setCalendarUnavailable(true);
       } finally {
         setLoading(false);
       }
@@ -150,12 +174,31 @@ function LeetContributionGraph({
   }, [username]);
 
   const { weeks, total, easy, medium, hard } = useMemo(() => {
-    const easy = { solved: data?.easySolved || 0, total: data?.totalEasy || 0 };
-    const medium = {
-      solved: data?.mediumSolved || 0,
-      total: data?.totalMedium || 0,
+    const acStats = data?.submitStats?.acSubmissionNum || [];
+    const totalStats = data?.submitStats?.totalSubmissionNum || [];
+    const byDifficulty = (stats: any[], difficulty: "Easy" | "Medium" | "Hard") =>
+      stats.find((item) => item?.difficulty === difficulty) || {};
+
+    const easyAc = byDifficulty(acStats, "Easy");
+    const mediumAc = byDifficulty(acStats, "Medium");
+    const hardAc = byDifficulty(acStats, "Hard");
+
+    const easyTotal = byDifficulty(totalStats, "Easy");
+    const mediumTotal = byDifficulty(totalStats, "Medium");
+    const hardTotal = byDifficulty(totalStats, "Hard");
+
+    const easy = {
+      solved: Number(easyAc.count || 0),
+      total: Number(easyTotal.count || 0),
     };
-    const hard = { solved: data?.hardSolved || 0, total: data?.totalHard || 0 };
+    const medium = {
+      solved: Number(mediumAc.count || 0),
+      total: Number(mediumTotal.count || 0),
+    };
+    const hard = {
+      solved: Number(hardAc.count || 0),
+      total: Number(hardTotal.count || 0),
+    };
 
     const dateToCount: Record<string, number> = {};
     for (const key in calendar) {
@@ -264,6 +307,12 @@ function LeetContributionGraph({
           ))}
         </div>
       </div>
+
+      {calendarUnavailable && (
+        <p className="mt-2 text-xs text-muted-foreground">
+          Calendar heatmap data is unavailable from the current API response.
+        </p>
+      )}
 
       <div className="flex flex-wrap justify-center sm:justify-end gap-2 sm:gap-3 mt-4 border-t pt-2 border-neutral-100 dark:border-neutral-800">
         <StatBadge
